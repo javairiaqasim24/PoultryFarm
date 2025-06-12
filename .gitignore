@@ -1,0 +1,80 @@
+# Ignore build output folders
+bin/
+obj/
+
+# Ignore user-specific Visual Studio files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build logs, debugging, cache, and temp data
+*.log
+*.pdb
+*.cache
+*.tlog
+*.vspscc
+*.vssscc
+*.v11.suo
+*.ncb
+*.sdf
+*.dbmdl
+*.bak
+*.orig
+
+# Ignore compiled DLLs and EXEs
+*.dll
+*.exe
+
+# Ignore VS Code settings (optional)
+.vscode/
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# Ignore JetBrains Rider files
+.idea/
+*.sln.iml
+
+# Ignore package output and NuGet packages
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+*.signature.p7s
+
+# Ignore ReSharper and Rider caches
+_ReSharper*/
+*.DotSettings.user
+
+# Ignore Windows Installer and MSI build outputs
+*.msi
+*.msm
+*.msp
+*.cab
+
+# Ignore resource designer files (auto-generated)
+*.Designer.cs
+
+# Ignore local history folders
+.history/
+
+# Ignore database files and backups
+*.mdf
+*.ldf
+*.bak
+*.sql
+
+# Ignore system/mac files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Ignore temporary or auto-generated layout and metadata files
+*.vsdx
+*DocumentLayout*.json
+
+# Ignore solution file (optional)
+PoultryProject/PoultryProject.sln
