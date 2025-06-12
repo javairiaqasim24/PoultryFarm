@@ -60,5 +60,9 @@ namespace Poultary.BL.Bl
         {
             return DL.SupplierDL.SearchSuppliersByName(name);
         }
+        public List<string> getsupplierbytype(string type)
+        {
+            return DL.SupplierDL.GetSupplierNamesByType(type);
+        }
     }
 }

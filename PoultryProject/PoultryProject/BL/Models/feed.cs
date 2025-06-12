@@ -28,5 +28,14 @@ namespace Poultary.BL.Models
             this.price = price;
         }
 
+        public feed(string name, DateTime purchaseDate, int price, float weight, int quantity, string supplierName)
+        {
+            this.name = name;
+            purchasedate = purchaseDate;
+            this.price = price;
+            this.weight = weight;
+            this.quantity = quantity;
+            suppliername = supplierName;
+        }
     }
 }

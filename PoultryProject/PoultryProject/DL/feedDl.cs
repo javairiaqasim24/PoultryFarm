@@ -68,7 +68,7 @@ namespace Poultary.DL
             }
         }
 
-        public static bool deletefeed(feed c)
+        public static bool deletefeed(int id)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace Poultary.DL
                     string query = "DELETE FROM feedbatches WHERE BatchId = @BatchId";
                     using (var cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@BatchId", c.id);
+                        cmd.Parameters.AddWithValue("@BatchId", id);
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
