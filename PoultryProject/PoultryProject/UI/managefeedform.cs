@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PoultryProject
+namespace Poultary.UI
 {
-    public partial class Form1 : Form
+    public partial class managefeedform : Form
     {
-        public Form1()
+        public managefeedform()
         {
             InitializeComponent();
+        }
+
+        private void managefeedform_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
