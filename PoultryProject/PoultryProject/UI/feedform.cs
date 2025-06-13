@@ -41,8 +41,8 @@ namespace Poultary.UI
             pictureBox6.MouseLeave += pictureBox_MouseLeave;
             pictureBox7.MouseEnter += pictureBox_MouseEnter;
             pictureBox7.MouseLeave += pictureBox_MouseLeave;
-            pictureBox15.MouseEnter += pictureBox_MouseEnter;
-            pictureBox15.MouseLeave += pictureBox_MouseLeave;
+            //pictureBox15.MouseEnter += pictureBox_MouseEnter;
+            //pictureBox15.MouseLeave += pictureBox_MouseLeave;
             pictureBox8.MouseEnter += pictureBox_MouseEnter;
             pictureBox8.MouseLeave += pictureBox_MouseLeave;
         }

@@ -124,7 +124,7 @@ namespace pro.UI
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            AddSupplier add=new AddSupplier(this);
+            AddSupplier add=new AddSupplier();
             add.ShowDialog();
         }
     }

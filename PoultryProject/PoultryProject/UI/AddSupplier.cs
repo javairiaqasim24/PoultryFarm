@@ -10,17 +10,18 @@ using System.Windows.Forms;
 using pro.BL.Bl;
 using pro.Interface;
 using pro.BL.Model;
+using pro.UI;
+using PoultryProject.UI;
 
 namespace pro.UI
 {
     public partial class AddSupplier : Form
     {
         Isupplier supp = new SupplierBL();
-        private Supplier main;
-        public AddSupplier(Supplier main)
+        public AddSupplier()
         {
             InitializeComponent();
-            this.main = main;
+            
         }
 
         private void btnadd_Click(object sender, EventArgs e)
@@ -35,7 +36,6 @@ namespace pro.UI
             if (result)
             {
                 MessageBox.Show("Supplier added successfully.");
-                main.LoadSuppliers();
                 this.Close();
 
             }
