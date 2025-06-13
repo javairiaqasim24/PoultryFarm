@@ -11,6 +11,7 @@ using Poultary.BL.Models;
 using System.Xml.Linq;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
+using Poultary.UI;
 
 namespace PoultryProject.UI
 {
@@ -157,5 +158,18 @@ namespace PoultryProject.UI
             }
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new managefeedform().ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new trackfeedform().ShowDialog();
+            this.Close();
+        }
     }
 }

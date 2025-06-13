@@ -547,6 +547,7 @@
             this.button10.TabIndex = 19;
             this.button10.Text = "Manage Feed";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -562,6 +563,7 @@
             this.button11.TabIndex = 18;
             this.button11.Text = "Track Usage";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label3
             // 
@@ -596,6 +598,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "feedform";
             this.Text = "feedform";
+            this.Load += new System.EventHandler(this.feedform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

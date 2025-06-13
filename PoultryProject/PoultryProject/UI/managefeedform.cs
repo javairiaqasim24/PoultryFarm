@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using PoultryProject.UI;
 
 namespace Poultary.UI
 {
@@ -116,5 +117,18 @@ namespace Poultary.UI
 
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new managefeedform().ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new trackfeedform().ShowDialog();
+            this.Close();
+        }
     }
 }

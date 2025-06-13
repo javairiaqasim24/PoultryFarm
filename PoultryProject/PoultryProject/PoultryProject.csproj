@@ -102,6 +102,7 @@
     <Compile Include="BL\Bl\chickenBL.cs" />
     <Compile Include="BL\Bl\CustomerBL.cs" />
     <Compile Include="BL\Bl\feedBL.cs" />
+    <Compile Include="BL\Bl\feedinfoBL.cs" />
     <Compile Include="BL\Bl\mortalityBl.cs" />
     <Compile Include="BL\Bl\SupplierBL.cs" />
     <Compile Include="BL\Bl\trackfeedBL.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="BL\Models\ChickenBatch.cs" />
     <Compile Include="BL\Models\Customer.cs" />
     <Compile Include="BL\Models\feed.cs" />
+    <Compile Include="BL\Models\feedinfo.cs" />
     <Compile Include="BL\Models\mortality.cs" />
     <Compile Include="BL\Models\Supplier.cs" />
     <Compile Include="BL\Models\trackfeed.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="DL\chickenDL.cs" />
     <Compile Include="DL\DatabaseHelper.cs" />
     <Compile Include="DL\feedDl.cs" />
+    <Compile Include="DL\feedinfoDL.cs" />
     <Compile Include="DL\loginpagedl.cs" />
     <Compile Include="DL\mortalityDL.cs" />
     <Compile Include="DL\SupplierDL.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Interfaces\ChickenBatchInterface.cs" />
     <Compile Include="Interfaces\chickeninterfaceBL.cs" />
     <Compile Include="Interfaces\feedinterface.cs" />
+    <Compile Include="Interfaces\Ifeedinfo.cs" />
     <Compile Include="Interfaces\ISupplier.cs" />
     <Compile Include="Interfaces\Itrackfeed.cs" />
     <Compile Include="Interfaces\mortalityinterface.cs" />

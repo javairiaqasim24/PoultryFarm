@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PoultryProject.BL.Bl;
+using PoultryProject.Interfaces;
+using PoultryProject.UI;
 
 namespace Poultary.UI
 {
@@ -17,6 +20,7 @@ namespace Poultary.UI
         private const int PanelCollapsedWidth = 50;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
+        Ifeedinfo ibl = new feedinfoBL();
         public feedform()
         {
             InitializeComponent();
@@ -111,12 +115,51 @@ namespace Poultary.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            string text = textBox1.Text.Trim();
+            if (string.IsNullOrEmpty(text))
+            {
+                loadgrid();
+            }
+            else
+            {
+                var list = ibl.searchinfo(text);
+                dataGridView2.DataSource = list;
+                dataGridView2.Columns["id"].Visible = false;
+                dataGridView2.Columns["batchname"].Visible = false;
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void feedform_Load(object sender, EventArgs e)
+        {
+            loadgrid();
+        }
+        private void loadgrid()
+        {
+            var list = ibl.getinfo();
+            dataGridView2.DataSource = list;
+            dataGridView2.Columns["id"].Visible = false;
+            dataGridView2.Columns["batchname"].Visible = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+         new   managefeedform().ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new trackfeedform().ShowDialog();
+            this.Close();
         }
     }
 }
