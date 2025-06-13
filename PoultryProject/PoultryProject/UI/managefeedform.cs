@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.BL.Bl;
+using Poultary.BL.Models;
 using Poultary.Interfaces;
 using PoultryProject.BL.Models;
 
@@ -27,6 +28,7 @@ namespace Poultary.UI
         private void managefeedform_Load(object sender, EventArgs e)
         {
             loadgrid();
+            dataGridView2.RowEnter += dataGridView2_rowselected;
         }
         private void loadgrid()
         {
@@ -50,13 +52,16 @@ namespace Poultary.UI
         {
 
             if (dataGridView2.CurrentRow == null) { return; }
-            trackfeed selectedUser = dataGridView2.CurrentRow.DataBoundItem as trackfeed;
+            feed selectedUser = dataGridView2.CurrentRow.DataBoundItem as feed;
             if (selectedUser == null) return;
-            selectedUser.sacksUsed = int.Parse(txtquantity.Text);
-            selectedUser.date = txtdate.Value;
-            selectedUser.name = txtsupplier.Text;
+            selectedUser.quantity = int.Parse(txtquantity.Text);
+            selectedUser.purchasedate = txtdate.Value;
+            selectedUser.name = txtname.Text;
+            selectedUser.price = int.Parse(txtprice.Text);
+            selectedUser.weight = double.Parse(txtweight.Text);
+            selectedUser.suppliername = txtsupplier.Text;
             selectedUser.id = currentitemid;
-            bool result = ibl.updatetrack(selectedUser);
+            bool result = ibl.updatefeed(selectedUser);
             if (result == true)
             {
                 MessageBox.Show("Item Updated Successfully");
@@ -70,7 +75,7 @@ namespace Poultary.UI
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            trackfeed selecteditems = dataGridView2.CurrentRow?.DataBoundItem as trackfeed;
+            feed selecteditems = dataGridView2.CurrentRow?.DataBoundItem as feed;
             if (selecteditems == null) return;
 
             selecteditems.id = currentitemid;
@@ -84,7 +89,7 @@ namespace Poultary.UI
 
             if (result == DialogResult.Yes)
             {
-                if (ibl.deletetrack(currentitemid))
+                if (ibl.deletefeed(currentitemid))
                 {
                     MessageBox.Show("Item Deleted Successfully");
                 }
@@ -101,12 +106,16 @@ namespace Poultary.UI
             if (e.RowIndex < 0) return;
 
             DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
-            trackfeed selectedItem = selectedRow.DataBoundItem as trackfeed;
+            feed selectedItem = selectedRow.DataBoundItem as feed;
             if (selectedItem == null) return;
 
-            txtquantity.Text = selectedItem.sacksUsed.ToString();
-            txtdate.Value = selectedItem.date;
-            txtsupplier.Text = selectedItem.name;
+            txtquantity.Text = selectedItem.quantity.ToString();
+            txtdate.Value = selectedItem.purchasedate;
+            txtsupplier.Text = selectedItem.suppliername;
+            txtname.Text = selectedItem.name;
+            txtprice.Text = selectedItem.price.ToString();
+            txtweight.Text = selectedItem.weight.ToString();
+
             currentitemid = selectedItem.id;
 
 

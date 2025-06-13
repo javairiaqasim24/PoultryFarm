@@ -156,6 +156,12 @@
     <Compile Include="UI\addmortality.Designer.cs">
       <DependentUpon>addmortality.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Addpayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Addpayment.Designer.cs">
+      <DependentUpon>Addpayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\chicksform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     </Compile>
     <Compile Include="UI\Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\customerpayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\customerpayments.Designer.cs">
+      <DependentUpon>customerpayments.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\feedform.cs">
       <SubType>Form</SubType>
@@ -253,11 +265,17 @@
     <EmbeddedResource Include="UI\addmortality.resx">
       <DependentUpon>addmortality.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Addpayment.resx">
+      <DependentUpon>Addpayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\chicksform.resx">
       <DependentUpon>chicksform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\customerpayments.resx">
+      <DependentUpon>customerpayments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\feedform.resx">
       <DependentUpon>feedform.cs</DependentUpon>
