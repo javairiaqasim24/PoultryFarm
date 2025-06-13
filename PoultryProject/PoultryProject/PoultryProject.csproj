@@ -202,7 +202,9 @@
     <Compile Include="UI\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Supplier.cs" />
+    <Compile Include="UI\Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Supplierform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +277,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
