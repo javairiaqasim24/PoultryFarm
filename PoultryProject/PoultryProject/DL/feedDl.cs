@@ -47,7 +47,7 @@ namespace Poultary.DL
                     conn.Open();
                     string query = "UPDATE feedbatches SET BatchName = @BatchName, PurchaseDate = @purchaseDate, " +
                                    "batchprice = @batchprice, weight = @batchweight, QuantitySacks = @batchquantity, " +
-                                   "SupplierID = @supplier_id WHERE BatchId = @BatchId";
+                                   "SupplierID = @supplier_id WHERE FeedBatchID = @BatchId";
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@BatchId", c.id);
@@ -75,7 +75,7 @@ namespace Poultary.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "DELETE FROM feedbatches WHERE BatchId = @BatchId";
+                    string query = "DELETE FROM feedbatches WHERE FeedBatchID = @BatchId";
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@BatchId", id);
@@ -98,8 +98,8 @@ namespace Poultary.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT fb.BatchId, fb.BatchName, fb.PurchaseDate, fb.batchprice, fb.weight, fb.QuantitySacks, s.Name " +
-                                   "FROM feedbatches fb JOIN suppliers s ON fb.SupplierID = s.SupplierID WHERE s.SupplierType = 'feed'";
+                    string query = "SELECT fb.FeedBatchID, fb.BatchName, fb.PurchaseDate,s.SupplierID, fb.batchprice, fb.weight, fb.QuantitySacks, s.Name " +
+                                   "FROM feedbatches fb JOIN suppliers s ON fb.SupplierID = s.SupplierID ";
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         using (var reader = cmd.ExecuteReader())
@@ -107,7 +107,7 @@ namespace Poultary.DL
                             while (reader.Read())
                             {
                                 feed batch = new feed(
-                                    reader.GetInt32("BatchId"),
+                                    reader.GetInt32("FeedBAtchID"),
                                     reader.GetString("BatchName"),
                                     reader.GetFloat("weight"),
                                     reader.GetInt32("QuantitySacks"),
