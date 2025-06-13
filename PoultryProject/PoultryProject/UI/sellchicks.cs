@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Poultary.UI
+namespace PoultryProject.UI
 {
-    public partial class Form2 : Form
+    public partial class sellchicks : Form
     {
-        public Form2()
+        public sellchicks()
         {
             InitializeComponent();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
