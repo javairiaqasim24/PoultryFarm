@@ -484,7 +484,6 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 88;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // txtdate
             // 
@@ -714,7 +713,6 @@
             this.button10.TabIndex = 21;
             this.button10.Text = "Manage Feed";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -730,7 +728,6 @@
             this.button11.TabIndex = 20;
             this.button11.Text = "Track Usage";
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label3
             // 
