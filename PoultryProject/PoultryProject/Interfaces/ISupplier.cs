@@ -15,6 +15,7 @@ namespace Poultary.Interfaces
         List<Supplier> GetSuppliers();
 
         List<Supplier> GetSuppliersbyName(string text);
-        
+        List<string >getsupplierbytype(string type);
+
     }
 }

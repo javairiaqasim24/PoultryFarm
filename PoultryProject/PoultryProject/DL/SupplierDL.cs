@@ -67,9 +67,9 @@ namespace Poultary.DL
                 var parameterDict = new Dictionary<string, object>
             {
                 {"@name", supplier.Name },
-               
+
                 {"@contact", supplier.Contact },
-              
+
                 {"@address", supplier.Address },
 
                 {"@type", supplier.SupplierType },
@@ -85,7 +85,7 @@ namespace Poultary.DL
                 return rowsAffected > 0;
             }
 
-            
+
 
             catch (SqlException sqlEx)
             {
@@ -190,6 +190,29 @@ namespace Poultary.DL
             }
 
             return suppliers;
+        }
+        public static List<string> GetSupplierNamesByType(string supplierType)
+        {
+            List<string> names = new List<string>();
+
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Name FROM suppliers WHERE SupplierType = @type";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@type", supplierType);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            names.Add(reader.GetString("Name"));
+                        }
+                    }
+                }
+            }
+
+            return names;
         }
 
     }

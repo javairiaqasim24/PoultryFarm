@@ -15,22 +15,24 @@ namespace Poultary.UI
 {
     public partial class Addchickform : Form
     {
-         ChickenBatchInterface _chickenBatchService=new ChickenbatchBL();
+        ChickenBatchInterface _chickenBatchService = new ChickenbatchBL();
+        ISupplier supplier = new SupplierBL();
         public Addchickform()
         {
             InitializeComponent();
+            this.Load += Addchickform_Load; 
         }
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string name=txtname.Text;
-           float weight = float.Parse(txtweight.Text);
+            string name = txtname.Text;
+            float weight = float.Parse(txtweight.Text);
             int quantity = int.Parse(txtquantity.Text);
             DateTime purchaseDate = txtdate.Value;
             int price = int.Parse(txtprice.Text);
             string supplierName = txtsupplier.Text;
-            ChickenBatch c = new ChickenBatch(name,purchaseDate,price,weight,quantity,supplierName);
-            bool result=_chickenBatchService.AddChickenBatch(c);
+            ChickenBatch c = new ChickenBatch(name, purchaseDate, price, weight, quantity, supplierName);
+            bool result = _chickenBatchService.AddChickenBatch(c);
             if (result)
             {
                 MessageBox.Show("Chicken batch added successfully.");
@@ -39,6 +41,24 @@ namespace Poultary.UI
             else
             {
                 MessageBox.Show("Failed to add chicken batch. Please try again.");
+            }
+        }
+
+        private void Addchickform_Load(object sender, EventArgs e)
+        {
+            load(); 
+        }
+        private void load()
+        {
+            try
+            {
+                var suppliers = supplier.getsupplierbytype("chicks"); 
+                txtsupplier.DataSource = suppliers;
+                txtsupplier.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to load suppliers: {ex.Message}");
             }
         }
     }

@@ -78,3 +78,4 @@ Desktop.ini
 
 # Ignore solution file (optional)
 PoultryProject/PoultryProject.sln
+/PoultryProject/PoultryProject/.vs
