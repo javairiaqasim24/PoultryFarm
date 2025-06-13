@@ -43,7 +43,7 @@ namespace Poultary.UI
             try
             {
                 string name = txtname.Text;
-                float weight = float.Parse(txtweight.Text);
+                double weight = Convert.ToDouble(txtweight.Text);
                 int quantity = int.Parse(txtquantity.Text);
                 DateTime purchaseDate = txtdate.Value;
                 int price = int.Parse(txtprice.Text);

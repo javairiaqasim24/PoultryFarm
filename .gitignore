@@ -56,7 +56,6 @@ _ReSharper*/
 *.cab
 
 # Ignore resource designer files (auto-generated)
-*.Designer.cs
 
 # Ignore local history folders
 .history/

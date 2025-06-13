@@ -104,12 +104,14 @@
     <Compile Include="BL\Bl\feedBL.cs" />
     <Compile Include="BL\Bl\mortalityBl.cs" />
     <Compile Include="BL\Bl\SupplierBL.cs" />
+    <Compile Include="BL\Bl\trackfeedBL.cs" />
     <Compile Include="BL\Models\chicken.cs" />
     <Compile Include="BL\Models\ChickenBatch.cs" />
     <Compile Include="BL\Models\Customer.cs" />
     <Compile Include="BL\Models\feed.cs" />
     <Compile Include="BL\Models\mortality.cs" />
     <Compile Include="BL\Models\Supplier.cs" />
+    <Compile Include="BL\Models\trackfeed.cs" />
     <Compile Include="DL\chickbatchDL.cs" />
     <Compile Include="DL\chickenDL.cs" />
     <Compile Include="DL\DatabaseHelper.cs" />
@@ -117,10 +119,12 @@
     <Compile Include="DL\loginpagedl.cs" />
     <Compile Include="DL\mortalityDL.cs" />
     <Compile Include="DL\SupplierDL.cs" />
+    <Compile Include="DL\trackfeedDL.cs" />
     <Compile Include="Interfaces\ChickenBatchInterface.cs" />
     <Compile Include="Interfaces\chickeninterfaceBL.cs" />
     <Compile Include="Interfaces\feedinterface.cs" />
     <Compile Include="Interfaces\ISupplier.cs" />
+    <Compile Include="Interfaces\Itrackfeed.cs" />
     <Compile Include="Interfaces\mortalityinterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +139,12 @@
     </Compile>
     <Compile Include="UI\Addfeed.Designer.cs">
       <DependentUpon>Addfeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\addfeedusage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\addfeedusage.Designer.cs">
+      <DependentUpon>addfeedusage.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\addmortality.cs">
       <SubType>Form</SubType>
@@ -209,6 +219,12 @@
     <Compile Include="UI\Supplierform.Designer.cs">
       <DependentUpon>Supplierform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\trackfeedform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\trackfeedform.Designer.cs">
+      <DependentUpon>trackfeedform.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -224,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Addfeed.resx">
       <DependentUpon>Addfeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\addfeedusage.resx">
+      <DependentUpon>addfeedusage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\addmortality.resx">
       <DependentUpon>addmortality.cs</DependentUpon>
@@ -260,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Supplierform.resx">
       <DependentUpon>Supplierform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\trackfeedform.resx">
+      <DependentUpon>trackfeedform.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

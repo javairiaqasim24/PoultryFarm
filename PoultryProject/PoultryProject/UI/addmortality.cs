@@ -64,5 +64,49 @@ namespace Poultary.UI
             }
         }
 
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtreason_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtquantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
