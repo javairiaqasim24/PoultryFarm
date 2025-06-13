@@ -104,29 +104,37 @@
     <Compile Include="BL\Bl\feedBL.cs" />
     <Compile Include="BL\Bl\feedinfoBL.cs" />
     <Compile Include="BL\Bl\mortalityBl.cs" />
+    <Compile Include="BL\Bl\StaffBL.cs" />
     <Compile Include="BL\Bl\SupplierBL.cs" />
     <Compile Include="BL\Bl\trackfeedBL.cs" />
     <Compile Include="BL\Models\chicken.cs" />
     <Compile Include="BL\Models\ChickenBatch.cs" />
     <Compile Include="BL\Models\Customer.cs" />
+    <Compile Include="BL\Models\Customers.cs" />
     <Compile Include="BL\Models\feed.cs" />
     <Compile Include="BL\Models\feedinfo.cs" />
     <Compile Include="BL\Models\mortality.cs" />
+    <Compile Include="BL\Models\Staffs.cs" />
     <Compile Include="BL\Models\Supplier.cs" />
+    <Compile Include="BL\Models\Suppliers.cs" />
     <Compile Include="BL\Models\trackfeed.cs" />
     <Compile Include="DL\chickbatchDL.cs" />
     <Compile Include="DL\chickenDL.cs" />
+    <Compile Include="DL\CustomerDL.cs" />
     <Compile Include="DL\DatabaseHelper.cs" />
     <Compile Include="DL\feedDl.cs" />
     <Compile Include="DL\feedinfoDL.cs" />
     <Compile Include="DL\loginpagedl.cs" />
     <Compile Include="DL\mortalityDL.cs" />
+    <Compile Include="DL\StaffDL.cs" />
     <Compile Include="DL\SupplierDL.cs" />
     <Compile Include="DL\trackfeedDL.cs" />
     <Compile Include="Interfaces\ChickenBatchInterface.cs" />
     <Compile Include="Interfaces\chickeninterfaceBL.cs" />
     <Compile Include="Interfaces\feedinterface.cs" />
+    <Compile Include="Interfaces\Icustomer.cs" />
     <Compile Include="Interfaces\Ifeedinfo.cs" />
+    <Compile Include="Interfaces\Istaff.cs" />
     <Compile Include="Interfaces\ISupplier.cs" />
     <Compile Include="Interfaces\Itrackfeed.cs" />
     <Compile Include="Interfaces\mortalityinterface.cs" />
@@ -137,6 +145,12 @@
     </Compile>
     <Compile Include="UI\Addchickform.Designer.cs">
       <DependentUpon>Addchickform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Addfeed.cs">
       <SubType>Form</SubType>
@@ -161,6 +175,18 @@
     </Compile>
     <Compile Include="UI\Addpayment.Designer.cs">
       <DependentUpon>Addpayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\chicksform.cs">
       <SubType>Form</SubType>
@@ -237,6 +263,12 @@
     <Compile Include="UI\Supplierform.Designer.cs">
       <DependentUpon>Supplierform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SupplierUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupplierUI.Designer.cs">
+      <DependentUpon>SupplierUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\trackfeedform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +288,9 @@
     <EmbeddedResource Include="UI\Addchickform.resx">
       <DependentUpon>Addchickform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Addfeed.resx">
       <DependentUpon>Addfeed.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,12 +303,18 @@
     <EmbeddedResource Include="UI\Addpayment.resx">
       <DependentUpon>Addpayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\chicksform.resx">
       <DependentUpon>chicksform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Customer.resx">
+    <None Include="UI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
-    </EmbeddedResource>
+    </None>
     <EmbeddedResource Include="UI\customerpayments.resx">
       <DependentUpon>customerpayments.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,11 +339,14 @@
     <EmbeddedResource Include="UI\mortalityform.resx">
       <DependentUpon>mortalityform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Staff.resx">
+    <None Include="UI\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
-    </EmbeddedResource>
+    </None>
     <EmbeddedResource Include="UI\Supplierform.resx">
       <DependentUpon>Supplierform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupplierUI.resx">
+      <DependentUpon>SupplierUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\trackfeedform.resx">
       <DependentUpon>trackfeedform.cs</DependentUpon>

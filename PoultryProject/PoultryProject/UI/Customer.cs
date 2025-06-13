@@ -7,94 +7,124 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using pro.BL.Bl;
+using pro.BL.Model;
+using pro.Interface;
+using PoultryProject;
 
-namespace Poultary.UI
+namespace pro.UI
 {
     public partial class Customer : Form
     {
+        Icustomer supp = new CustomerBL();
+        int currentitemid = -1;
         public Customer()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Customer_Load(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
+            LoadCustomer();
+            dataGridViewCustomer.RowEnter += dataGridViewCustomer_rowselected;
+        }
+        public void LoadCustomer()
+        {
+
+            var customers = supp.GetCustomers();
+            dataGridViewCustomer.DataSource = customers;
+            dataGridViewCustomer.Columns["CustomerID"].Visible = false;
+            dataGridViewCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void dataGridViewCustomer_rowselected(object sender, DataGridViewCellEventArgs e)
         {
-            Form1 f = new Form1();
-            this.Hide();
-            f.ShowDialog();
-            this.Close();
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow selectedRow = dataGridViewCustomer.Rows[e.RowIndex];
+            Customers selectedItem = selectedRow.DataBoundItem as Customers;
+            if (selectedItem == null) return;
+
+            txtname.Text = selectedItem.Name;
+            txtcontact.Text = selectedItem.Contact.ToString();
+            txtaddress.Text = selectedItem.Address.ToString();
+            
+
+
+            currentitemid = selectedItem.CustomerID;
+
+        }
+        private void ClearInputs()
+        {
+            txtname.Text = "";
+            txtcontact.Text = "";
+            txtaddress.Text = "";
+            currentitemid = -1;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnedit_Click(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
-            this.Hide();
-            m.ShowDialog();
-            this.Close();
+            if (dataGridViewCustomer.CurrentRow == null) { return; }
+            Customers selectedUser = dataGridViewCustomer.CurrentRow.DataBoundItem as Customers;
+            if (selectedUser == null) return;
+            selectedUser.Name = txtname.Text;
+            selectedUser.Contact = txtcontact.Text;
+            selectedUser.Address = txtaddress.Text;         
+            selectedUser.CustomerID = currentitemid;
+            bool result = supp.Update(selectedUser, currentitemid);
+            if (result == true)
+            {
+                MessageBox.Show("Item Updated Successfully");
+                ClearInputs();
+            }
+            else
+            {
+                MessageBox.Show("Item Not Updated");
+            }
+            LoadCustomer();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void btndelete_Click(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
-            this.Hide();
-            m.ShowDialog();
-            this.Close();
+            if (dataGridViewCustomer.CurrentRow == null) return;
+            Customers selecteditems = dataGridViewCustomer.CurrentRow.DataBoundItem as Customers;
+            if (selecteditems == null) return;
+
+            selecteditems.CustomerID = currentitemid;
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {selecteditems.Name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (supp.delete(currentitemid))
+            {
+                MessageBox.Show("Item Deleted Successfully");
+                ClearInputs();
+            }
+            else
+            {
+                MessageBox.Show("Item Not Deleted");
+            }
+            LoadCustomer();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
-            this.Hide();
-            m.ShowDialog();
-            this.Close();
+            AddCustomer addCustomer = new AddCustomer(this);
+            addCustomer.ShowDialog();   
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
-            this.Hide();
-            m.ShowDialog();
-            this.Close();
-        }
+            string searchText = txtsearch.Text.Trim();
+            List<Customers> filteredSuppliers;
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Customer c = new Customer();
-            this.Hide();
-            c.ShowDialog();
-            this.Close();
-        }
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                filteredSuppliers = supp.GetCustomers();
+            }
+            else
+            {
+                filteredSuppliers = supp.GetCustomersbyName(searchText);
+            }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            Customer c = new Customer();
-            this.Hide();
-            c.ShowDialog();
-            this.Close();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Staff c = new Staff();
-            this.Hide();
-            c.ShowDialog();
-            this.Close();
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            Staff c = new Staff();
-            this.Hide();
-            c.ShowDialog();
-            this.Close();
+            dataGridViewCustomer.DataSource = filteredSuppliers;
         }
     }
 }

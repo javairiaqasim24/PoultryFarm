@@ -4,46 +4,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using Poultary.BL.Models;
+using pro.BL.Bl;
+using pro.BL.Model;
 
-namespace Poultary.BL.Bl
+namespace pro.BL.Bl
 {
-    public class SupplierBL :Interfaces.ISupplier
+    public class SupplierBL:Interface.Isupplier
     {
-        public bool Add(Supplier s)
+        public bool Add(Suppliers s)
         {
             if (string.IsNullOrWhiteSpace(s.Name))
+            {
                 MessageBox.Show("Name is required.");
+                return false;
+            }
 
             if (string.IsNullOrWhiteSpace(s.Contact))
+            {
                 MessageBox.Show("Contact is required.");
+                return false;
+            }
 
             if (s.Contact.Length < 11 || s.Contact.Length > 15)
+            {
                 MessageBox.Show("Contact must be 11 to 15 characters long.");
+                return false;
+            }
 
             if (string.IsNullOrWhiteSpace(s.Address))
+            {
                 MessageBox.Show("Address is required.");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(s.SupplierType))
+            {
+                MessageBox.Show("Please select an option from the ComboBox.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
             return DL.SupplierDL.AddSupplier(s);
         }
 
-        public bool Update(Supplier s,int id)
+        public bool Update(Suppliers s, int id)
         {
             if (string.IsNullOrWhiteSpace(s.Name))
+            {
                 MessageBox.Show("Name is required.");
+                return false;
+            }
 
             if (string.IsNullOrWhiteSpace(s.Contact))
+            {
                 MessageBox.Show("Contact is required.");
+                return false;
+            }
 
-            if (s.Contact.Length >11 && s.Contact.Length <12)
-                MessageBox.Show("Contact must be 11 characters long.");
+            if (s.Contact.Length < 11 || s.Contact.Length > 15)
+            {
+                MessageBox.Show("Contact must be 11 to 15 characters long.");
+                return false;
+            }
 
             if (string.IsNullOrWhiteSpace(s.Address))
+            {
                 MessageBox.Show("Address is required.");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(s.SupplierType))
+            {
+                MessageBox.Show("Please select an option from the ComboBox.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
 
-            return DL.SupplierDL.UpdateSupplier(s,id);
+            return DL.SupplierDL.UpdateSupplier(s, id);
         }
 
         public bool delete(int id)
@@ -51,12 +85,12 @@ namespace Poultary.BL.Bl
             return DL.SupplierDL.DeleteSupplier(id);
         }
 
-        public List<Supplier> GetSuppliers()
+        public List<Suppliers> GetSuppliers()
         {
             return DL.SupplierDL.GetSuppliers();
         }
 
-        public List<Supplier> GetSuppliersbyName(string name)
+        public List<Suppliers> GetSuppliersbyName(string name)
         {
             return DL.SupplierDL.SearchSuppliersByName(name);
         }
@@ -66,3 +100,4 @@ namespace Poultary.BL.Bl
         }
     }
 }
+

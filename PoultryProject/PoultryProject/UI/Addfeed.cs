@@ -5,13 +5,14 @@ using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
 using Poultary.DL; // Ensure this is included for SupplierDl
-
+using pro.Interface;
+using pro.BL.Bl;
 namespace Poultary.UI
 {
     public partial class Addfeed : Form
     {
         feedinterface ibl = new feedBL();
-        ISupplier supplier= new SupplierBL(); // Assuming you have a SupplierBL class that implements ISupplier
+        Isupplier supplier= new SupplierBL(); // Assuming you have a SupplierBL class that implements ISupplier
 
         public Addfeed()
         {

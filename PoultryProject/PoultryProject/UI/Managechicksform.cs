@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.Interfaces;
 using Poultary.BL.Models;
-
+using pro.UI;
 namespace Poultary.UI
 {
     public partial class Managechicksform : Form
@@ -321,7 +321,7 @@ namespace Poultary.UI
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            pro.UI.Customer c = new pro.UI.Customer();  
             this.Hide();
             c.ShowDialog();
             this.Close();
@@ -329,7 +329,7 @@ namespace Poultary.UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            pro.UI.Customer c = new pro.UI.Customer();
             this.Hide();
             c.ShowDialog();
             this.Close();

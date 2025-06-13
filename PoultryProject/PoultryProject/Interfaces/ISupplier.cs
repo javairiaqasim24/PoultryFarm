@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Poultary.BL.Models;
+using pro.BL.Bl;
+using pro.BL.Model;
 
-namespace Poultary.Interfaces
+namespace pro.Interface
 {
-    public interface ISupplier
+    public interface Isupplier
     {
-        bool Add(Supplier s);
-        bool Update(Supplier s,int id);
+        bool Add(Suppliers s);
+        bool Update(Suppliers s, int id);
         bool delete(int id);
-        List<Supplier> GetSuppliers();
+        List<Suppliers> GetSuppliers();
 
-        List<Supplier> GetSuppliersbyName(string text);
-        List<string >getsupplierbytype(string type);
-
+        List<Suppliers> GetSuppliersbyName(string text);
+        List<string> getsupplierbytype(string type);
     }
 }
