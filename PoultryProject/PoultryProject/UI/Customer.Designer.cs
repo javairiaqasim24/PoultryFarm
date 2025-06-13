@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtrole = new System.Windows.Forms.Label();
@@ -75,7 +74,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel7.SuspendLayout();
@@ -97,18 +96,8 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(42, 42);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 3;
-            this.pictureBox15.TabStop = false;
             // 
             // textBox4
             // 
@@ -358,7 +347,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(271, 80);
             this.button7.TabIndex = 0;
-            this.button7.Text = "Reports";
+            this.button7.Text = "Payments";
             this.button7.UseVisualStyleBackColor = false;
             // 
             // panel1
@@ -675,7 +664,7 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.pictureBox15);
+            this.panel16.Controls.Add(this.pictureBox10);
             this.panel16.Controls.Add(this.button7);
             this.panel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
             this.panel16.Location = new System.Drawing.Point(4, 637);
@@ -684,6 +673,17 @@
             this.panel16.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
             this.panel16.Size = new System.Drawing.Size(255, 65);
             this.panel16.TabIndex = 6;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
+            this.pictureBox10.Location = new System.Drawing.Point(14, 0);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 21;
+            this.pictureBox10.TabStop = false;
             // 
             // Customer
             // 
@@ -696,7 +696,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Customer";
             this.Text = "Customer";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -721,13 +720,12 @@
             this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Label txtrole;
@@ -772,5 +770,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }

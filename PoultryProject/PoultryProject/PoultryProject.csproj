@@ -138,12 +138,6 @@
     <Compile Include="UI\Addchickform.Designer.cs">
       <DependentUpon>Addchickform.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Addfeed.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Addfeed.Designer.cs">
-      <DependentUpon>Addfeed.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\addfeedusage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,12 +174,6 @@
     <Compile Include="UI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\loginpage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,9 +204,6 @@
     <Compile Include="UI\Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Supplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UI\Supplierform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,9 +229,6 @@
     <EmbeddedResource Include="UI\Addchickform.resx">
       <DependentUpon>Addchickform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Addfeed.resx">
-      <DependentUpon>Addfeed.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\addfeedusage.resx">
       <DependentUpon>addfeedusage.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\loginpage.resx">
       <DependentUpon>loginpage.cs</DependentUpon>
@@ -305,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-06-13 200110.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
