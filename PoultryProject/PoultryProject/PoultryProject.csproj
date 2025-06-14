@@ -122,6 +122,7 @@
     <Compile Include="DL\addpaymentdl.cs" />
     <Compile Include="DL\chickbatchDL.cs" />
     <Compile Include="DL\chickenDL.cs" />
+    <Compile Include="DL\CustomerInvoiceGenerator.cs" />
     <Compile Include="DL\DatabaseHelper.cs" />
     <Compile Include="DL\feedDl.cs" />
     <Compile Include="DL\feedinfoDL.cs" />

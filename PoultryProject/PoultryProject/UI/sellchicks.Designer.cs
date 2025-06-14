@@ -62,7 +62,7 @@
             this.combocustomer.Name = "combocustomer";
             this.combocustomer.Size = new System.Drawing.Size(352, 28);
             this.combocustomer.TabIndex = 66;
-            this.combocustomer.SelectedIndexChanged += new System.EventHandler(this.combocustomer_SelectedIndexChanged);
+            //this.combocustomer.SelectedIndexChanged += new System.EventHandler(this.combocustomer_SelectedIndexChanged);
             // 
             // txtweight
             // 

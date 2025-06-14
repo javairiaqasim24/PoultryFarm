@@ -59,5 +59,23 @@ namespace PoultryProject.DL
                 }
             }
         }
+
+        public static int GetLatestCustomerBillId(int customerId)
+        {
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT BillID FROM customerbills WHERE CustomerID = @cid ORDER BY BillID DESC LIMIT 1";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", customerId);
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1;
+                }
+            }
+        }
+
+
     }
 }

@@ -136,10 +136,39 @@ namespace PoultryProject.UI
         }
 
 
-        private void combocustomer_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtcustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string customerName = combocustomer.Text.Trim();
+            int customerId = addpaymentdl.GetCustomerIdByName(customerName);
 
+            if (customerId == -1)
+            {
+                MessageBox.Show("Customer not found.");
+                return;
+            }
+
+            // Option 1: Load latest bill only
+            int latestBillId = addpaymentdl.GetLatestBillId(customerId);
+
+            if (latestBillId != -1)
+            {
+                //txtbill.Items.Clear();                // If using ComboBox
+                //txtbill.Items.Add(latestBillId);
+                //txtbill.SelectedIndex = 0;
+
+                // Optionally load due
+                decimal due = addpaymentdl.GetDueAmount(customerId, latestBillId);
+                //txtremaining.Text = due.ToString("F2");
+            }
+            else
+            {
+                //txtbill.Items.Clear();
+                //txtremaining.Text = "";
+                MessageBox.Show("No bills found for this customer.");
+            }
         }
+
+        
 
         private void txtcontact_TextChanged(object sender, EventArgs e)
         {
@@ -168,7 +197,32 @@ namespace PoultryProject.UI
 
         private void btnprint_Click(object sender, EventArgs e)
         {
+            string customerName = combocustomer.Text.Trim();
+            int customerId = sellchicksdl.GetCustomerIdByName(customerName);
+            int latestBillId = sellchicksdl.GetLatestCustomerBillId(customerId);
+
+            if (latestBillId != -1)
+            {
+                MessageBox.Show("Sale saved. Latest Bill ID is: " + latestBillId);
+
+                // Optional: Use it to generate PDF
+                CustomerInvoiceGenerator.GenerateInvoice(
+                    customerName,
+                    txtcontact.Text,
+                    txtdate.Value,
+                    latestBillId,
+                    decimal.Parse(txtweight.Text),
+                    decimal.Parse(txtamount.Text),
+                    decimal.Parse(txtpaidamount.Text),
+                    decimal.Parse(txtamount.Text) - decimal.Parse(txtpaidamount.Text)
+                );
+            }
+            else
+            {
+                MessageBox.Show("Unable to retrieve latest bill.");
+            }
 
         }
+
     }
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using pro.BL.Model;
+using PoultryProject.BL.Models;
+using PoultryProject.Interfaces;
 using System.Windows.Forms;
+using pro.BL.Models;
 
-namespace pro.BL.Bl
+namespace Poultary.BL.Models
 {
     public class CustomerBL:Interface.Icustomer
     {
