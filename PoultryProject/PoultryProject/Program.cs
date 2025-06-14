@@ -18,7 +18,7 @@ namespace PoultryProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pro.UI.Supplier());
+            Application.Run(new Sellchicks());
         }
     }
 }

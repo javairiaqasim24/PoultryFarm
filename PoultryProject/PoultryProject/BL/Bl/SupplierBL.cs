@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pro.BL.Bl;
-using pro.BL.Model;
+using pro.BL.Models;
 
 namespace pro.BL.Bl
 {
