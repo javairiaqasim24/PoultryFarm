@@ -11,15 +11,13 @@ using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
 using PoultryProject.BL.Models;
-using pro.BL.Bl;
-using pro.Interface;
 
 namespace Poultary.UI
 {
     public partial class managefeedform : Form
     {
         feedinterface ibl = new feedBL();
-        Isupplier supplier = new SupplierBL();
+        ISupplier supplier = new SupplierBL();
         int currentitemid = -1;
         public managefeedform()
         {
@@ -44,10 +42,10 @@ namespace Poultary.UI
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
             //Addfeed addfeed = new Addfeed();
             //addfeed.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void btnedit_Click(object sender, EventArgs e)
