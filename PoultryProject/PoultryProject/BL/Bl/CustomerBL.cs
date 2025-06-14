@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 using PoultryProject.BL.Models;
 using PoultryProject.Interfaces;
 using System.Windows.Forms;
-using pro.BL.Models;
+using pro.BL.Model;
+using Poultary.DL;
+using pro.Interface;
+using pro.DL;
+
 
 namespace Poultary.BL.Models
 {
-    public class CustomerBL:Interface.Icustomer
+    public class CustomerBL:Icustomer
     {
         public bool Add(Customers s)
         {
@@ -40,7 +44,7 @@ namespace Poultary.BL.Models
                 return false;
             }
 
-            return DL.CustomerDL.AddCustomer(s);
+            return CustomerDL.AddCustomer(s);
         }
 
         public bool Update(Customers s, int id)
@@ -72,22 +76,22 @@ namespace Poultary.BL.Models
             }
 
 
-            return DL.CustomerDL.UpdateCustomers(s, id);
+            return CustomerDL.UpdateCustomers(s, id);
         }
 
         public bool delete(int id)
         {
-            return DL.CustomerDL.DeleteCustomer(id);
+            return CustomerDL.DeleteCustomer(id);
         }
 
         public List<Customers> GetCustomers()
         {
-            return DL.CustomerDL.GetCustomers();
+            return CustomerDL.GetCustomers();
         }
 
         public List<Customers> GetCustomersbyName(string name)
         {
-            return DL.CustomerDL.SearchCustomersByName(name);
+            return CustomerDL.SearchCustomersByName(name);
         }
     }
 }

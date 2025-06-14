@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using pro.BL.Bl;
 using pro.BL.Model;
 using pro.Interface;
+using Poultary.BL.Models;
+using Poultary.BL.Bl;
 
 namespace pro.UI
 {

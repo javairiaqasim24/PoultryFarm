@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pro.BL.Bl;
-using pro.BL.Models;
+using pro.BL.Model;
+using pro.Interface;
 
 namespace pro.BL.Bl
 {
-    public class SupplierBL:Interface.Isupplier
+    public class SupplierBL:Isupplier
     {
         public bool Add(Suppliers s)
         {
