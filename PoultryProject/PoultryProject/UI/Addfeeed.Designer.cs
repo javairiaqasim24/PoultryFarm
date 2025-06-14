@@ -1,6 +1,6 @@
-﻿namespace Poultary.UI
+﻿namespace PoultryProject.UI
 {
-    partial class Addchickform
+    partial class Addfeeed
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Addchickform));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Addfeeed));
+            this.txtdate = new System.Windows.Forms.DateTimePicker();
             this.txtsupplier = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtweight = new System.Windows.Forms.TextBox();
@@ -43,9 +44,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtdate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtdate
+            // 
+            this.txtdate.Location = new System.Drawing.Point(73, 463);
+            this.txtdate.Name = "txtdate";
+            this.txtdate.Size = new System.Drawing.Size(307, 22);
+            this.txtdate.TabIndex = 67;
             // 
             // txtsupplier
             // 
@@ -54,30 +61,30 @@
             "fresh",
             "useable",
             "rotten"});
-            this.txtsupplier.Location = new System.Drawing.Point(82, 236);
+            this.txtsupplier.Location = new System.Drawing.Point(73, 238);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
-            this.txtsupplier.TabIndex = 51;
+            this.txtsupplier.TabIndex = 66;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(413, 227);
+            this.pictureBox1.Location = new System.Drawing.Point(404, 229);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 50;
+            this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtweight
             // 
             this.txtweight.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtweight.Location = new System.Drawing.Point(86, 300);
+            this.txtweight.Location = new System.Drawing.Point(79, 302);
             this.txtweight.Multiline = true;
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(313, 35);
-            this.txtweight.TabIndex = 47;
+            this.txtweight.TabIndex = 64;
             // 
             // btnadd
             // 
@@ -85,11 +92,11 @@
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnadd.Location = new System.Drawing.Point(139, 550);
+            this.btnadd.Location = new System.Drawing.Point(130, 552);
             this.btnadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(171, 64);
-            this.btnadd.TabIndex = 46;
+            this.btnadd.TabIndex = 63;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
@@ -101,11 +108,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label7.Location = new System.Drawing.Point(82, 426);
+            this.label7.Location = new System.Drawing.Point(73, 428);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 20);
-            this.label7.TabIndex = 45;
+            this.label7.TabIndex = 62;
             this.label7.Text = "Purchase Date";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -116,22 +123,22 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label6.Location = new System.Drawing.Point(84, 355);
+            this.label6.Location = new System.Drawing.Point(75, 357);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
-            this.label6.TabIndex = 43;
+            this.label6.TabIndex = 61;
             this.label6.Text = "Price";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtprice
             // 
             this.txtprice.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtprice.Location = new System.Drawing.Point(82, 378);
+            this.txtprice.Location = new System.Drawing.Point(77, 380);
             this.txtprice.Multiline = true;
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(313, 35);
-            this.txtprice.TabIndex = 42;
+            this.txtprice.TabIndex = 60;
             // 
             // label5
             // 
@@ -140,11 +147,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label5.Location = new System.Drawing.Point(84, 268);
+            this.label5.Location = new System.Drawing.Point(75, 270);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
-            this.label5.TabIndex = 41;
+            this.label5.TabIndex = 59;
             this.label5.Text = "Weight";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -155,11 +162,11 @@
             this.txtusername.BackColor = System.Drawing.Color.Transparent;
             this.txtusername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.txtusername.Location = new System.Drawing.Point(84, 204);
+            this.txtusername.Location = new System.Drawing.Point(75, 206);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(66, 20);
-            this.txtusername.TabIndex = 40;
+            this.txtusername.TabIndex = 58;
             this.txtusername.Text = "Supplier";
             this.txtusername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -170,22 +177,22 @@
             this.txt1.BackColor = System.Drawing.Color.Transparent;
             this.txt1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.txt1.Location = new System.Drawing.Point(84, 130);
+            this.txt1.Location = new System.Drawing.Point(75, 132);
             this.txt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(70, 20);
-            this.txt1.TabIndex = 39;
+            this.txt1.TabIndex = 57;
             this.txt1.Text = "Quantity";
             this.txt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtquantity
             // 
             this.txtquantity.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtquantity.Location = new System.Drawing.Point(86, 162);
+            this.txtquantity.Location = new System.Drawing.Point(77, 164);
             this.txtquantity.Multiline = true;
             this.txtquantity.Name = "txtquantity";
             this.txtquantity.Size = new System.Drawing.Size(313, 35);
-            this.txtquantity.TabIndex = 38;
+            this.txtquantity.TabIndex = 56;
             // 
             // label2
             // 
@@ -194,22 +201,22 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label2.Location = new System.Drawing.Point(96, 60);
+            this.label2.Location = new System.Drawing.Point(87, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 37;
+            this.label2.TabIndex = 55;
             this.label2.Text = "Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtname
             // 
             this.txtname.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtname.Location = new System.Drawing.Point(86, 92);
+            this.txtname.Location = new System.Drawing.Point(77, 94);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(313, 35);
-            this.txtname.TabIndex = 36;
+            this.txtname.TabIndex = 54;
             // 
             // label1
             // 
@@ -218,26 +225,19 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(153, 24);
+            this.label1.Location = new System.Drawing.Point(144, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 32);
-            this.label1.TabIndex = 35;
+            this.label1.TabIndex = 53;
             this.label1.Text = "Add Inventory";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtdate
-            // 
-            this.txtdate.Location = new System.Drawing.Point(82, 461);
-            this.txtdate.Name = "txtdate";
-            this.txtdate.Size = new System.Drawing.Size(307, 22);
-            this.txtdate.TabIndex = 52;
-            // 
-            // Addchickform
+            // Addfeeed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 744);
+            this.ClientSize = new System.Drawing.Size(521, 642);
             this.Controls.Add(this.txtdate);
             this.Controls.Add(this.txtsupplier);
             this.Controls.Add(this.pictureBox1);
@@ -253,11 +253,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.label1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Addchickform";
-            this.Text = "Addchickform";
-            this.Load += new System.EventHandler(this.Addchickform_Load);
+            this.Name = "Addfeeed";
+            this.Text = "Addfeeed";
+            this.Load += new System.EventHandler(this.Addfeeed_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,6 +264,7 @@
 
         #endregion
 
+        private System.Windows.Forms.DateTimePicker txtdate;
         private System.Windows.Forms.ComboBox txtsupplier;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtweight;
@@ -280,6 +279,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker txtdate;
     }
 }

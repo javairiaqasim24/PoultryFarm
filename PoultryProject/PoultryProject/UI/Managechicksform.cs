@@ -269,7 +269,6 @@ namespace Poultary.UI
             m.ShowDialog();
             this.Close();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Managechicksform m = new Managechicksform();
