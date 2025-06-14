@@ -63,5 +63,10 @@ namespace Poultary.UI
                 MessageBox.Show($"Failed to load suppliers: {ex.Message}");
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new pro.UI.AddSupplier().ShowDialog();
+        }
     }
 }
