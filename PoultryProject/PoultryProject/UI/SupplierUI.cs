@@ -8,76 +8,70 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pro.BL.Bl;
-using pro.BL.Model;
 using pro.Interface;
+using pro.BL.Model;
+
 
 namespace pro.UI
 {
-    public partial class Staff : Form
+    public partial class Supplier : Form
     {
-        Istaff supp = new StaffBL();
+        Isupplier supp = new SupplierBL();
         int currentitemid = -1;
-        public Staff()
+        public Supplier()
         {
             InitializeComponent();
         }
 
-        private void Staff_Load(object sender, EventArgs e)
+        private void Supplier_Load(object sender, EventArgs e)
         {
-            LoadStaff();
-            dataGridViewStaff.RowEnter += dataGridViewStaff_rowselected;
+            LoadSuppliers();
+            dataGridViewSupplier.RowEnter += dataGridViewSupplier_rowselected;
         }
-        public void LoadStaff()
+        public void LoadSuppliers()
         {
 
-            var staff = supp.GetStaff();
-            dataGridViewStaff.DataSource = staff;
-            dataGridViewStaff.Columns["StaffID"].Visible = false;
-            dataGridViewStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            var suppliers = supp.GetSuppliers();
+            dataGridViewSupplier.DataSource = suppliers;
+            dataGridViewSupplier.Columns["SupplierID"].Visible = false;
+            dataGridViewSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
-        private void dataGridViewStaff_rowselected(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewSupplier_rowselected(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            DataGridViewRow selectedRow = dataGridViewStaff.Rows[e.RowIndex];
-            Staffs selectedItem = selectedRow.DataBoundItem as Staffs;
+            DataGridViewRow selectedRow = dataGridViewSupplier.Rows[e.RowIndex];
+            Suppliers selectedItem = selectedRow.DataBoundItem as Suppliers;
             if (selectedItem == null) return;
 
             txtname.Text = selectedItem.Name;
             txtcontact.Text = selectedItem.Contact.ToString();
-            txtCNIC.Text = selectedItem.CNIC.ToString();
-            comboBoxType.SelectedItem = selectedItem.Role.ToString();
+            txtaddress.Text = selectedItem.Address.ToString();
+            comboBoxType.SelectedItem = selectedItem.SupplierType.ToString();
 
 
-            currentitemid = selectedItem.StaffID;
-
-        }
-
-        private void dataGridViewStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            currentitemid = selectedItem.SupplierID;
 
         }
-
         private void ClearInputs()
         {
             txtname.Text = "";
             txtcontact.Text = "";
-            txtCNIC.Text = "";
+            txtaddress.Text = "";
             comboBoxType.SelectedItem = "";
             currentitemid = -1;
         }
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridViewStaff.CurrentRow == null) { return; }
-            Staffs selectedUser = dataGridViewStaff.CurrentRow.DataBoundItem as Staffs;
+            if (dataGridViewSupplier.CurrentRow == null) { return; }
+            Suppliers selectedUser = dataGridViewSupplier.CurrentRow.DataBoundItem as Suppliers;
             if (selectedUser == null) return;
             selectedUser.Name = txtname.Text;
             selectedUser.Contact = txtcontact.Text;
-            selectedUser.CNIC = txtCNIC.Text;
-            selectedUser.Role = comboBoxType.SelectedItem.ToString();
-            selectedUser.StaffID = currentitemid;
+            selectedUser.Address = txtaddress.Text;
+            selectedUser.SupplierType = comboBoxType.SelectedItem.ToString();
+            selectedUser.SupplierID = currentitemid;
             bool result = supp.Update(selectedUser, currentitemid);
             if (result == true)
             {
@@ -88,16 +82,16 @@ namespace pro.UI
             {
                 MessageBox.Show("Item Not Updated");
             }
-            LoadStaff();
+            LoadSuppliers();
         }
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            if (dataGridViewStaff.CurrentRow == null) return;
-            Staffs selecteditems = dataGridViewStaff.CurrentRow.DataBoundItem as Staffs;
+            if (dataGridViewSupplier.CurrentRow == null) return;
+            Suppliers selecteditems = dataGridViewSupplier.CurrentRow.DataBoundItem as Suppliers;
             if (selecteditems == null) return;
 
-            selecteditems.StaffID = currentitemid;
+            selecteditems.SupplierID = currentitemid;
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {selecteditems.Name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (supp.delete(currentitemid))
             {
@@ -108,30 +102,30 @@ namespace pro.UI
             {
                 MessageBox.Show("Item Not Deleted");
             }
-            LoadStaff();
+            LoadSuppliers();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            List<Staffs> filteredSuppliers;
+            List<Suppliers> filteredSuppliers;
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                filteredSuppliers = supp.GetStaff();
+                filteredSuppliers = supp.GetSuppliers();
             }
             else
             {
-                filteredSuppliers = supp.GetStaffbyName(searchText);
+                filteredSuppliers = supp.GetSuppliersbyName(searchText);
             }
 
-            dataGridViewStaff.DataSource = filteredSuppliers;
+            dataGridViewSupplier.DataSource = filteredSuppliers;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnadd_Click(object sender, EventArgs e)
         {
-            AddStaff addStaff = new AddStaff(this);
-            addStaff.ShowDialog();
+            AddSupplier add=new AddSupplier();
+            add.ShowDialog();
         }
     }
 }

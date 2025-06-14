@@ -10,12 +10,15 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using pro.BL.Bl;
+using pro.BL.Model;
+using pro.Interface;
 
 namespace Poultary.UI
 {
     public partial class Supplierform : Form
     {
-        ISupplier supp = new SupplierBL();
+        Isupplier supp = new SupplierBL();
         int currentitemid = -1;
         public Supplierform()
         {
@@ -64,7 +67,7 @@ namespace Poultary.UI
         private void btnedit_Click(object sender, EventArgs e)
         {
             if (dataGridViewSupplier.CurrentRow == null) { return; }
-            Supplier selectedUser = dataGridViewSupplier.CurrentRow.DataBoundItem as Supplier;
+           Suppliers selectedUser = dataGridViewSupplier.CurrentRow.DataBoundItem as Suppliers;
             if (selectedUser == null) return;
             selectedUser.Name = txtname.Text;
             selectedUser.Contact = txtcontact.Text;
@@ -111,7 +114,7 @@ namespace Poultary.UI
             string address = txtaddress.Text;
             string type = comboBoxType.SelectedItem.ToString();
 
-            Supplier c = new Supplier(name, contact, address, type);
+            Suppliers c = new Suppliers(name, contact, address, type);
             bool result = supp.Add(c);
             if (result)
             {
@@ -127,7 +130,7 @@ namespace Poultary.UI
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            List<Supplier> filteredSuppliers;
+            List<Suppliers> filteredSuppliers;
 
             if (string.IsNullOrWhiteSpace(searchText))
             {

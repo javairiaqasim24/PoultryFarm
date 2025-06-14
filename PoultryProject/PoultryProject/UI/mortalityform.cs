@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using pro.UI;
 
 namespace Poultary.UI
 {
@@ -226,15 +227,16 @@ txtsupplier.DisplayMember = "batchName";
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Supplier m = new Supplier();
+            pro.UI.Supplier m = new pro.UI.Supplier();
             this.Hide();
-            
+            m.ShowDialog();
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            pro.UI.Customer c = new pro.UI.Customer();
+
             this.Hide();
             c.ShowDialog();
             this.Close();
@@ -242,7 +244,7 @@ txtsupplier.DisplayMember = "batchName";
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
+            pro.UI.Customer c = new pro.UI.Customer();
             this.Hide();
             c.ShowDialog();
             this.Close();

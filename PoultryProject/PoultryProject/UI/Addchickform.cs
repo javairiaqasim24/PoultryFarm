@@ -10,13 +10,15 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using pro.BL.Bl;
+using pro.Interface;
 
 namespace Poultary.UI
 {
     public partial class Addchickform : Form
     {
         ChickenBatchInterface _chickenBatchService = new ChickenbatchBL();
-        ISupplier supplier = new SupplierBL();
+        Isupplier supplier = new SupplierBL();
         public Addchickform()
         {
             InitializeComponent();

@@ -4,26 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poultary.BL.Models
+namespace pro.BL.Model
 {
-    internal class Customer
+    public class Customers
     {
-        public string name { get; set; }
+        public int CustomerID { get; set; }
+        public string Name { get; set; }
         public string Contact { get; set; }
         public string Address { get; set; }
+       
 
-
-        public Customer(string name, string contact, string address)
+        public Customers() { }
+        public Customers(string name, string contact, string address)
         {
-            this.name = name;          
+            Name = name;
             Contact = contact;
             Address = address;
            
-
-        }
-
-        public Customer()
-        {
         }
     }
 }

@@ -4,26 +4,25 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using pro.BL.Bl;
 using pro.BL.Model;
+using System.Windows.Forms;
 using KIMS;
 namespace pro.DL
 {
-    internal class SupplierDL
+    public class StaffDL
     {
-        public static bool AddSupplier(Suppliers supplier)
+        public static bool AddStaff(Staffs staff)
         {
             try
             {
-                string query = @"insert into suppliers (Name,ContactInfo,SupplierType,Address) values (@name,@contact,@type,@address)";
+                string query = @"insert into staff (Name,ContactInfo,Role,cnic) values (@name,@contact,@type,@cnic)";
                 var parameterDict = new Dictionary<string, object>
             {
-                {"@name",supplier.Name },
-                { "@contact", supplier.Contact },
-                 { "@type", supplier.SupplierType },
-                    { "@address", supplier.Address },
+                {"@name",staff.Name },
+                { "@contact", staff.Contact },
+                 { "@type", staff.Role },
+                    { "@cnic", staff.CNIC },
 
             };
                 MySqlParameter[] parameters = parameterDict
@@ -51,26 +50,26 @@ namespace pro.DL
             }
         }
 
-        public static bool UpdateSupplier(Suppliers supplier, int supplierID)
+        public static bool UpdateStaff(Staffs staff, int StaffID)
         {
             try
             {
-                string query = @"update suppliers 
+                string query = @"update staff 
                              set Name = @name, 
                                  ContactInfo = @contact, 
-                                  SupplierType = @type,   
-                                 Address = @address                                 
-                             where SupplierID = @id";
+                                  Role = @type,   
+                                 cnic = @cnic                                 
+                             where StaffID = @id";
                 var parameterDict = new Dictionary<string, object>
             {
-                {"@name", supplier.Name },
+                {"@name", staff.Name },
 
-                {"@contact", supplier.Contact },
+                {"@contact", staff.Contact },
 
-                {"@address", supplier.Address },
+                {"@cnic" , staff.CNIC },
 
-                {"@type", supplier.SupplierType },
-                    {"@id", supplierID }
+                {"@type", staff.Role },
+                    {"@id", StaffID }
             };
                 MySqlParameter[] parameters = parameterDict
               .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
@@ -98,11 +97,11 @@ namespace pro.DL
             }
             return false;
         }
-        public static bool DeleteSupplier(int id)
+        public static bool DeleteStaff(int id)
         {
             try
             {
-                string query = @"delete from suppliers where SupplierID=@ID";
+                string query = @"delete from staff where StaffID=@ID";
                 var parameterDict = new Dictionary<string, object>
                 {
                     {"@ID",id }
@@ -122,10 +121,10 @@ namespace pro.DL
 
         }
 
-        public static List<Suppliers> GetSuppliers()
+        public static List<Staffs> GetStaff()
         {
-            string query = "SELECT SupplierID, Name, ContactInfo,SupplierType, Address FROM suppliers";
-            List<Suppliers> suppliers = new List<Suppliers>();
+            string query = "SELECT StaffID, Name, ContactInfo,Role, cnic FROM staff";
+            List<Staffs> staff = new List<Staffs>();
 
             using (var conn = DatabaseHelper.GetConnection())
             {
@@ -135,29 +134,29 @@ namespace pro.DL
                 {
                     while (reader.Read())
                     {
-                        Suppliers s = new Suppliers
+                        Staffs s = new Staffs
                         {
-                            SupplierID = Convert.ToInt32(reader["SupplierID"]),
+                            StaffID = Convert.ToInt32(reader["StaffID"]),
                             Name = reader["Name"].ToString(),
                             Contact = reader["ContactInfo"].ToString(),
-                            SupplierType = reader["SupplierType"].ToString(),
-                            Address = reader["Address"].ToString()
+                            Role = reader["Role"].ToString(),
+                            CNIC = reader["cnic"].ToString()
                         };
-                        suppliers.Add(s);
+                        staff.Add(s);
                     }
                 }
             }
 
-            return suppliers;
+            return staff;
         }
 
-        public static List<Suppliers> SearchSuppliersByName(string name)
+        public static List<Staffs> SearchStaffByName(string name)
         {
-            string query = @"SELECT SupplierID, Name, ContactInfo,SupplierType, Address 
-                     FROM suppliers 
+            string query = @"SELECT StaffID, Name, ContactInfo,Role, cnic 
+                     FROM staff 
                      WHERE Name LIKE @name";
 
-            List<Suppliers> suppliers = new List<Suppliers>();
+            List<Staffs> staff = new List<Staffs>();
 
             using (var conn = DatabaseHelper.GetConnection())
             {
@@ -170,44 +169,22 @@ namespace pro.DL
                     {
                         while (reader.Read())
                         {
-                            Suppliers s = new Suppliers
+                            Staffs s = new Staffs
                             {
-                                SupplierID = Convert.ToInt32(reader["SupplierID"]),
+                                StaffID = Convert.ToInt32(reader["StaffID"]),
                                 Name = reader["Name"].ToString(),
                                 Contact = reader["ContactInfo"].ToString(),
-                                SupplierType = reader["SupplierType"].ToString(),
-                                Address = reader["Address"].ToString()
+                                Role = reader["Role"].ToString(),
+                                CNIC = reader["cnic"].ToString()
                             };
-                            suppliers.Add(s);
+                            staff.Add(s);
                         }
                     }
                 }
             }
 
-            return suppliers;
+            return staff;
         }
-        public static List<string> GetSupplierNamesByType(string supplierType)
-        {
-            List<string> names = new List<string>();
-
-            using (var conn = DatabaseHelper.GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT Name FROM suppliers WHERE SupplierType = @type";
-                using (var cmd = new MySqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@type", supplierType);
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            names.Add(reader.GetString("Name"));
-                        }
-                    }
-                }
-            }
-
-            return names;
-        }
+       
     }
 }
