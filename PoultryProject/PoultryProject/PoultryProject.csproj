@@ -112,6 +112,8 @@
     <Compile Include="BL\Bl\StaffBL.cs" />
     <Compile Include="BL\Bl\supplierBillBL.cs" />
     <Compile Include="BL\Bl\SupplierBL.cs" />
+    <Compile Include="BL\Bl\SupplierpayBL.cs" />
+    <Compile Include="BL\Bl\supplierpaymentBL.cs" />
     <Compile Include="BL\Bl\trackfeedBL.cs" />
     <Compile Include="BL\Models\chicken.cs" />
     <Compile Include="BL\Models\ChickenBatch.cs" />
@@ -123,6 +125,8 @@
     <Compile Include="BL\Models\Staffs.cs" />
     <Compile Include="BL\Models\Supplier.cs" />
     <Compile Include="BL\Models\supplierbill.cs" />
+    <Compile Include="BL\Models\supplierpay.cs" />
+    <Compile Include="BL\Models\supplierpayment.cs" />
     <Compile Include="BL\Models\Suppliers.cs" />
     <Compile Include="BL\Models\trackfeed.cs" />
     <Compile Include="CustomerInvoiceGenerator.cs" />
@@ -140,6 +144,8 @@
     <Compile Include="DL\StaffDL.cs" />
     <Compile Include="DL\supplierBillDL.cs" />
     <Compile Include="DL\SupplierDL.cs" />
+    <Compile Include="DL\SupplierPayDL.cs" />
+    <Compile Include="DL\supplierpaymentDl.cs" />
     <Compile Include="DL\trackfeedDL.cs" />
     <Compile Include="Interfaces\ChickenBatchInterface.cs" />
     <Compile Include="Interfaces\chickeninterfaceBL.cs" />
@@ -149,6 +155,8 @@
     <Compile Include="Interfaces\Istaff.cs" />
     <Compile Include="Interfaces\ISupplier.cs" />
     <Compile Include="Interfaces\IsupplierBill.cs" />
+    <Compile Include="Interfaces\Isupplierpay.cs" />
+    <Compile Include="Interfaces\ISupplierpayemnts.cs" />
     <Compile Include="Interfaces\Itrackfeed.cs" />
     <Compile Include="Interfaces\mortalityinterface.cs" />
     <Compile Include="Program.cs" />
@@ -267,6 +275,12 @@
     <Compile Include="UI\mortalityform.Designer.cs">
       <DependentUpon>mortalityform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\priccerecordform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\priccerecordform.Designer.cs">
+      <DependentUpon>priccerecordform.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\sellchicks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +387,9 @@
     <None Include="UI\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </None>
+    <EmbeddedResource Include="UI\priccerecordform.resx">
+      <DependentUpon>priccerecordform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\sellchicks.resx">
       <DependentUpon>sellchicks.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,9 +7,10 @@ using PoultryProject.BL.Models;
 
 namespace PoultryProject.Interfaces
 {
-    public interface IsupplierBill
+    public interface ISupplierpayemnts
     {
-        bool addsupplierbills(supplierbill b);
-        List<string> getsuppliernames(string name);
+        bool addsupplierpayments(supplierpayment s);
+        List<string> getsuppliernames(string text);
+        List<supplierpayment> getsupplierpayments();
     }
 }

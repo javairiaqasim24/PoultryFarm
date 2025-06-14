@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.UI;
 using PoultryProject.UI;
+using ZstdSharp.Unsafe;
 
 namespace PoultryProject
 {
@@ -18,7 +19,7 @@ namespace PoultryProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new customerpayments());
+            Application.Run(new UI.priccerecordform());
         }
     }
 }

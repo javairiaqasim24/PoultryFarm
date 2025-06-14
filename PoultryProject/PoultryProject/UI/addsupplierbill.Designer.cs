@@ -39,7 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtdate
@@ -51,15 +51,13 @@
             // 
             // txtsupplier
             // 
+            this.txtsupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Items.AddRange(new object[] {
-            "fresh",
-            "useable",
-            "rotten"});
             this.txtsupplier.Location = new System.Drawing.Point(52, 99);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 86;
+            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // btnadd
             // 
@@ -74,6 +72,7 @@
             this.btnadd.TabIndex = 85;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // label7
             // 
@@ -183,22 +182,22 @@
             this.label3.Text = "Batch Name";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtname
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Location = new System.Drawing.Point(51, 172);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 35);
-            this.textBox1.TabIndex = 89;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtname.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtname.Location = new System.Drawing.Point(51, 172);
+            this.txtname.Multiline = true;
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(313, 35);
+            this.txtname.TabIndex = 89;
+            this.txtname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // addsupplierbill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 640);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtdate);
             this.Controls.Add(this.txtsupplier);
@@ -231,6 +230,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtname;
     }
 }

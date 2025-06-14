@@ -58,6 +58,7 @@
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 76;
+            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // btnadd
             // 
@@ -72,6 +73,7 @@
             this.btnadd.TabIndex = 75;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = false;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // label7
             // 
@@ -146,9 +148,9 @@
             this.label2.Location = new System.Drawing.Point(77, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 69;
-            this.label2.Text = "Name";
+            this.label2.Text = "Supplier Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1

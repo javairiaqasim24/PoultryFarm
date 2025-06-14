@@ -19,8 +19,8 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = @"INSERT INTO supplierbills (SupplierID, BatchName, Notes, Amount) 
-                                     VALUES (@SupplierID, @BatchName, @Notes, @Amount);";
+                    string query = @"INSERT INTO supplierbills (SupplierID, BatchName, Notes, TotalAmount,Date) 
+                                     VALUES (@SupplierID, @BatchName, @Notes, @Amount,@Date);";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
@@ -28,6 +28,7 @@ namespace PoultryProject.DL
                         cmd.Parameters.AddWithValue("@BatchName", b.batchname);
                         cmd.Parameters.AddWithValue("@Notes", b.batchdescription);
                         cmd.Parameters.AddWithValue("@Amount", b.amount);
+                        cmd.Parameters.AddWithValue("@Date", b.date);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         return rowsAffected > 0;
@@ -45,7 +46,7 @@ namespace PoultryProject.DL
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT SupplierID FROM suppliers WHERE SupplierType = 'chicks' AND Name = @name";
+                string query = "SELECT SupplierID FROM suppliers WHERE  Name = @name";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", name);
@@ -54,7 +55,7 @@ namespace PoultryProject.DL
                 }
             }
         }
-        public static List<string> GetAllSupplierNames()
+        public static List<string> GetSupplierNamesLike(string partialName)
         {
             List<string> names = new List<string>();
 
@@ -63,25 +64,30 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT Name FROM suppliers WHERE SupplierType = 'chicks'";
+                    string query = "SELECT Name FROM suppliers WHERE Name LIKE @name";
 
                     using (var cmd = new MySqlCommand(query, conn))
-                    using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        cmd.Parameters.AddWithValue("@name", $"%{partialName}%");
+
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            names.Add(reader.GetString("Name"));
+                            while (reader.Read())
+                            {
+                                names.Add(reader.GetString("Name"));
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error fetching supplier names: " + ex.Message);
+                Console.WriteLine("Error searching supplier names: " + ex.Message);
             }
 
             return names;
         }
+
 
     }
 }

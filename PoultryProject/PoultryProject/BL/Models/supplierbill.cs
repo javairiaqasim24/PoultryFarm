@@ -27,5 +27,13 @@ namespace PoultryProject.BL.Models
             this.batchname = batchname;
             this.batchdescription = batchdescription;
         }
+        public supplierbill(string suppliername, DateTime date, double amount, string batchname, string batchdescription)
+        {
+            this.suppliername = suppliername;
+            this.date = date;
+            this.amount = amount;
+            this.batchname = batchname;
+            this.batchdescription = batchdescription;
+        }
     }
 }

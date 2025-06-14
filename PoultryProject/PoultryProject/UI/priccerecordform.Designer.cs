@@ -1,6 +1,6 @@
 ﻿namespace PoultryProject.UI
 {
-    partial class supplierpayments
+    partial class priccerecordform
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supplierpayments));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(priccerecordform));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,20 +57,8 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.txtsupplier = new System.Windows.Forms.ComboBox();
-            this.txtpassword = new System.Windows.Forms.Label();
-            this.txtusername = new System.Windows.Forms.Label();
-            this.txtnotes = new System.Windows.Forms.TextBox();
-            this.txtdue = new System.Windows.Forms.TextBox();
-            this.txtbill = new System.Windows.Forms.TextBox();
-            this.txtrole = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtpayed = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnedit = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -98,7 +87,6 @@
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -116,7 +104,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1285, 57);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 17;
             // 
             // pictureBox1
             // 
@@ -163,9 +151,9 @@
             this.label1.Location = new System.Drawing.Point(557, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 32);
+            this.label1.Size = new System.Drawing.Size(153, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Chicks ";
+            this.label1.Text = "Price record";
             // 
             // flowLayoutPanel1
             // 
@@ -182,7 +170,7 @@
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(240, 683);
-            this.flowLayoutPanel1.TabIndex = 17;
+            this.flowLayoutPanel1.TabIndex = 21;
             // 
             // panel2
             // 
@@ -421,12 +409,12 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
-            this.pictureBox11.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox11.Location = new System.Drawing.Point(12, 7);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(37, 34);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 22;
+            this.pictureBox11.TabIndex = 23;
             this.pictureBox11.TabStop = false;
             // 
             // button7
@@ -445,19 +433,6 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.pictureBox10);
-            this.panel7.Controls.Add(this.txtsupplier);
-            this.panel7.Controls.Add(this.txtpassword);
-            this.panel7.Controls.Add(this.txtusername);
-            this.panel7.Controls.Add(this.txtnotes);
-            this.panel7.Controls.Add(this.txtdue);
-            this.panel7.Controls.Add(this.txtbill);
-            this.panel7.Controls.Add(this.txtrole);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.txtpayed);
-            this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.btnedit);
-            this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.button9);
@@ -467,179 +442,7 @@
             this.panel7.Location = new System.Drawing.Point(240, 57);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1045, 683);
-            this.panel7.TabIndex = 18;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(358, 147);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 109;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
-            // 
-            // txtsupplier
-            // 
-            this.txtsupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtsupplier.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Location = new System.Drawing.Point(393, 571);
-            this.txtsupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtsupplier.Name = "txtsupplier";
-            this.txtsupplier.Size = new System.Drawing.Size(245, 24);
-            this.txtsupplier.TabIndex = 107;
-            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
-            // 
-            // txtpassword
-            // 
-            this.txtpassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtpassword.AutoSize = true;
-            this.txtpassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtpassword.Location = new System.Drawing.Point(399, 546);
-            this.txtpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(66, 20);
-            this.txtpassword.TabIndex = 106;
-            this.txtpassword.Text = "Supplier";
-            this.txtpassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtusername
-            // 
-            this.txtusername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtusername.AutoSize = true;
-            this.txtusername.BackColor = System.Drawing.Color.Transparent;
-            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtusername.Location = new System.Drawing.Point(36, 526);
-            this.txtusername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(51, 20);
-            this.txtusername.TabIndex = 104;
-            this.txtusername.Text = "Notes";
-            this.txtusername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtnotes
-            // 
-            this.txtnotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtnotes.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtnotes.Location = new System.Drawing.Point(29, 560);
-            this.txtnotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtnotes.Multiline = true;
-            this.txtnotes.Name = "txtnotes";
-            this.txtnotes.Size = new System.Drawing.Size(245, 35);
-            this.txtnotes.TabIndex = 103;
-            // 
-            // txtdue
-            // 
-            this.txtdue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtdue.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtdue.Location = new System.Drawing.Point(715, 477);
-            this.txtdue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtdue.Multiline = true;
-            this.txtdue.Name = "txtdue";
-            this.txtdue.Size = new System.Drawing.Size(245, 35);
-            this.txtdue.TabIndex = 102;
-            // 
-            // txtbill
-            // 
-            this.txtbill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtbill.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtbill.Location = new System.Drawing.Point(29, 477);
-            this.txtbill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbill.Multiline = true;
-            this.txtbill.Name = "txtbill";
-            this.txtbill.Size = new System.Drawing.Size(245, 35);
-            this.txtbill.TabIndex = 101;
-            // 
-            // txtrole
-            // 
-            this.txtrole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtrole.AutoSize = true;
-            this.txtrole.BackColor = System.Drawing.Color.Transparent;
-            this.txtrole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtrole.Location = new System.Drawing.Point(721, 442);
-            this.txtrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtrole.Name = "txtrole";
-            this.txtrole.Size = new System.Drawing.Size(99, 20);
-            this.txtrole.TabIndex = 100;
-            this.txtrole.Text = "Due Amount";
-            this.txtrole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label5.Location = new System.Drawing.Point(399, 442);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
-            this.label5.TabIndex = 99;
-            this.label5.Text = "Payed amount";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtpayed
-            // 
-            this.txtpayed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtpayed.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtpayed.Location = new System.Drawing.Point(393, 477);
-            this.txtpayed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtpayed.Multiline = true;
-            this.txtpayed.Name = "txtpayed";
-            this.txtpayed.Size = new System.Drawing.Size(245, 35);
-            this.txtpayed.TabIndex = 98;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label6.Location = new System.Drawing.Point(27, 442);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 97;
-            this.label6.Text = "Bill ID";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnedit
-            // 
-            this.btnedit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnedit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnedit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnedit.Location = new System.Drawing.Point(187, 149);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(149, 42);
-            this.btnedit.TabIndex = 95;
-            this.btnedit.Text = "Edit";
-            this.btnedit.UseVisualStyleBackColor = false;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button8.Location = new System.Drawing.Point(29, 148);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(149, 42);
-            this.button8.TabIndex = 94;
-            this.button8.Text = "Add";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.panel7.TabIndex = 22;
             // 
             // panel8
             // 
@@ -650,11 +453,11 @@
             this.panel8.Controls.Add(this.button11);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.pictureBox9);
-            this.panel8.Location = new System.Drawing.Point(21, 25);
+            this.panel8.Location = new System.Drawing.Point(21, 29);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1011, 103);
-            this.panel8.TabIndex = 90;
+            this.panel8.TabIndex = 111;
             // 
             // button10
             // 
@@ -694,9 +497,9 @@
             this.label3.Location = new System.Drawing.Point(107, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 25);
+            this.label3.Size = new System.Drawing.Size(264, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Manage Chick Batches";
+            this.label3.Text = "Manage Supplier Price record";
             // 
             // pictureBox9
             // 
@@ -711,43 +514,39 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label4.Location = new System.Drawing.Point(567, 155);
+            this.label4.Location = new System.Drawing.Point(24, 163);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 25);
-            this.label4.TabIndex = 91;
+            this.label4.TabIndex = 112;
             this.label4.Text = "Search :";
             // 
             // button9
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button9.Location = new System.Drawing.Point(905, 154);
+            this.button9.Location = new System.Drawing.Point(362, 162);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 31);
-            this.button9.TabIndex = 93;
+            this.button9.TabIndex = 114;
             this.button9.Text = "Search";
             this.button9.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(653, 154);
+            this.textBox1.Location = new System.Drawing.Point(110, 162);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(230, 29);
-            this.textBox1.TabIndex = 92;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TabIndex = 113;
             // 
             // dataGridView2
             // 
@@ -759,16 +558,16 @@
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(29, 206);
+            this.dataGridView2.Location = new System.Drawing.Point(29, 210);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView2.Size = new System.Drawing.Size(999, 208);
-            this.dataGridView2.TabIndex = 89;
+            this.dataGridView2.Size = new System.Drawing.Size(999, 332);
+            this.dataGridView2.TabIndex = 110;
             // 
-            // supplierpayments
+            // priccerecordform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -776,9 +575,9 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Name = "supplierpayments";
-            this.Text = "supplierpayments";
-            this.Load += new System.EventHandler(this.supplierpayments_Load);
+            this.Name = "priccerecordform";
+            this.Text = "priccerecordform";
+            this.Load += new System.EventHandler(this.priccerecordform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -800,7 +599,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -838,20 +636,8 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.ComboBox txtsupplier;
-        private System.Windows.Forms.Label txtpassword;
-        private System.Windows.Forms.Label txtusername;
-        private System.Windows.Forms.TextBox txtnotes;
-        private System.Windows.Forms.TextBox txtdue;
-        private System.Windows.Forms.TextBox txtbill;
-        private System.Windows.Forms.Label txtrole;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtpayed;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnedit;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
