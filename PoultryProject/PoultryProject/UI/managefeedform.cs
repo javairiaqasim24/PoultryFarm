@@ -43,8 +43,8 @@ namespace Poultary.UI
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Addfeed addfeed = new Addfeed();
-            addfeed.Show();
+            //Addfeed addfeed = new Addfeed();
+            //addfeed.Show();
             this.Close();
         }
 
