@@ -75,7 +75,5 @@ namespace PoultryProject.DL
                 }
             }
         }
-
-
     }
 }

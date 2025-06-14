@@ -10,6 +10,8 @@ public class CustomerInvoiceGenerator
 {
     public static void GenerateInvoice(string customerName, string contact, DateTime saleDate, int billId, decimal weight, decimal totalAmount, decimal paid, decimal due)
     {
+        QuestPDF.Settings.License = LicenseType.Community;
+
         using (SaveFileDialog saveDialog = new SaveFileDialog())
         {
             saveDialog.Title = "Save Invoice As";
@@ -30,7 +32,7 @@ public class CustomerInvoiceGenerator
                         page.DefaultTextStyle(x => x.FontSize(12));
 
                         page.Header()
-                            .Text("A.A Poultry Farm - Customer Invoice")
+                            .Text("Yasir Poultry Farm - Customer Invoice")
                             .SemiBold().FontSize(20).FontColor(Colors.Blue.Medium);
 
                         page.Content().PaddingVertical(10).Column(col =>

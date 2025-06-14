@@ -197,6 +197,79 @@ namespace PoultryProject.UI
 
         private void btnprint_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string customerNam= combocustomer.Text.Trim();
+                decimal weight = decimal.Parse(txtweight.Text);
+                decimal totalAmount = decimal.Parse(txtamount.Text);
+                decimal paidAmount = decimal.Parse(txtpaidamount.Text);
+                DateTime saleDate = txtdate.Value;
+                string notes = "Auto-entry"; // optional
+
+                int customerI = sellchicksdl.GetCustomerIdByName(customerNam);
+                if (customerI == -1)
+                {
+                    MessageBox.Show("Customer not found.");
+                    return;
+                }
+
+                int billId = -1;
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+
+                    // 1. Insert into customerbills
+                    string insertBillQuery = @"INSERT INTO customerbills (CustomerID, SaleDate, weight, TotalAmount, Notes)
+                                       VALUES (@custId, @date, @weight, @totalAmt, @notes); SELECT LAST_INSERT_ID();";
+
+                    using (MySqlCommand cmd = new MySqlCommand(insertBillQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@custId", customerI);
+                        cmd.Parameters.AddWithValue("@date", saleDate);
+                        cmd.Parameters.AddWithValue("@weight", weight);
+                        cmd.Parameters.AddWithValue("@totalAmt", totalAmount);
+                        cmd.Parameters.AddWithValue("@notes", notes);
+
+                        billId = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+
+                    // 2. Insert into customerpayments
+                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Due amount`, Notes)
+                                          VALUES (@custId, @billId, @paid, @due, @notes)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(insertPaymentQuery, conn))
+                    {
+                        decimal dueAmount = totalAmount - paidAmount;
+                        cmd.Parameters.AddWithValue("@custId", customerI);
+                        cmd.Parameters.AddWithValue("@billId", billId);
+                        cmd.Parameters.AddWithValue("@paid", paidAmount);
+                        cmd.Parameters.AddWithValue("@due", dueAmount);
+                        cmd.Parameters.AddWithValue("@notes", notes);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    // 3. Insert into customerpricerecord
+                    string insertPriceRecordQuery = @"INSERT INTO customerpricerecord (customer_id, date, payment, BillID)
+                                              VALUES (@custId, @date, @paid, @billId)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(insertPriceRecordQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@custId", customerI);
+                        cmd.Parameters.AddWithValue("@date", saleDate);
+                        cmd.Parameters.AddWithValue("@paid", paidAmount);
+                        cmd.Parameters.AddWithValue("@billId", billId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Sale and payment recorded successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
             string customerName = combocustomer.Text.Trim();
             int customerId = sellchicksdl.GetCustomerIdByName(customerName);
             int latestBillId = sellchicksdl.GetLatestCustomerBillId(customerId);

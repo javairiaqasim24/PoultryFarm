@@ -139,6 +139,7 @@ namespace PoultryProject.UI
 
         private void txtcustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtbill.Text = "";
             string customerName = txtcustomer.Text.Trim();
             int customerId = addpaymentdl.GetCustomerIdByName(customerName);
 
@@ -174,10 +175,19 @@ namespace PoultryProject.UI
             }
 
             int billId = Convert.ToInt32(txtbill.SelectedItem);
-            decimal due = addpaymentdl.GetDueAmount(customerId, billId);
 
+            // Validate if the bill exists for this customer
+            if (!addpaymentdl.DoesCustomerBillExist(customerId, billId))
+            {
+                txtremining.Text = "";
+                MessageBox.Show("No such bill found for this customer.", "Invalid Bill", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            decimal due = addpaymentdl.GetDueAmount(customerId, billId);
             txtremining.Text = due.ToString("F2");
         }
+
 
         private void Addpayment_Load(object sender, EventArgs e)
         {

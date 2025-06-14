@@ -201,6 +201,8 @@
             this.txtbill.Size = new System.Drawing.Size(354, 28);
             this.txtbill.TabIndex = 91;
             this.txtbill.SelectedIndexChanged += new System.EventHandler(this.txtbill_SelectedIndexChanged);
+            txtbill.SelectedIndexChanged += txtbill_SelectedIndexChanged;
+            txtbill.SelectedIndexChanged += txtbill_SelectedIndexChanged;
             // 
             // Addpayment
             // 

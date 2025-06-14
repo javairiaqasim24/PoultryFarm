@@ -10,6 +10,8 @@ public class CustomerInvoiceGenerator
 {
     public static void GenerateInvoice(string customerName, string contact, DateTime saleDate, int billId, decimal weight, decimal totalAmount, decimal paid, decimal due)
     {
+        QuestPDF.Settings.License = LicenseType.Community;
+
         using (SaveFileDialog saveDialog = new SaveFileDialog())
         {
             saveDialog.Title = "Save Invoice As";

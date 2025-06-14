@@ -130,6 +130,7 @@
     <Compile Include="DL\chickbatchDL.cs" />
     <Compile Include="DL\chickenDL.cs" />
     <Compile Include="DL\CustomerDL.cs" />
+    <Compile Include="DL\customerpaymentsdl.cs" />
     <Compile Include="DL\DatabaseHelper.cs" />
     <Compile Include="DL\feedDl.cs" />
     <Compile Include="DL\feedinfoDL.cs" />
@@ -266,6 +267,12 @@
     <Compile Include="UI\mortalityform.Designer.cs">
       <DependentUpon>mortalityform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\sellchicks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\sellchicks.Designer.cs">
+      <DependentUpon>sellchicks.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Staff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +373,9 @@
     <None Include="UI\Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
     </None>
+    <EmbeddedResource Include="UI\sellchicks.resx">
+      <DependentUpon>sellchicks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Supplierform.resx">
       <DependentUpon>Supplierform.cs</DependentUpon>
     </EmbeddedResource>

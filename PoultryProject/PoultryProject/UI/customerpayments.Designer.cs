@@ -69,13 +69,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnsrch = new System.Windows.Forms.Button();
+            this.txtsrch = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,8 +102,6 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -453,8 +455,8 @@
             this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label4);
-            this.panel7.Controls.Add(this.button9);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.btnsrch);
+            this.panel7.Controls.Add(this.txtsrch);
             this.panel7.Controls.Add(this.dataGridView2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(270, 70);
@@ -566,16 +568,17 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(168, 52);
             this.button8.TabIndex = 64;
-            this.button8.Text = "Add";
+            this.button8.Text = "Add Payment";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel8.Controls.Add(this.tabControl1);
             this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.button10);
             this.panel8.Controls.Add(this.pictureBox9);
             this.panel8.Location = new System.Drawing.Point(10, 20);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -619,31 +622,33 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Search :";
             // 
-            // button9
+            // btnsrch
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button9.Location = new System.Drawing.Point(1005, 181);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(126, 39);
-            this.button9.TabIndex = 63;
-            this.button9.Text = "Search";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnsrch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnsrch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.btnsrch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsrch.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsrch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnsrch.Location = new System.Drawing.Point(1005, 181);
+            this.btnsrch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnsrch.Name = "btnsrch";
+            this.btnsrch.Size = new System.Drawing.Size(126, 39);
+            this.btnsrch.TabIndex = 63;
+            this.btnsrch.Text = "Search";
+            this.btnsrch.UseVisualStyleBackColor = false;
+            this.btnsrch.Click += new System.EventHandler(this.btnsrch_Click);
             // 
-            // textBox1
+            // txtsrch
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(722, 181);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 33);
-            this.textBox1.TabIndex = 62;
+            this.txtsrch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsrch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtsrch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsrch.Location = new System.Drawing.Point(722, 181);
+            this.txtsrch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtsrch.Name = "txtsrch";
+            this.txtsrch.Size = new System.Drawing.Size(258, 33);
+            this.txtsrch.TabIndex = 62;
+            this.txtsrch.TextChanged += new System.EventHandler(this.txtsrch_TextChanged);
             // 
             // dataGridView2
             // 
@@ -655,6 +660,14 @@
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.dataGridView2.Location = new System.Drawing.Point(20, 246);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
@@ -663,44 +676,82 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView2.Size = new System.Drawing.Size(1124, 261);
             this.dataGridView2.TabIndex = 59;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // tabControl1
+            // Column1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(524, 41);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(370, 77);
-            this.tabControl1.TabIndex = 2;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "Bill id";
+            this.Column1.HeaderText = "Bill id";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // tabPage1
+            // Column2
             // 
-            this.tabPage1.Controls.Add(this.printPreviewControl1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(362, 44);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Supplier";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // tabPage2
+            // Column3
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(362, 44);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "Weight";
+            this.Column3.HeaderText = "Weight";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // printPreviewControl1
+            // Column4
             // 
-            this.printPreviewControl1.Location = new System.Drawing.Point(114, 24);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(100, 100);
-            this.printPreviewControl1.TabIndex = 0;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "Total amount";
+            this.Column4.HeaderText = "Total amount";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "Paid amount";
+            this.Column5.HeaderText = "Paid amount";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "Remaining amount";
+            this.Column6.HeaderText = "Remaining amount";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "SaleDate";
+            this.Column7.HeaderText = "SaleDate";
+            this.Column7.MinimumWidth = 8;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(588, 49);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(55, 51);
+            this.button10.TabIndex = 73;
+            this.button10.Text = "↻";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // customerpayments
             // 
@@ -738,8 +789,6 @@
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -786,12 +835,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnsrch;
+        private System.Windows.Forms.TextBox txtsrch;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button button10;
     }
 }

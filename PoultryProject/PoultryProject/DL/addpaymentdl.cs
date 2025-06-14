@@ -82,5 +82,24 @@ namespace PoultryProject.DL
             }
         }
 
+        public static bool DoesCustomerBillExist(int customerId, int billId)
+        {
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM customerpayments WHERE CustomerID = @cid AND BillID = @bid";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@cid", customerId);
+                    cmd.Parameters.AddWithValue("@bid", billId);
+
+                    object result = cmd.ExecuteScalar();
+                    return Convert.ToInt32(result) > 0;
+                }
+            }
+        }
+
+
     }
 }
