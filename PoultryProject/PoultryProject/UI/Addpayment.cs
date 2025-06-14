@@ -179,5 +179,9 @@ namespace PoultryProject.UI
             txtremining.Text = due.ToString("F2");
         }
 
+        private void Addpayment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
