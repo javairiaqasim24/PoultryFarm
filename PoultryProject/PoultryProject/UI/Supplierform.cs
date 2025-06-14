@@ -144,5 +144,14 @@ namespace Poultary.UI
             dataGridViewSupplier.DataSource = filteredSuppliers;
         }
 
+        private void btnadd_Click_1(object sender, EventArgs e)
+        {
+            new pro.UI.AddSupplier().ShowDialog();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
