@@ -17,11 +17,74 @@ namespace pro.UI
     {
         Istaff supp = new StaffBL();
         int currentitemid = -1;
+        private bool isPanelCollapsed = true;
+        private const int PanelExpandedWidth = 181;
+        private const int PanelCollapsedWidth = 50;
+        private const int SlideStep = 10;
+        private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Staff()
         {
             InitializeComponent();
+            timer1.Interval = 10;
+            timer1.Tick += timer1_Tick;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            panel7.Dock = DockStyle.Fill;
+            this.Shown += ViewOrderAd_Shown;
+        }
+        private void pictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            var pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                pictureBox.BackColor = hoverColor;
+                pictureBox.Cursor = Cursors.Hand;
+
+
+            }
+        }
+        private void ViewOrderAd_Shown(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Width = PanelCollapsedWidth;
+
+            this.PerformLayout();
         }
 
+        private void pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            var pictureBox = sender as PictureBox;
+            if (pictureBox != null)
+            {
+                pictureBox.BackColor = Color.Transparent;
+                pictureBox.Cursor = Cursors.Default;
+
+
+            }
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isPanelCollapsed)
+            {
+                flowLayoutPanel1.Width += SlideStep;
+                if (flowLayoutPanel1.Width >= PanelExpandedWidth)
+                {
+                    timer1.Stop();
+                    isPanelCollapsed = false;
+                }
+            }
+            else
+            {
+                flowLayoutPanel1.Width -= SlideStep;
+                if (flowLayoutPanel1.Width <= PanelCollapsedWidth)
+                {
+                    timer1.Stop();
+                    isPanelCollapsed = true;
+                }
+            }
+        }
         private void Staff_Load(object sender, EventArgs e)
         {
             LoadStaff();
@@ -133,5 +196,7 @@ namespace pro.UI
             AddStaff addStaff = new AddStaff(this);
             addStaff.ShowDialog();
         }
+
+     
     }
 }

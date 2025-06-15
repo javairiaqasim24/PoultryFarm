@@ -20,6 +20,7 @@ namespace PoultryProject.UI
         int currentitemid = -1;
         IsupplierBill ibl = new supplierBillBL();
         Isupplierpay idl = new SupplierpayBL();
+
         public supplierpayments()
         {
             InitializeComponent();
@@ -137,6 +138,11 @@ namespace PoultryProject.UI
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             loadgrid();
+        }
+
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

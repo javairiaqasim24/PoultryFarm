@@ -361,9 +361,9 @@
     <EmbeddedResource Include="UI\chicksform.resx">
       <DependentUpon>chicksform.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="UI\Customer.resx">
+    <EmbeddedResource Include="UI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
-    </None>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\customerpayments.resx">
       <DependentUpon>customerpayments.cs</DependentUpon>
     </EmbeddedResource>

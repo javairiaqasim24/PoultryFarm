@@ -11,6 +11,7 @@ namespace PoultryProject.UI
         {
             InitializeComponent();
             LoadPaymentData();
+            dataGridView2.ScrollBars = ScrollBars.Both; 
 
         }
 
@@ -132,5 +133,9 @@ namespace PoultryProject.UI
             }
         }
 
+        private void customerpayments_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace pro.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,6 +78,7 @@ namespace pro.UI
             this.button9 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewStaff = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -125,6 +127,7 @@ namespace pro.UI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -195,7 +198,7 @@ namespace pro.UI
             // 
             // pictureBox3
             // 
-            //this.pictureBox3.Image = global::pro.Properties.Resources.dashboard__1_1;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(12, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
@@ -232,7 +235,7 @@ namespace pro.UI
             // 
             // pictureBox4
             // 
-            //this.pictureBox4.Image = global::pro.Properties.Resources.chicken;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 1);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
@@ -269,7 +272,7 @@ namespace pro.UI
             // 
             // pictureBox5
             // 
-            //this.pictureBox5.Image = global::pro.Properties.Resources.feeding;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(12, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
@@ -306,8 +309,7 @@ namespace pro.UI
             // 
             // pictureBox6
             // 
-            //this.pictureBox6.Image = global::pro.Properties.Resources.fair_trade;
-            //this.pictureBox6.InitialImage = global::pro.Properties.Resources.fair_trade;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(12, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
@@ -344,7 +346,7 @@ namespace pro.UI
             // 
             // pictureBox7
             // 
-            //this.pictureBox7.Image = global::pro.Properties.Resources.loyal_customer;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(12, 4);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
@@ -381,7 +383,7 @@ namespace pro.UI
             // 
             // pictureBox8
             // 
-            //this.pictureBox8.Image = global::pro.Properties.Resources.teamwork;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(12, 4);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
@@ -418,7 +420,7 @@ namespace pro.UI
             // 
             // pictureBox15
             // 
-            //this.pictureBox15.Image = global::pro.Properties.Resources.logo;
+            this.pictureBox15.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
             this.pictureBox15.Location = new System.Drawing.Point(12, 4);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
@@ -438,7 +440,7 @@ namespace pro.UI
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(241, 64);
             this.button7.TabIndex = 0;
-            this.button7.Text = "Reports";
+            this.button7.Text = "Payments";
             this.button7.UseVisualStyleBackColor = false;
             // 
             // panel7
@@ -795,5 +797,6 @@ namespace pro.UI
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridViewStaff;
+        private System.Windows.Forms.Timer timer1;
     }
 }
