@@ -192,5 +192,15 @@ namespace pro.UI
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            LoadCustomer();
+        }
     }
 }

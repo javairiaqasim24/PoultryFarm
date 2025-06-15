@@ -11,6 +11,7 @@ using Poultary.BL.Bl;
 using Poultary.Interfaces;
 using Poultary.BL.Models;
 using pro.UI;
+using PoultryProject.DL;
 namespace Poultary.UI
 {
     public partial class Managechicksform : Form
@@ -118,6 +119,7 @@ namespace Poultary.UI
         {
             loadgrid();
             dataGridView2.RowEnter += dataGridView2_rowselected;
+            LoadSupplierComboBox();
         }
         private void loadgrid()
         {
@@ -126,6 +128,34 @@ namespace Poultary.UI
             dataGridView2.Columns["BatchId"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        {
+            string searchText = txtsupplier.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames = supplierBillDL.GetSupplierNamesLike(searchText);
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
         }
         private void dataGridView2_rowselected(object sender, DataGridViewCellEventArgs e)
         {
@@ -289,7 +319,9 @@ namespace Poultary.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new feedform().ShowDialog();
+            this.Hide() ;
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -307,7 +339,7 @@ namespace Poultary.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
+            pro.UI.Supplier m = new pro.UI.Supplier();
             this.Hide();
             m.ShowDialog();
             this.Close();
@@ -432,7 +464,9 @@ namespace Poultary.UI
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Managechicksform().ShowDialog();
+            this.Close();
         }
 
         private void button11_Click(object sender, EventArgs e)

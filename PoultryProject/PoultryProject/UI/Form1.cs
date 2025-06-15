@@ -304,11 +304,6 @@ namespace Poultary
 
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Form1 f = new Form1();

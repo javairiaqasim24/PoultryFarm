@@ -190,5 +190,10 @@ namespace pro.UI
             AddSupplier add=new AddSupplier();
             add.ShowDialog();
         }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            LoadSuppliers();
+        }
     }
 }

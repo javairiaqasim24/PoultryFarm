@@ -298,5 +298,17 @@ txtsupplier.DisplayMember = "batchName";
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new feedform().ShowDialog();
+            this.Close();   
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

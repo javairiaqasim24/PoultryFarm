@@ -36,7 +36,7 @@ namespace Poultary.DL
             {
                 conn.Open();
                 string query = "SELECT cb.BatchId, cb.BatchName, cb.purchaseDate, cb.batchprice, cb.batchweight, cb.Quantity, s.Name " +
-                               "FROM chickbatches cb JOIN suppliers s ON cb.supplier_id = s.SupplierID WHERE s.SupplierType = 'feed'";
+                               "FROM chickbatches cb JOIN suppliers s ON cb.supplier_id = s.SupplierID WHERE s.SupplierType = 'Chick'";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
@@ -98,7 +98,7 @@ namespace Poultary.DL
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT SupplierID FROM suppliers WHERE SupplierType = 'chicks' AND Name = @name";
+                string query = "SELECT SupplierID FROM suppliers WHERE SupplierType = 'Chick' AND Name = @name";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name",name);
@@ -117,7 +117,7 @@ namespace Poultary.DL
                 string query = @"SELECT cb.BatchId, cb.BatchName, cb.purchaseDate, cb.batchprice, cb.batchweight, cb.Quantity, s.Name
                          FROM chickbatches cb
                          JOIN suppliers s ON cb.supplier_id = s.SupplierID
-                         WHERE s.SupplierType = 'feed' AND cb.BatchName LIKE @partialName";
+                         WHERE s.SupplierType = 'Chick' AND cb.BatchName LIKE @partialName";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {

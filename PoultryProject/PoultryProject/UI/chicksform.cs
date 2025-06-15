@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.BL.Bl;
+using Poultary.DL;
 using Poultary.Interfaces;
 using PoultryProject.UI;
 using pro.UI;
@@ -152,7 +153,9 @@ namespace Poultary.UI
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            new mortalityform().Show();
+            this.Hide();
+            new mortalityform().ShowDialog();
+            this.Close();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -165,7 +168,9 @@ namespace Poultary.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
         }
 
         private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -199,25 +204,22 @@ namespace Poultary.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Supplierform f = new Supplierform();
             this.Hide();
-            f.ShowDialog();
+            new pro.UI.Supplier().ShowDialog();
             this.Close();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Supplierform f = new Supplierform();
             this.Hide();
-            f.ShowDialog();
+            new pro.UI.Supplier().ShowDialog();
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Customer c = new Customer();
             this.Hide();
-            c.ShowDialog();
+            new pro.UI.Customer().ShowDialog();
             this.Close();
         }
 
@@ -259,6 +261,38 @@ namespace Poultary.UI
             this.Hide();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            string text = textBox1.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                loadgrid();
+
+            }
+            else
+            {
+                load(); 
+            }
+        }
+        private void load()
+        {
+            var list = chickenDL.getinfo();
+            dataGridView2.DataSource = list;
+            dataGridView2.Columns["batch_Id"].Visible = false;
+            dataGridView2.Columns["supplierId"].Visible = false;
+
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
