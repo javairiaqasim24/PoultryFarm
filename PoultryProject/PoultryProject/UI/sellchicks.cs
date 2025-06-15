@@ -279,16 +279,29 @@ namespace PoultryProject.UI
                 MessageBox.Show("Sale saved. Latest Bill ID is: " + latestBillId);
 
                 // Optional: Use it to generate PDF
-                CustomerInvoiceGenerator.GenerateInvoice(
-                    customerName,
-                    txtcontact.Text,
-                    txtdate.Value,
-                    latestBillId,
-                    decimal.Parse(txtweight.Text),
-                    decimal.Parse(txtamount.Text),
-                    decimal.Parse(txtpaidamount.Text),
-                    decimal.Parse(txtamount.Text) - decimal.Parse(txtpaidamount.Text)
-                );
+                //CustomerInvoiceGenerator.GenerateInvoice(
+                //    customerName,
+                //    txtcontact.Text,
+                //    txtdate.Value,
+                //    latestBillId,
+                //    decimal.Parse(txtweight.Text),
+                //    decimal.Parse(txtamount.Text),
+                //    decimal.Parse(txtpaidamount.Text),
+                //    decimal.Parse(txtamount.Text) - decimal.Parse(txtpaidamount.Text)
+                //);
+
+                PoultryPdfPrinter.PrintInvoiceDirectly(
+    customerName,
+    txtcontact.Text,
+    txtdate.Value,
+    latestBillId,
+    decimal.Parse(txtweight.Text),
+    decimal.Parse(txtamount.Text),
+    decimal.Parse(txtpaidamount.Text),
+    decimal.Parse(txtamount.Text) - decimal.Parse(txtpaidamount.Text)
+);
+
+
             }
             else
             {

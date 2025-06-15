@@ -140,6 +140,7 @@
     <Compile Include="DL\feedinfoDL.cs" />
     <Compile Include="DL\loginpagedl.cs" />
     <Compile Include="DL\mortalityDL.cs" />
+    <Compile Include="DL\PoultryPdfPrinter.cs" />
     <Compile Include="DL\sellchicksdl.cs" />
     <Compile Include="DL\StaffDL.cs" />
     <Compile Include="DL\supplierBillDL.cs" />

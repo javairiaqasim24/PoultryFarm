@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.UI;
+using PoultryProject.UI;
 using pro.UI;
 
 namespace Poultary
@@ -326,7 +327,7 @@ namespace Poultary
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
+            chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
             this.Close();
@@ -334,7 +335,7 @@ namespace Poultary
 
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
+            chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
             this.Close();
@@ -391,6 +392,43 @@ namespace Poultary
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click_1(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
         }
     }
 }

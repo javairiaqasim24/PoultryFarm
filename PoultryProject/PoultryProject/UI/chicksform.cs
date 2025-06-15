@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.Interfaces;
+using PoultryProject.UI;
+using pro.UI;
 
 namespace Poultary.UI
 {
@@ -155,7 +157,108 @@ namespace Poultary.UI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            new Managechicksform().Show();
+            Managechicksform m = new Managechicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chicksform c = new chicksform();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform c = new chicksform();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Supplierform f = new Supplierform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Supplierform f = new Supplierform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Customer c = new Customer();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Customer c = new Customer();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments f = new customerpayments();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            customerpayments f = new customerpayments();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

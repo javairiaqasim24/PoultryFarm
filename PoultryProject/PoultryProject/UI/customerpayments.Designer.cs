@@ -67,6 +67,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnsrch = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -446,6 +446,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.textBox4);
+            this.panel7.Controls.Add(this.button10);
             this.panel7.Controls.Add(this.txtname);
             this.panel7.Controls.Add(this.txtrole);
             this.panel7.Controls.Add(this.label5);
@@ -578,7 +579,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Controls.Add(this.button10);
             this.panel8.Controls.Add(this.pictureBox9);
             this.panel8.Location = new System.Drawing.Point(10, 20);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -597,6 +597,18 @@
             this.label3.Size = new System.Drawing.Size(309, 31);
             this.label3.TabIndex = 1;
             this.label3.Text = "Manage Customer Payments";
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(384, 175);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(55, 51);
+            this.button10.TabIndex = 73;
+            this.button10.Text = "↻";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // pictureBox9
             // 
@@ -740,18 +752,6 @@
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(588, 49);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(55, 51);
-            this.button10.TabIndex = 73;
-            this.button10.Text = "↻";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // customerpayments
             // 
