@@ -26,9 +26,9 @@ namespace pro.BL.Bl
                 return false;
             }
 
-            if (s.Contact.Length < 11 || s.Contact.Length > 15)
+            if (s.Contact.Length != 11)
             {
-                MessageBox.Show("Contact must be 11 to 15 characters long.");
+                MessageBox.Show("Contact must be 11 characters long.");
                 return false;
             }
 
@@ -60,9 +60,9 @@ namespace pro.BL.Bl
                 return false;
             }
 
-            if (s.Contact.Length < 11 || s.Contact.Length > 15)
+            if (s.Contact.Length != 11)
             {
-                MessageBox.Show("Contact must be 11 to 15 characters long.");
+                MessageBox.Show("Contact must be 11 characters long.");
                 return false;
             }
 
