@@ -50,9 +50,9 @@
             this.label6.Location = new System.Drawing.Point(228, 21);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 31);
+            this.label6.Size = new System.Drawing.Size(154, 31);
             this.label6.TabIndex = 54;
-            this.label6.Text = "Add Staff";
+            this.label6.Text = "Add Supplier";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1

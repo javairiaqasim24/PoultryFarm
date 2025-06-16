@@ -151,5 +151,65 @@ namespace Poultary.DL
                 return -1;
             }
         }
+        // Fix for CS1729: 'feed' does not contain a constructor that takes 0 arguments
+        // Update the `SearchFeedBatchesWithSupplier` method to use the correct constructor for the `feed` class.
+
+        public static List<feed> SearchFeedBatchesWithSupplier(string searchText)
+        {
+            List<feed> results = new List<feed>();
+
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"SELECT   
+                               fb.FeedBatchID,  
+                               fb.BatchName,  
+                               fb.PurchaseDate,  
+                               fb.Quantitysacks,  
+                               s.Name AS SupplierName,  
+                               fb.SupplierID  ,
+fb.weight,
+fb.batchprice
+                            FROM feedbatches fb  
+                            LEFT JOIN suppliers s ON fb.SupplierID = s.SupplierID  
+                            WHERE fb.BatchName LIKE @search   
+                               OR DATE_FORMAT(fb.PurchaseDate, '%Y-%m-%d') LIKE @search  
+                               OR s.Name LIKE @search";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                results.Add(new feed
+                                (
+                                    reader.GetInt32("FeedBatchID"),
+                                    reader.GetString("BatchName"),
+                                    reader.GetFloat("weight"),
+                                    reader.GetInt32("Quantitysacks"),
+                                    reader.GetInt32("SupplierID"),
+                                    reader.IsDBNull(reader.GetOrdinal("SupplierName")) ? "N/A" : reader.GetString("SupplierName"),
+                                    reader.GetDateTime("PurchaseDate"),
+                                    reader.GetInt32("batchprice")
+                                ));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error searching feed batches: " + ex.Message);
+            }
+
+            return results;
+        }
+
+
     }
 }

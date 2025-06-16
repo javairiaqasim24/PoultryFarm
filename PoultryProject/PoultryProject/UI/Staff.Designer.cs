@@ -30,6 +30,7 @@ namespace pro.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,7 +59,52 @@ namespace pro.UI
             this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.button20 = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.button22 = new System.Windows.Forms.Button();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.button23 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.txtusername = new System.Windows.Forms.Label();
             this.txtCNIC = new System.Windows.Forms.TextBox();
@@ -77,6 +123,7 @@ namespace pro.UI
             this.button9 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewStaff = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -95,7 +142,38 @@ namespace pro.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            this.panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
@@ -117,7 +195,7 @@ namespace pro.UI
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::PoultryProject.Properties.Resources.more__1_;
             this.pictureBox1.Location = new System.Drawing.Point(16, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -125,6 +203,7 @@ namespace pro.UI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -142,7 +221,7 @@ namespace pro.UI
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::PoultryProject.Properties.Resources.user3;
             this.pictureBox2.Location = new System.Drawing.Point(1175, 13);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
@@ -174,6 +253,8 @@ namespace pro.UI
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel15);
             this.flowLayoutPanel1.Controls.Add(this.panel16);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 56);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -195,7 +276,7 @@ namespace pro.UI
             // 
             // pictureBox3
             // 
-            //this.pictureBox3.Image = global::pro.Properties.Resources.dashboard__1_1;
+            this.pictureBox3.Image = global::PoultryProject.Properties.Resources.dashboard__1_1;
             this.pictureBox3.Location = new System.Drawing.Point(12, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
@@ -217,6 +298,7 @@ namespace pro.UI
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -232,7 +314,7 @@ namespace pro.UI
             // 
             // pictureBox4
             // 
-            //this.pictureBox4.Image = global::pro.Properties.Resources.chicken;
+            this.pictureBox4.Image = global::PoultryProject.Properties.Resources.chicken;
             this.pictureBox4.Location = new System.Drawing.Point(12, 1);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
@@ -254,6 +336,7 @@ namespace pro.UI
             this.button2.TabIndex = 0;
             this.button2.Text = "Chicks";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel4
             // 
@@ -269,7 +352,7 @@ namespace pro.UI
             // 
             // pictureBox5
             // 
-            //this.pictureBox5.Image = global::pro.Properties.Resources.feeding;
+            this.pictureBox5.Image = global::PoultryProject.Properties.Resources.feeding;
             this.pictureBox5.Location = new System.Drawing.Point(12, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
@@ -291,6 +374,7 @@ namespace pro.UI
             this.button3.TabIndex = 0;
             this.button3.Text = "Feed";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel5
             // 
@@ -306,8 +390,7 @@ namespace pro.UI
             // 
             // pictureBox6
             // 
-            //this.pictureBox6.Image = global::pro.Properties.Resources.fair_trade;
-            //this.pictureBox6.InitialImage = global::pro.Properties.Resources.fair_trade;
+            this.pictureBox6.Image = global::PoultryProject.Properties.Resources.fair_trade;
             this.pictureBox6.Location = new System.Drawing.Point(12, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
@@ -329,6 +412,7 @@ namespace pro.UI
             this.button4.TabIndex = 0;
             this.button4.Text = "Suppliers";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel6
             // 
@@ -344,7 +428,7 @@ namespace pro.UI
             // 
             // pictureBox7
             // 
-            //this.pictureBox7.Image = global::pro.Properties.Resources.loyal_customer;
+            this.pictureBox7.Image = global::PoultryProject.Properties.Resources.loyal_customer;
             this.pictureBox7.Location = new System.Drawing.Point(12, 4);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
@@ -366,6 +450,7 @@ namespace pro.UI
             this.button5.TabIndex = 0;
             this.button5.Text = "Customers";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel15
             // 
@@ -381,7 +466,7 @@ namespace pro.UI
             // 
             // pictureBox8
             // 
-            //this.pictureBox8.Image = global::pro.Properties.Resources.teamwork;
+            this.pictureBox8.Image = global::PoultryProject.Properties.Resources.teamwork;
             this.pictureBox8.Location = new System.Drawing.Point(12, 4);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
@@ -403,6 +488,7 @@ namespace pro.UI
             this.button6.TabIndex = 0;
             this.button6.Text = "Staff";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel16
             // 
@@ -418,7 +504,7 @@ namespace pro.UI
             // 
             // pictureBox15
             // 
-            //this.pictureBox15.Image = global::pro.Properties.Resources.logo;
+            this.pictureBox15.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
             this.pictureBox15.Location = new System.Drawing.Point(12, 4);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
@@ -438,11 +524,565 @@ namespace pro.UI
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(241, 64);
             this.button7.TabIndex = 0;
-            this.button7.Text = "Reports";
+            this.button7.Text = "Payments";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel2.Controls.Add(this.panel9);
+            this.flowLayoutPanel2.Controls.Add(this.panel10);
+            this.flowLayoutPanel2.Controls.Add(this.panel11);
+            this.flowLayoutPanel2.Controls.Add(this.panel12);
+            this.flowLayoutPanel2.Controls.Add(this.panel13);
+            this.flowLayoutPanel2.Controls.Add(this.panel14);
+            this.flowLayoutPanel2.Controls.Add(this.panel17);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 571);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(240, 0);
+            this.flowLayoutPanel2.TabIndex = 24;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.pictureBox11);
+            this.panel9.Controls.Add(this.button10);
+            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel9.Location = new System.Drawing.Point(4, 25);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel9.Size = new System.Drawing.Size(227, 52);
+            this.panel9.TabIndex = 2;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 3;
+            this.pictureBox11.TabStop = false;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button10.Location = new System.Drawing.Point(-4, -9);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(241, 64);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "Dashboard";
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.pictureBox12);
+            this.panel10.Controls.Add(this.button11);
+            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel10.Location = new System.Drawing.Point(4, 106);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel10.Size = new System.Drawing.Size(227, 52);
+            this.panel10.TabIndex = 3;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 3;
+            this.pictureBox12.TabStop = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button11.Location = new System.Drawing.Point(-4, -10);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(241, 64);
+            this.button11.TabIndex = 0;
+            this.button11.Text = "Chicks";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.pictureBox13);
+            this.panel11.Controls.Add(this.button12);
+            this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel11.Location = new System.Drawing.Point(4, 187);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel11.Size = new System.Drawing.Size(227, 52);
+            this.panel11.TabIndex = 3;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 3;
+            this.pictureBox13.TabStop = false;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button12.Location = new System.Drawing.Point(-4, -9);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(241, 64);
+            this.button12.TabIndex = 0;
+            this.button12.Text = "Feed";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.pictureBox14);
+            this.panel12.Controls.Add(this.button13);
+            this.panel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel12.Location = new System.Drawing.Point(4, 268);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel12.Name = "panel12";
+            this.panel12.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel12.Size = new System.Drawing.Size(227, 52);
+            this.panel12.TabIndex = 3;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 3;
+            this.pictureBox14.TabStop = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button13.Location = new System.Drawing.Point(-4, -9);
+            this.button13.Margin = new System.Windows.Forms.Padding(4);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(241, 64);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Suppliers";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.pictureBox16);
+            this.panel13.Controls.Add(this.button14);
+            this.panel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel13.Location = new System.Drawing.Point(4, 349);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel13.Size = new System.Drawing.Size(227, 52);
+            this.panel13.TabIndex = 4;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 3;
+            this.pictureBox16.TabStop = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button14.Location = new System.Drawing.Point(-4, -9);
+            this.button14.Margin = new System.Windows.Forms.Padding(4);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(241, 64);
+            this.button14.TabIndex = 0;
+            this.button14.Text = "Customers";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.pictureBox17);
+            this.panel14.Controls.Add(this.button15);
+            this.panel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel14.Location = new System.Drawing.Point(4, 430);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel14.Size = new System.Drawing.Size(227, 52);
+            this.panel14.TabIndex = 5;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 3;
+            this.pictureBox17.TabStop = false;
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button15.Location = new System.Drawing.Point(-4, -9);
+            this.button15.Margin = new System.Windows.Forms.Padding(4);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(241, 64);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Staff";
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.pictureBox18);
+            this.panel17.Controls.Add(this.button16);
+            this.panel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel17.Location = new System.Drawing.Point(4, 511);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel17.Name = "panel17";
+            this.panel17.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel17.Size = new System.Drawing.Size(227, 52);
+            this.panel17.TabIndex = 6;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
+            this.pictureBox18.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 3;
+            this.pictureBox18.TabStop = false;
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button16.Location = new System.Drawing.Point(-4, -9);
+            this.button16.Margin = new System.Windows.Forms.Padding(4);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(241, 64);
+            this.button16.TabIndex = 0;
+            this.button16.Text = "payments";
+            this.button16.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.flowLayoutPanel3.Controls.Add(this.panel18);
+            this.flowLayoutPanel3.Controls.Add(this.panel19);
+            this.flowLayoutPanel3.Controls.Add(this.panel20);
+            this.flowLayoutPanel3.Controls.Add(this.panel21);
+            this.flowLayoutPanel3.Controls.Add(this.panel22);
+            this.flowLayoutPanel3.Controls.Add(this.panel23);
+            this.flowLayoutPanel3.Controls.Add(this.panel24);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 579);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(240, 0);
+            this.flowLayoutPanel3.TabIndex = 25;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.pictureBox19);
+            this.panel18.Controls.Add(this.button17);
+            this.panel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel18.Location = new System.Drawing.Point(4, 25);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(227, 52);
+            this.panel18.TabIndex = 2;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 3;
+            this.pictureBox19.TabStop = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button17.Location = new System.Drawing.Point(-4, -9);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(241, 64);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "Dashboard";
+            this.button17.UseVisualStyleBackColor = false;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.pictureBox20);
+            this.panel19.Controls.Add(this.button18);
+            this.panel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel19.Location = new System.Drawing.Point(4, 106);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel19.Size = new System.Drawing.Size(227, 52);
+            this.panel19.TabIndex = 3;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 3;
+            this.pictureBox20.TabStop = false;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button18.Location = new System.Drawing.Point(-4, -10);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(241, 64);
+            this.button18.TabIndex = 0;
+            this.button18.Text = "Chicks";
+            this.button18.UseVisualStyleBackColor = false;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.pictureBox21);
+            this.panel20.Controls.Add(this.button19);
+            this.panel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel20.Location = new System.Drawing.Point(4, 187);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel20.Name = "panel20";
+            this.panel20.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel20.Size = new System.Drawing.Size(227, 52);
+            this.panel20.TabIndex = 3;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 3;
+            this.pictureBox21.TabStop = false;
+            // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button19.Location = new System.Drawing.Point(-4, -9);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(241, 64);
+            this.button19.TabIndex = 0;
+            this.button19.Text = "Feed";
+            this.button19.UseVisualStyleBackColor = false;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.pictureBox22);
+            this.panel21.Controls.Add(this.button20);
+            this.panel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel21.Location = new System.Drawing.Point(4, 268);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel21.Size = new System.Drawing.Size(227, 52);
+            this.panel21.TabIndex = 3;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
+            this.pictureBox22.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox22.TabIndex = 3;
+            this.pictureBox22.TabStop = false;
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button20.Location = new System.Drawing.Point(-4, -9);
+            this.button20.Margin = new System.Windows.Forms.Padding(4);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(241, 64);
+            this.button20.TabIndex = 0;
+            this.button20.Text = "Suppliers";
+            this.button20.UseVisualStyleBackColor = false;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.pictureBox23);
+            this.panel22.Controls.Add(this.button21);
+            this.panel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel22.Location = new System.Drawing.Point(4, 349);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel22.Name = "panel22";
+            this.panel22.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel22.Size = new System.Drawing.Size(227, 52);
+            this.panel22.TabIndex = 4;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
+            this.pictureBox23.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox23.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox23.TabIndex = 3;
+            this.pictureBox23.TabStop = false;
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button21.Location = new System.Drawing.Point(-4, -9);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(241, 64);
+            this.button21.TabIndex = 0;
+            this.button21.Text = "Customers";
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.pictureBox24);
+            this.panel23.Controls.Add(this.button22);
+            this.panel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel23.Location = new System.Drawing.Point(4, 430);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel23.Name = "panel23";
+            this.panel23.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel23.Size = new System.Drawing.Size(227, 52);
+            this.panel23.TabIndex = 5;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
+            this.pictureBox24.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox24.TabIndex = 3;
+            this.pictureBox24.TabStop = false;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button22.Location = new System.Drawing.Point(-4, -9);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(241, 64);
+            this.button22.TabIndex = 0;
+            this.button22.Text = "Staff";
+            this.button22.UseVisualStyleBackColor = false;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.pictureBox25);
+            this.panel24.Controls.Add(this.button23);
+            this.panel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
+            this.panel24.Location = new System.Drawing.Point(4, 511);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
+            this.panel24.Name = "panel24";
+            this.panel24.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel24.Size = new System.Drawing.Size(227, 52);
+            this.panel24.TabIndex = 6;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
+            this.pictureBox25.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox25.TabIndex = 3;
+            this.pictureBox25.TabStop = false;
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button23.Location = new System.Drawing.Point(-4, -9);
+            this.button23.Margin = new System.Windows.Forms.Padding(4);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(241, 64);
+            this.button23.TabIndex = 0;
+            this.button23.Text = "payments";
+            this.button23.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.pictureBox10);
             this.panel7.Controls.Add(this.comboBoxType);
             this.panel7.Controls.Add(this.txtusername);
             this.panel7.Controls.Add(this.txtCNIC);
@@ -464,6 +1104,17 @@ namespace pro.UI
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1045, 684);
             this.panel7.TabIndex = 24;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::PoultryProject.Properties.Resources.refresh;
+            this.pictureBox10.Location = new System.Drawing.Point(501, 139);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(43, 43);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 68;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // comboBoxType
             // 
@@ -639,7 +1290,7 @@ namespace pro.UI
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Image = global::PoultryProject.Properties.Resources.teamwork;
             this.pictureBox9.Location = new System.Drawing.Point(24, 18);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
@@ -717,7 +1368,9 @@ namespace pro.UI
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "Staff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffUI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Staff_FormClosed);
             this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -738,8 +1391,39 @@ namespace pro.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            this.panel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            this.panel20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            this.panel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            this.panel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            this.panel23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            this.panel24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -795,5 +1479,51 @@ namespace pro.UI
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridViewStaff;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.Button button23;
     }
 }

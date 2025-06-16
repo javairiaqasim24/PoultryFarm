@@ -206,6 +206,24 @@ namespace Poultary.DL
 
             return results;
         }
+        public static int GetTodayDeaths()
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT SUM(Count) AS total_died
+            FROM chickmortality
+            WHERE DATE(Date) = CURDATE();
+        ";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    object result = cmd.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
 
 
     }

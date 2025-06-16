@@ -221,9 +221,9 @@
             this.label1.Location = new System.Drawing.Point(153, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 32);
+            this.label1.Size = new System.Drawing.Size(140, 32);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Add Inventory";
+            this.label1.Text = "Add Chicks";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtdate

@@ -153,5 +153,10 @@ namespace Poultary.UI
         {
 
         }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            LoadSuppliers();
+        }
     }
 }
