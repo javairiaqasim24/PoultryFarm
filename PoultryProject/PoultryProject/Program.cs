@@ -19,7 +19,7 @@ namespace PoultryProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Sellchicks());
+            Application.Run(new UI.customerpayments());
         }
     }
 }

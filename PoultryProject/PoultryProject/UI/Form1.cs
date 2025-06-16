@@ -430,5 +430,10 @@ namespace Poultary
             c.ShowDialog();
             this.Close();
         }
+
+        private void panel9_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
