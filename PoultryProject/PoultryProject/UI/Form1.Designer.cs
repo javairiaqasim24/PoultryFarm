@@ -35,21 +35,27 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.Dueslb = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.paymentlb = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.usagelb = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.mortalitylb = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.sacslb = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.chickslb = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -79,12 +85,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.usagelb = new System.Windows.Forms.Label();
-            this.chickslb = new System.Windows.Forms.Label();
-            this.sacslb = new System.Windows.Forms.Label();
-            this.mortalitylb = new System.Windows.Forms.Label();
-            this.paymentlb = new System.Windows.Forms.Label();
-            this.Dueslb = new System.Windows.Forms.Label();
             this.panel13.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -178,6 +178,17 @@
             this.panel14.Size = new System.Drawing.Size(305, 311);
             this.panel14.TabIndex = 15;
             // 
+            // Dueslb
+            // 
+            this.Dueslb.AutoSize = true;
+            this.Dueslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dueslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Dueslb.Location = new System.Drawing.Point(14, 32);
+            this.Dueslb.Name = "Dueslb";
+            this.Dueslb.Size = new System.Drawing.Size(96, 38);
+            this.Dueslb.TabIndex = 10;
+            this.Dueslb.Text = "label9";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -215,6 +226,17 @@
             this.panel10.Size = new System.Drawing.Size(305, 311);
             this.panel10.TabIndex = 14;
             // 
+            // paymentlb
+            // 
+            this.paymentlb.AutoSize = true;
+            this.paymentlb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentlb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.paymentlb.Location = new System.Drawing.Point(15, 21);
+            this.paymentlb.Name = "paymentlb";
+            this.paymentlb.Size = new System.Drawing.Size(96, 38);
+            this.paymentlb.TabIndex = 10;
+            this.paymentlb.Text = "label9";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -251,7 +273,16 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(305, 311);
             this.panel12.TabIndex = 13;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint_1);
+            // 
+            // usagelb
+            // 
+            this.usagelb.AutoSize = true;
+            this.usagelb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usagelb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.usagelb.Location = new System.Drawing.Point(5, 30);
+            this.usagelb.Name = "usagelb";
+            this.usagelb.Size = new System.Drawing.Size(0, 38);
+            this.usagelb.TabIndex = 9;
             // 
             // pictureBox9
             // 
@@ -289,6 +320,17 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(305, 310);
             this.panel11.TabIndex = 12;
+            // 
+            // mortalitylb
+            // 
+            this.mortalitylb.AutoSize = true;
+            this.mortalitylb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mortalitylb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.mortalitylb.Location = new System.Drawing.Point(14, 24);
+            this.mortalitylb.Name = "mortalitylb";
+            this.mortalitylb.Size = new System.Drawing.Size(96, 38);
+            this.mortalitylb.TabIndex = 10;
+            this.mortalitylb.Text = "label9";
             // 
             // label7
             // 
@@ -328,6 +370,17 @@
             this.panel9.TabIndex = 11;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint_1);
             // 
+            // sacslb
+            // 
+            this.sacslb.AutoSize = true;
+            this.sacslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sacslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sacslb.Location = new System.Drawing.Point(15, 22);
+            this.sacslb.Name = "sacslb";
+            this.sacslb.Size = new System.Drawing.Size(96, 38);
+            this.sacslb.TabIndex = 10;
+            this.sacslb.Text = "label9";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -364,6 +417,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(305, 310);
             this.panel8.TabIndex = 10;
+            // 
+            // chickslb
+            // 
+            this.chickslb.AutoSize = true;
+            this.chickslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chickslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chickslb.Location = new System.Drawing.Point(5, 22);
+            this.chickslb.Name = "chickslb";
+            this.chickslb.Size = new System.Drawing.Size(0, 38);
+            this.chickslb.TabIndex = 10;
             // 
             // label3
             // 
@@ -744,71 +807,6 @@
             this.label1.Size = new System.Drawing.Size(164, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
-            // 
-            // usagelb
-            // 
-            this.usagelb.AutoSize = true;
-            this.usagelb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usagelb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.usagelb.Location = new System.Drawing.Point(5, 30);
-            this.usagelb.Name = "usagelb";
-            this.usagelb.Size = new System.Drawing.Size(0, 38);
-            this.usagelb.TabIndex = 9;
-            // 
-            // chickslb
-            // 
-            this.chickslb.AutoSize = true;
-            this.chickslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chickslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chickslb.Location = new System.Drawing.Point(5, 22);
-            this.chickslb.Name = "chickslb";
-            this.chickslb.Size = new System.Drawing.Size(0, 38);
-            this.chickslb.TabIndex = 10;
-            // 
-            // sacslb
-            // 
-            this.sacslb.AutoSize = true;
-            this.sacslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sacslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sacslb.Location = new System.Drawing.Point(15, 22);
-            this.sacslb.Name = "sacslb";
-            this.sacslb.Size = new System.Drawing.Size(96, 38);
-            this.sacslb.TabIndex = 10;
-            this.sacslb.Text = "label9";
-            this.sacslb.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // mortalitylb
-            // 
-            this.mortalitylb.AutoSize = true;
-            this.mortalitylb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mortalitylb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.mortalitylb.Location = new System.Drawing.Point(14, 24);
-            this.mortalitylb.Name = "mortalitylb";
-            this.mortalitylb.Size = new System.Drawing.Size(96, 38);
-            this.mortalitylb.TabIndex = 10;
-            this.mortalitylb.Text = "label9";
-            // 
-            // paymentlb
-            // 
-            this.paymentlb.AutoSize = true;
-            this.paymentlb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paymentlb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.paymentlb.Location = new System.Drawing.Point(15, 21);
-            this.paymentlb.Name = "paymentlb";
-            this.paymentlb.Size = new System.Drawing.Size(96, 38);
-            this.paymentlb.TabIndex = 10;
-            this.paymentlb.Text = "label9";
-            // 
-            // Dueslb
-            // 
-            this.Dueslb.AutoSize = true;
-            this.Dueslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dueslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Dueslb.Location = new System.Drawing.Point(14, 32);
-            this.Dueslb.Name = "Dueslb";
-            this.Dueslb.Size = new System.Drawing.Size(96, 38);
-            this.Dueslb.TabIndex = 10;
-            this.Dueslb.Text = "label9";
             // 
             // Form1
             // 
