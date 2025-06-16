@@ -155,5 +155,21 @@ namespace PoultryProject.UI
             new supplierpayments().ShowDialog();
             this.Close();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
     }
 }

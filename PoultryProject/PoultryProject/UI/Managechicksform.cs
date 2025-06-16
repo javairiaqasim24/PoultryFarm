@@ -12,6 +12,7 @@ using Poultary.Interfaces;
 using Poultary.BL.Models;
 using pro.UI;
 using PoultryProject.DL;
+using PoultryProject.UI;
 namespace Poultary.UI
 {
     public partial class Managechicksform : Form
@@ -294,14 +295,14 @@ namespace Poultary.UI
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
+            chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
             this.Close();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Managechicksform m = new Managechicksform();
+            chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
             this.Close();
@@ -399,7 +400,10 @@ namespace Poultary.UI
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
         }
 
         private void txtdate_ValueChanged(object sender, EventArgs e)
@@ -523,6 +527,14 @@ namespace Poultary.UI
         private void timer1_Tick_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -214,8 +214,10 @@ namespace pro.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            chicksform chick = new chicksform();
-            chick.Show();
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -246,12 +248,38 @@ namespace pro.UI
         private void button7_Click(object sender, EventArgs e)
         {
            customerpayments customerpayments = new customerpayments();
+            this.Hide();
             customerpayments.Show();
+            this.Close();
         }
 
         private void Staff_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.Show();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
         }
     }
 }
