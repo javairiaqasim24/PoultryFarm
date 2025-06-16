@@ -13,6 +13,8 @@ using pro.Interface;
 using Poultary.BL.Models;
 using Poultary.BL.Bl;
 using Poultary;
+using Poultary.UI;
+using PoultryProject.UI;
 
 namespace pro.UI
 {
@@ -204,6 +206,48 @@ namespace pro.UI
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             LoadCustomer();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chicksform chick = new chicksform();
+            chick.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            feedform feed = new feedform();
+            feed.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier supplier = new pro.UI.Supplier();
+            supplier.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            Customer customer = new Customer();
+            customer.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff();
+            staff.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            customerpayments.Show();
+        }
+
+        private void Customer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

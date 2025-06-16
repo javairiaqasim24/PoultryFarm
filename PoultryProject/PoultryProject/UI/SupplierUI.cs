@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using pro.BL.Bl;
 using pro.Interface;
 using pro.BL.Model;
+using Poultary.UI;
+using Poultary;
+using PoultryProject.UI;
 
 
 namespace pro.UI
@@ -198,7 +201,56 @@ namespace pro.UI
 
         private void button5_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            pro.UI.Customer customer = new pro.UI.Customer();
+            customer.Show();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            chicksform chick = new chicksform();
+            chick.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            feedform feed = new feedform();
+            feed.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            pro.UI.Supplier supplier = new pro.UI.Supplier();
+            supplier.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            pro.UI.Staff staff = new pro.UI.Staff();
+            staff.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            customerpayments customerpayments = new customerpayments();
+            customerpayments.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+        }
+
+        private void Supplier_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
