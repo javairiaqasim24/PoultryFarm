@@ -379,7 +379,7 @@
             // 
             this.txtdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtdate.Location = new System.Drawing.Point(388, 605);
-            this.txtdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdate.Margin = new System.Windows.Forms.Padding(4);
             this.txtdate.Name = "txtdate";
             this.txtdate.Size = new System.Drawing.Size(245, 26);
             this.txtdate.TabIndex = 66;
@@ -607,6 +607,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // button3
             // 

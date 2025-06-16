@@ -228,5 +228,10 @@ namespace Poultary.UI
             f.ShowDialog();
             this.Close();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

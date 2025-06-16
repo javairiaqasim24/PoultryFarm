@@ -315,14 +315,18 @@ namespace Poultary.UI
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            feedform f = new feedform();
             this.Hide();
-            new feedform().ShowDialog();
-            this.Hide() ;
+            f.ShowDialog();
+            this.Close();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)

@@ -171,5 +171,13 @@ namespace PoultryProject.UI
             m.ShowDialog();
             this.Close();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }
