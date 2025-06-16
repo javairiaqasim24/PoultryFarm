@@ -273,17 +273,17 @@ namespace Poultary.UI
             }
             else
             {
-                load(); 
+                var list = chickenDL.getinfos(text);
+                dataGridView2.DataSource = list;
+                dataGridView2.Columns["batch_Id"].Visible = false;
+                dataGridView2.Columns["supplierId"].Visible = false;
+
+                dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
         private void load()
         {
-            var list = chickenDL.getinfo();
-            dataGridView2.DataSource = list;
-            dataGridView2.Columns["batch_Id"].Visible = false;
-            dataGridView2.Columns["supplierId"].Visible = false;
-
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+           
         }
         private void button8_Click(object sender, EventArgs e)
         {

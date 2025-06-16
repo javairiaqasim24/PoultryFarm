@@ -243,6 +243,30 @@ namespace PoultryProject.DL
 
             return list;
         }
+        public static int GetTodaySacksUsed()
+        {
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"SELECT SUM(SacksUsed) AS total_sacks_used_today 
+                             FROM feedusage 
+                             WHERE DATE(Date) = CURDATE()";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetTodaySacksUsed: " + ex.Message);
+                return 0;
+            }
+        }
 
     }
 }

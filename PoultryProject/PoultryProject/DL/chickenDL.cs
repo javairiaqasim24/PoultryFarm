@@ -52,7 +52,7 @@ namespace Poultary.DL
                 }
             }
         }
-        public static List<chicken> getinfo(string searchText)
+        public static List<chicken> getinfos(string searchText)
         {
             using (var conn = DatabaseHelper.GetConnection())
             {
@@ -94,6 +94,29 @@ namespace Poultary.DL
                         }
                         return chickens;
                     }
+                }
+            }
+        }
+        public static int GetTotalRemainingChicks()
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                SUM(c.Quantity - IFNULL(m.total_died, 0)) AS total_remaining_chicks
+            FROM chickbatches c
+            LEFT JOIN (
+                SELECT batchId, SUM(Count) AS total_died
+                FROM chickmortality
+                GROUP BY batchId
+            ) m ON c.BatchID = m.batchId;
+        ";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    object result = cmd.ExecuteScalar();
+                    return result != DBNull.Value ? Convert.ToInt32(result) : 0;
                 }
             }
         }

@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poultary.DL;
 using Poultary.UI;
+using PoultryProject.BL.Models;
+using PoultryProject.DL;
 using PoultryProject.UI;
 using pro.UI;
 
@@ -386,7 +389,12 @@ namespace Poultary
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            chickslb.Text=chickenDL.GetTotalRemainingChicks().ToString();
+            sacslb.Text = feedinfoDL.GetTotalRemainingSacks().ToString();
+            mortalitylb.Text=mortalityDL.GetTodayDeaths().ToString();
+            usagelb.Text=trackfeedDL.GetTodaySacksUsed().ToString();
+            Dueslb.Text=SupplierPayDL.GetTotalDueToSuppliers().ToString();
+            paymentlb.Text = customerpaymentsdl.GetTotalDueTocustomer().ToString();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
@@ -424,6 +432,16 @@ namespace Poultary
             this.Hide();
             c.ShowDialog();
             this.Close();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

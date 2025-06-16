@@ -397,9 +397,9 @@
     <EmbeddedResource Include="UI\Supplierform.resx">
       <DependentUpon>Supplierform.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="UI\SupplierUI.resx">
+    <EmbeddedResource Include="UI\SupplierUI.resx">
       <DependentUpon>SupplierUI.cs</DependentUpon>
-    </None>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\supplierpayments.resx">
       <DependentUpon>supplierpayments.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poultary;
+using Poultary.UI;
 using PoultryProject.BL.Bl;
 using PoultryProject.Interfaces;
 
@@ -100,12 +102,58 @@ namespace PoultryProject.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            new chicksform().ShowDialog();
+            this.Close();
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new feedform().ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Supplier().ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Staff().ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new customerpayments().ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new supplierpayments().ShowDialog();
+            this.Close();
         }
     }
 }

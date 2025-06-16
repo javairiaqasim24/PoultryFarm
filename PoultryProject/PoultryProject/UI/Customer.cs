@@ -12,6 +12,7 @@ using pro.BL.Model;
 using pro.Interface;
 using Poultary.BL.Models;
 using Poultary.BL.Bl;
+using Poultary;
 
 namespace pro.UI
 {
@@ -195,7 +196,9 @@ namespace pro.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)

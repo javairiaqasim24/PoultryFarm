@@ -116,6 +116,37 @@ namespace PoultryProject.DL
 
             return list;
         }
+        public static int GetTotalRemainingSacks()
+        {
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"
+                SELECT 
+                    SUM(fb.Quantitysacks - IFNULL(fu.total_used, 0)) AS total_remaining_sacks
+                FROM feedbatches fb
+                LEFT JOIN (
+                    SELECT FeedBatchID, SUM(SacksUsed) AS total_used
+                    FROM feedusage
+                    GROUP BY FeedBatchID
+                ) fu ON fb.FeedBatchID = fu.FeedBatchID;
+            ";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        return result != DBNull.Value ? Convert.ToInt32(result) : 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return 0;
+            }
+        }
 
     }
 }

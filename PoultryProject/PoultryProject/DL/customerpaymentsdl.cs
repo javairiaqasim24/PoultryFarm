@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using MySql.Data.MySqlClient;
 using KIMS;
+using System;
 
 namespace PoultryProject.DL
 {
@@ -71,7 +72,28 @@ namespace PoultryProject.DL
             return dt;
         }
 
+        public static double GetTotalDueTocustomer()
+        {
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT SUM(DueAmount) FROM customerpayments WHERE DueAmount > 0";
 
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        return result != DBNull.Value ? Convert.ToDouble(result) : 0.0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error fetching total supplier dues: " + ex.Message);
+                return 0.0;
+            }
+        }
     }
 }
     

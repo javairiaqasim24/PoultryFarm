@@ -79,6 +79,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.usagelb = new System.Windows.Forms.Label();
+            this.chickslb = new System.Windows.Forms.Label();
+            this.sacslb = new System.Windows.Forms.Label();
+            this.mortalitylb = new System.Windows.Forms.Label();
+            this.paymentlb = new System.Windows.Forms.Label();
+            this.Dueslb = new System.Windows.Forms.Label();
             this.panel13.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -163,6 +169,7 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel14.Controls.Add(this.Dueslb);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Controls.Add(this.pictureBox13);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -199,6 +206,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel10.Controls.Add(this.paymentlb);
             this.panel10.Controls.Add(this.label5);
             this.panel10.Controls.Add(this.pictureBox10);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -235,6 +243,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel12.Controls.Add(this.usagelb);
             this.panel12.Controls.Add(this.pictureBox9);
             this.panel12.Controls.Add(this.label8);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -242,6 +251,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(305, 311);
             this.panel12.TabIndex = 13;
+            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint_1);
             // 
             // pictureBox9
             // 
@@ -271,6 +281,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel11.Controls.Add(this.mortalitylb);
             this.panel11.Controls.Add(this.label7);
             this.panel11.Controls.Add(this.pictureBox14);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -307,6 +318,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel9.Controls.Add(this.sacslb);
             this.panel9.Controls.Add(this.label4);
             this.panel9.Controls.Add(this.pictureBox11);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -343,6 +355,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            this.panel8.Controls.Add(this.chickslb);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.pictureBox12);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -731,6 +744,71 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
             // 
+            // usagelb
+            // 
+            this.usagelb.AutoSize = true;
+            this.usagelb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usagelb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.usagelb.Location = new System.Drawing.Point(5, 30);
+            this.usagelb.Name = "usagelb";
+            this.usagelb.Size = new System.Drawing.Size(0, 38);
+            this.usagelb.TabIndex = 9;
+            // 
+            // chickslb
+            // 
+            this.chickslb.AutoSize = true;
+            this.chickslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chickslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chickslb.Location = new System.Drawing.Point(5, 22);
+            this.chickslb.Name = "chickslb";
+            this.chickslb.Size = new System.Drawing.Size(0, 38);
+            this.chickslb.TabIndex = 10;
+            // 
+            // sacslb
+            // 
+            this.sacslb.AutoSize = true;
+            this.sacslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sacslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.sacslb.Location = new System.Drawing.Point(15, 22);
+            this.sacslb.Name = "sacslb";
+            this.sacslb.Size = new System.Drawing.Size(96, 38);
+            this.sacslb.TabIndex = 10;
+            this.sacslb.Text = "label9";
+            this.sacslb.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // mortalitylb
+            // 
+            this.mortalitylb.AutoSize = true;
+            this.mortalitylb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mortalitylb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.mortalitylb.Location = new System.Drawing.Point(14, 24);
+            this.mortalitylb.Name = "mortalitylb";
+            this.mortalitylb.Size = new System.Drawing.Size(96, 38);
+            this.mortalitylb.TabIndex = 10;
+            this.mortalitylb.Text = "label9";
+            // 
+            // paymentlb
+            // 
+            this.paymentlb.AutoSize = true;
+            this.paymentlb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentlb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.paymentlb.Location = new System.Drawing.Point(15, 21);
+            this.paymentlb.Name = "paymentlb";
+            this.paymentlb.Size = new System.Drawing.Size(96, 38);
+            this.paymentlb.TabIndex = 10;
+            this.paymentlb.Text = "label9";
+            // 
+            // Dueslb
+            // 
+            this.Dueslb.AutoSize = true;
+            this.Dueslb.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dueslb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Dueslb.Location = new System.Drawing.Point(14, 32);
+            this.Dueslb.Name = "Dueslb";
+            this.Dueslb.Size = new System.Drawing.Size(96, 38);
+            this.Dueslb.TabIndex = 10;
+            this.Dueslb.Text = "label9";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -835,6 +913,12 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label usagelb;
+        private System.Windows.Forms.Label chickslb;
+        private System.Windows.Forms.Label sacslb;
+        private System.Windows.Forms.Label Dueslb;
+        private System.Windows.Forms.Label paymentlb;
+        private System.Windows.Forms.Label mortalitylb;
     }
 }
 
