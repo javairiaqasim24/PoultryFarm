@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poultary;
 using Poultary.UI;
 using PoultryProject.UI;
 using ZstdSharp.Unsafe;
@@ -19,7 +20,7 @@ namespace PoultryProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginpage());
+            Application.Run(new Form1());
         }
     }
 }
