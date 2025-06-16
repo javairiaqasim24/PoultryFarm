@@ -224,8 +224,9 @@ namespace pro.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pro.UI.Supplier supplier = new pro.UI.Supplier();
-            supplier.Show();
+            this.Hide();
+            new pro.UI.Supplier().ShowDialog();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -237,8 +238,10 @@ namespace pro.UI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Staff staff = new Staff();
-            staff.Show();
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -280,6 +283,18 @@ namespace pro.UI
             this.Hide();
             c.ShowDialog();
             this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Supplier().ShowDialog();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -179,5 +179,10 @@ namespace PoultryProject.UI
             f.ShowDialog();
             this.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

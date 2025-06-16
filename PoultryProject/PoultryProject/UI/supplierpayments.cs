@@ -14,6 +14,7 @@ using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
 using PoultryProject.DL;
 using PoultryProject.Interfaces;
+using pro.UI;
 
 namespace PoultryProject.UI
 {
@@ -41,9 +42,7 @@ namespace PoultryProject.UI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Addsupplierpay().ShowDialog();
-            this.Close();
         }
 
         private void btnedit_Click(object sender, EventArgs e)
@@ -260,6 +259,82 @@ namespace PoultryProject.UI
             this.Hide();
             m.ShowDialog();
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            priccerecordform d = new priccerecordform();
+            this.Hide();
+            d.ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            supplierpayments s = new supplierpayments();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

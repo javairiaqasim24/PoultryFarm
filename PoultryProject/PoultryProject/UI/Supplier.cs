@@ -222,16 +222,18 @@ namespace pro.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
+            pro.UI.Supplier s = new pro.UI.Supplier();
             this.Hide();
-            pro.UI.Supplier supplier = new pro.UI.Supplier();
-            supplier.Show();
+            s.ShowDialog();
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            Staff f = new Staff();
             this.Hide();
-            pro.UI.Staff staff = new pro.UI.Staff();
-            staff.Show();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -275,6 +277,27 @@ namespace pro.UI
             chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
             this.Close();
         }
     }

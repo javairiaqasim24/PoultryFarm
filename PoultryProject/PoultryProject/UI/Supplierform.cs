@@ -208,5 +208,59 @@ namespace Poultary.UI
             m.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void dataGridViewSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

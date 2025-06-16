@@ -287,6 +287,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // button3
             // 
@@ -301,6 +302,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Feed";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel5
             // 
@@ -324,6 +326,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // button4
             // 
@@ -338,6 +341,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "Suppliers";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel6
             // 
@@ -375,6 +379,7 @@
             this.button5.TabIndex = 0;
             this.button5.Text = "Customers";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel15
             // 
@@ -398,6 +403,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 3;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // button6
             // 
@@ -412,6 +418,7 @@
             this.button6.TabIndex = 0;
             this.button6.Text = "Staff";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel16
             // 
@@ -682,6 +689,7 @@
             this.button10.TabIndex = 21;
             this.button10.Text = "Price record";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -690,13 +698,14 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button11.Location = new System.Drawing.Point(907, 20);
+            this.button11.Location = new System.Drawing.Point(922, 20);
             this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(220, 80);
             this.button11.TabIndex = 20;
             this.button11.Text = "Payments";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label3
             // 
@@ -779,6 +788,7 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView2.Size = new System.Drawing.Size(1124, 260);
             this.dataGridView2.TabIndex = 89;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // supplierpayments
             // 

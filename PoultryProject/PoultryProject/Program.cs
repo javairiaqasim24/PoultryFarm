@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Poultary;
 using Poultary.UI;
 using PoultryProject.UI;
+using pro.UI;
 using ZstdSharp.Unsafe;
 
 namespace PoultryProject
@@ -20,7 +21,7 @@ namespace PoultryProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new trackfeedform());
         }
     }
 }

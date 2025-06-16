@@ -233,5 +233,13 @@ namespace Poultary.UI
         {
 
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
     }
 }

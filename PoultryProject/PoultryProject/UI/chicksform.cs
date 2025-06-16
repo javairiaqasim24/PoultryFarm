@@ -204,8 +204,9 @@ namespace Poultary.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
+            pro.UI.Supplier s = new Supplier();
             this.Hide();
-            new pro.UI.Supplier().ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 

@@ -235,17 +235,17 @@ namespace PoultryProject.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Supplierform f = new Supplierform();
+            pro.UI.Supplier s = new Supplier();
             this.Hide();
-            f.ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Supplierform f = new Supplierform();
+            pro.UI.Supplier s = new Supplier();
             this.Hide();
-            f.ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 
@@ -295,6 +295,11 @@ namespace PoultryProject.UI
             this.Hide();
             c.ShowDialog();
             this.Close();
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

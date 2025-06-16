@@ -75,7 +75,6 @@
             this.btnedit = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -708,7 +707,6 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panel8.Controls.Add(this.button10);
             this.panel8.Controls.Add(this.button11);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.pictureBox9);
@@ -717,22 +715,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1137, 129);
             this.panel8.TabIndex = 69;
-            // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button10.Location = new System.Drawing.Point(680, 20);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(220, 80);
-            this.button10.TabIndex = 21;
-            this.button10.Text = "Manage Feed";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -758,9 +740,9 @@
             this.label3.Location = new System.Drawing.Point(120, 49);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 31);
+            this.label3.Size = new System.Drawing.Size(240, 31);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Manage Chick Batches";
+            this.label3.Text = "Manage Feed Batches";
             // 
             // pictureBox9
             // 
@@ -927,7 +909,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Timer timer1;

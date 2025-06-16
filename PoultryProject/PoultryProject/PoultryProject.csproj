@@ -306,11 +306,11 @@
     <Compile Include="UI\supplierpayments.Designer.cs">
       <DependentUpon>supplierpayments.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\SupplierUI.cs">
+    <Compile Include="UI\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\SupplierUI.Designer.cs">
-      <DependentUpon>SupplierUI.cs</DependentUpon>
+    <Compile Include="UI\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\trackfeedform.cs">
       <SubType>Form</SubType>
@@ -397,8 +397,8 @@
     <EmbeddedResource Include="UI\Supplierform.resx">
       <DependentUpon>Supplierform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\SupplierUI.resx">
-      <DependentUpon>SupplierUI.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\supplierpayments.resx">
       <DependentUpon>supplierpayments.cs</DependentUpon>

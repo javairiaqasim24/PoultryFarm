@@ -230,21 +230,25 @@ namespace pro.UI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pro.UI.Supplier supplier = new pro.UI.Supplier();
-            supplier.Show();
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            Customer customer = new Customer();
-            customer.Show();
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Staff staff = new Staff();
-            staff.Show();
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -281,6 +285,19 @@ namespace pro.UI
             chicksform m = new chicksform();
             this.Hide();
             m.ShowDialog();
+            this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            pro.UI.Supplier s = new pro.UI.Supplier();
+            this.Hide();
+            s.ShowDialog();
             this.Close();
         }
     }

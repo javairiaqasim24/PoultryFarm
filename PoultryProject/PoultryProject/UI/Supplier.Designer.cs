@@ -233,6 +233,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // button3
             // 
@@ -290,6 +291,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1176, 855);
             this.panel7.TabIndex = 23;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // pictureBox10
             // 
@@ -448,7 +450,7 @@
             this.btnadd.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnadd.Location = new System.Drawing.Point(34, 175);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(148, 52);
             this.btnadd.TabIndex = 45;
@@ -526,7 +528,7 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(738, 184);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(230, 33);
             this.txtSearch.TabIndex = 43;
@@ -543,7 +545,7 @@
             this.dataGridViewSupplier.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSupplier.Location = new System.Drawing.Point(30, 265);
-            this.dataGridViewSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewSupplier.Name = "dataGridViewSupplier";
             this.dataGridViewSupplier.ReadOnly = true;
             this.dataGridViewSupplier.RowHeadersWidth = 51;
@@ -573,6 +575,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // button4
             // 

@@ -220,9 +220,9 @@ txtsupplier.DisplayMember = "batchName";
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
+            pro.UI.Supplier s = new pro.UI.Supplier();
             this.Hide();
-            m.ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 
@@ -237,7 +237,6 @@ txtsupplier.DisplayMember = "batchName";
         private void button5_Click(object sender, EventArgs e)
         {
             pro.UI.Customer c = new pro.UI.Customer();
-
             this.Hide();
             c.ShowDialog();
             this.Close();

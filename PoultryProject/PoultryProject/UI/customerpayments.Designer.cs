@@ -65,7 +65,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtage = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnedit = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -470,7 +469,6 @@
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.txtage);
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.btnedit);
             this.panel7.Controls.Add(this.button8);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label4);
@@ -573,20 +571,6 @@
             this.label6.TabIndex = 67;
             this.label6.Text = "Name";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnedit
-            // 
-            this.btnedit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnedit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnedit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnedit.Location = new System.Drawing.Point(197, 175);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(168, 52);
-            this.btnedit.TabIndex = 65;
-            this.btnedit.Text = "Edit";
-            this.btnedit.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -849,7 +833,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtage;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label3;

@@ -345,17 +345,17 @@ namespace Poultary
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
+            pro.UI.Supplier s = new Supplier();
             this.Hide();
-            m.ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 
         private void pictureBox6_Click_1(object sender, EventArgs e)
         {
-            Supplierform m = new Supplierform();
+            pro.UI.Supplier s = new Supplier();
             this.Hide();
-            m.ShowDialog();
+            s.ShowDialog();
             this.Close();
         }
 
@@ -440,6 +440,11 @@ namespace Poultary
         }
 
         private void panel9_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
