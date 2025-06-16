@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
 using Poultary.UI;
+using Poultary;
 
 namespace PoultryProject.UI
 {
@@ -190,7 +191,10 @@ namespace PoultryProject.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -205,7 +209,42 @@ namespace PoultryProject.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
         }
     }
 }

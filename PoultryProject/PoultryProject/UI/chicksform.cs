@@ -294,5 +294,12 @@ namespace Poultary.UI
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form1().ShowDialog();
+            this.Close();
+        }
     }
 }

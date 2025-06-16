@@ -171,8 +171,9 @@ namespace Poultary.UI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            chicksform c = new chicksform();
             this.Hide();
-            new Managechicksform().ShowDialog();
+            c.ShowDialog();
             this.Close();
         }
 
@@ -201,6 +202,30 @@ namespace Poultary.UI
         {
             this.Hide();
             new pro.UI.Staff().ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
             this.Close();
         }
     }

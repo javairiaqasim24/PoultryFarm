@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poultary;
 using Poultary.BL.Models;
+using Poultary.UI;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
 using PoultryProject.DL;
@@ -210,6 +212,54 @@ namespace PoultryProject.UI
                     isPanelCollapsed = true;
                 }
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
         }
     }
 

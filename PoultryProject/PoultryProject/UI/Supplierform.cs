@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using PoultryProject.UI;
 using pro.BL.Bl;
 using pro.BL.Model;
 using pro.Interface;
@@ -157,6 +158,55 @@ namespace Poultary.UI
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             LoadSuppliers();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+           customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments customerpayments = new customerpayments();
+            this.Hide();
+            customerpayments.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
         }
     }
 }

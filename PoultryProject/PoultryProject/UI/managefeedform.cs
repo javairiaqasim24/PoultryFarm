@@ -46,20 +46,20 @@ namespace Poultary.UI
         }
         private void loadgrid()
         {
-            var list=ibl.getfeed();
+            var list = ibl.getfeed();
             dataGridView2.DataSource = list;
-            dataGridView2.Columns["id"].Visible = false; 
+            dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            var result=supplier.getsupplierbytype("feed");
+            var result = supplier.getsupplierbytype("feed");
             txtsupplier.DataSource = result;
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            
+
             Addfeeed add = new Addfeeed();
             add.Show();
-            
+
         }
 
         private void btnedit_Click(object sender, EventArgs e)
@@ -237,8 +237,8 @@ namespace Poultary.UI
 
         private void button10_Click(object sender, EventArgs e)
         {
-           
-           
+
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -273,6 +273,46 @@ namespace Poultary.UI
         {
             this.Hide();
             new pro.UI.Staff().ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform m = new chicksform();
+            this.Hide();
+            m.ShowDialog();
             this.Close();
         }
     }

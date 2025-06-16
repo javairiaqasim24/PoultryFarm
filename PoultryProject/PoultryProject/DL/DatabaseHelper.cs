@@ -12,7 +12,7 @@ namespace KIMS
     {
 
 
-        private static string connectionString = "Server=127.0.0.1;Database=poultry;Uid=root;Pwd=javairiaqasim123456789$$";
+        private static string connectionString = "Server=127.0.0.1;Database=poultary;Uid=root;Pwd=Ahadsaab@263";
 
 
         public static MySqlConnection GetConnection()
