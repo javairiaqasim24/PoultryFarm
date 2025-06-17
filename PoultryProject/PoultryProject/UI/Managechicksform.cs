@@ -22,7 +22,7 @@ namespace Poultary.UI
         private bool isPanelCollapsed = true;
         private const int PanelExpandedWidth = 181;
         private const int PanelCollapsedWidth = 50;
-        private const int SlideStep = 10;
+        private const int SlideStep =25;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Managechicksform()
         {
@@ -31,6 +31,7 @@ namespace Poultary.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
+            DoubleBuffered = true;
             this.Shown += ViewOrderAd_Shown;
             pictureBox1.MouseEnter += pictureBox_MouseEnter;
             pictureBox1.MouseLeave += pictureBox_MouseLeave;
@@ -91,6 +92,7 @@ namespace Poultary.UI
                 flowLayoutPanel1.Width += SlideStep;
                 if (flowLayoutPanel1.Width >= PanelExpandedWidth)
                 {
+                    flowLayoutPanel1.Width = PanelExpandedWidth; // lock exact size
                     timer1.Stop();
                     isPanelCollapsed = false;
                 }
@@ -100,11 +102,13 @@ namespace Poultary.UI
                 flowLayoutPanel1.Width -= SlideStep;
                 if (flowLayoutPanel1.Width <= PanelCollapsedWidth)
                 {
+                    flowLayoutPanel1.Width = PanelCollapsedWidth;
                     timer1.Stop();
                     isPanelCollapsed = true;
                 }
             }
         }
+
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -132,7 +136,7 @@ namespace Poultary.UI
         }
         private void LoadSupplierComboBox()
         {
-            txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
             txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
             txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
@@ -144,7 +148,7 @@ namespace Poultary.UI
             if (string.IsNullOrEmpty(searchText))
                 return;
 
-            var matchingNames = supplierBillDL.GetSupplierNamesLike(searchText);
+            var matchingNames = supplierBillDL.GetSupplierNamesLike(searchText,"Chick");
 
             var autoSource = new AutoCompleteStringCollection();
             autoSource.AddRange(matchingNames.ToArray());

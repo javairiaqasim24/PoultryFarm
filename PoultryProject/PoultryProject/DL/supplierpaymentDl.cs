@@ -44,6 +44,37 @@ namespace PoultryProject.DL
                 }
             }
         }
+        public static List<int> GetBillIdsBySupplierName(string supplierName)
+        {
+            var billIds = new List<int>();
+
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT sb.BillID
+            FROM supplierbills sb
+            INNER JOIN suppliers s ON sb.SupplierID = s.SupplierID
+            WHERE s.Name = @name";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", supplierName);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            billIds.Add(reader.GetInt32("BillID"));
+                        }
+                    }
+                }
+            }
+
+            return billIds;
+        }
+
         public static List<string> GetSupplierNamesLike(string partialName)
         {
             List<string> names = new List<string>();

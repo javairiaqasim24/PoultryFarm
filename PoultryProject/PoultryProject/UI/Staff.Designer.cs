@@ -188,18 +188,18 @@ namespace pro.UI
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1446, 70);
+            this.panel1.Size = new System.Drawing.Size(1285, 56);
             this.panel1.TabIndex = 21;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PoultryProject.Properties.Resources.more__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -211,10 +211,10 @@ namespace pro.UI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(1368, 31);
+            this.label2.Location = new System.Drawing.Point(1216, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Admin";
             // 
@@ -222,10 +222,10 @@ namespace pro.UI
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.Image = global::PoultryProject.Properties.Resources.user3;
-            this.pictureBox2.Location = new System.Drawing.Point(1322, 16);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(1175, 13);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(37, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -236,10 +236,10 @@ namespace pro.UI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(627, 19);
+            this.label1.Location = new System.Drawing.Point(557, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 40);
+            this.label1.Size = new System.Drawing.Size(66, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Staff";
             // 
@@ -256,10 +256,10 @@ namespace pro.UI
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 70);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 56);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(270, 855);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(240, 684);
             this.flowLayoutPanel1.TabIndex = 23;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -268,20 +268,20 @@ namespace pro.UI
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel2.Location = new System.Drawing.Point(4, 31);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(4, 25);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(255, 65);
+            this.panel2.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel2.Size = new System.Drawing.Size(227, 52);
             this.panel2.TabIndex = 2;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PoultryProject.Properties.Resources.dashboard__1_1;
-            this.pictureBox3.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox3.Size = new System.Drawing.Size(37, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -293,10 +293,10 @@ namespace pro.UI
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(-4, -11);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(-4, -9);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 80);
+            this.button1.Size = new System.Drawing.Size(241, 64);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = false;
@@ -307,20 +307,20 @@ namespace pro.UI
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.button2);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel3.Location = new System.Drawing.Point(4, 132);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel3.Location = new System.Drawing.Point(4, 106);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(255, 65);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(227, 52);
             this.panel3.TabIndex = 3;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::PoultryProject.Properties.Resources.chicken;
-            this.pictureBox4.Location = new System.Drawing.Point(14, 1);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 54);
+            this.pictureBox4.Size = new System.Drawing.Size(47, 43);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
@@ -332,10 +332,10 @@ namespace pro.UI
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(-4, -12);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(-4, -10);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(271, 80);
+            this.button2.Size = new System.Drawing.Size(241, 64);
             this.button2.TabIndex = 0;
             this.button2.Text = "Chicks";
             this.button2.UseVisualStyleBackColor = false;
@@ -346,20 +346,20 @@ namespace pro.UI
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.button3);
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel4.Location = new System.Drawing.Point(4, 233);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel4.Location = new System.Drawing.Point(4, 187);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel4.Size = new System.Drawing.Size(255, 65);
+            this.panel4.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel4.Size = new System.Drawing.Size(227, 52);
             this.panel4.TabIndex = 3;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::PoultryProject.Properties.Resources.feeding;
-            this.pictureBox5.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox5.Size = new System.Drawing.Size(37, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
@@ -370,10 +370,10 @@ namespace pro.UI
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(-4, -11);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(-4, -9);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(271, 80);
+            this.button3.Size = new System.Drawing.Size(241, 64);
             this.button3.TabIndex = 0;
             this.button3.Text = "Feed";
             this.button3.UseVisualStyleBackColor = false;
@@ -384,20 +384,20 @@ namespace pro.UI
             this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Controls.Add(this.button4);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel5.Location = new System.Drawing.Point(4, 334);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel5.Location = new System.Drawing.Point(4, 268);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel5.Size = new System.Drawing.Size(255, 65);
+            this.panel5.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel5.Size = new System.Drawing.Size(227, 52);
             this.panel5.TabIndex = 3;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::PoultryProject.Properties.Resources.fair_trade;
-            this.pictureBox6.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox6.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox6.Size = new System.Drawing.Size(37, 34);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
@@ -409,10 +409,10 @@ namespace pro.UI
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Location = new System.Drawing.Point(-4, -11);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(-4, -9);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(271, 80);
+            this.button4.Size = new System.Drawing.Size(241, 64);
             this.button4.TabIndex = 0;
             this.button4.Text = "Suppliers";
             this.button4.UseVisualStyleBackColor = false;
@@ -423,20 +423,20 @@ namespace pro.UI
             this.panel6.Controls.Add(this.pictureBox7);
             this.panel6.Controls.Add(this.button5);
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel6.Location = new System.Drawing.Point(4, 435);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel6.Location = new System.Drawing.Point(4, 349);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel6.Size = new System.Drawing.Size(255, 65);
+            this.panel6.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel6.Size = new System.Drawing.Size(227, 52);
             this.panel6.TabIndex = 4;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::PoultryProject.Properties.Resources.loyal_customer;
-            this.pictureBox7.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox7.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox7.Size = new System.Drawing.Size(37, 34);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
@@ -447,10 +447,10 @@ namespace pro.UI
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(-4, -11);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(-4, -9);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(271, 80);
+            this.button5.Size = new System.Drawing.Size(241, 64);
             this.button5.TabIndex = 0;
             this.button5.Text = "Customers";
             this.button5.UseVisualStyleBackColor = false;
@@ -461,20 +461,20 @@ namespace pro.UI
             this.panel15.Controls.Add(this.pictureBox8);
             this.panel15.Controls.Add(this.button6);
             this.panel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel15.Location = new System.Drawing.Point(4, 536);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel15.Location = new System.Drawing.Point(4, 430);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel15.Size = new System.Drawing.Size(255, 65);
+            this.panel15.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel15.Size = new System.Drawing.Size(227, 52);
             this.panel15.TabIndex = 5;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::PoultryProject.Properties.Resources.teamwork;
-            this.pictureBox8.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox8.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox8.Size = new System.Drawing.Size(37, 34);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 3;
             this.pictureBox8.TabStop = false;
@@ -485,10 +485,10 @@ namespace pro.UI
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button6.Location = new System.Drawing.Point(-4, -11);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(-4, -9);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(271, 80);
+            this.button6.Size = new System.Drawing.Size(241, 64);
             this.button6.TabIndex = 0;
             this.button6.Text = "Staff";
             this.button6.UseVisualStyleBackColor = false;
@@ -499,20 +499,20 @@ namespace pro.UI
             this.panel16.Controls.Add(this.pictureBox15);
             this.panel16.Controls.Add(this.button7);
             this.panel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel16.Location = new System.Drawing.Point(4, 637);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel16.Location = new System.Drawing.Point(4, 511);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel16.Name = "panel16";
-            this.panel16.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel16.Size = new System.Drawing.Size(255, 65);
+            this.panel16.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel16.Size = new System.Drawing.Size(227, 52);
             this.panel16.TabIndex = 6;
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
-            this.pictureBox15.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox15.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox15.Size = new System.Drawing.Size(37, 34);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 3;
             this.pictureBox15.TabStop = false;
@@ -524,10 +524,10 @@ namespace pro.UI
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button7.Location = new System.Drawing.Point(-4, -11);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(-4, -9);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(271, 80);
+            this.button7.Size = new System.Drawing.Size(241, 64);
             this.button7.TabIndex = 0;
             this.button7.Text = "Payments";
             this.button7.UseVisualStyleBackColor = false;
@@ -544,10 +544,10 @@ namespace pro.UI
             this.flowLayoutPanel2.Controls.Add(this.panel14);
             this.flowLayoutPanel2.Controls.Add(this.panel17);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 712);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 571);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(270, 0);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(240, 0);
             this.flowLayoutPanel2.TabIndex = 24;
             // 
             // panel9
@@ -555,20 +555,20 @@ namespace pro.UI
             this.panel9.Controls.Add(this.pictureBox11);
             this.panel9.Controls.Add(this.button10);
             this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel9.Location = new System.Drawing.Point(4, 31);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel9.Location = new System.Drawing.Point(4, 25);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(255, 65);
+            this.panel9.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel9.Size = new System.Drawing.Size(227, 52);
             this.panel9.TabIndex = 2;
             // 
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox11.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox11.Size = new System.Drawing.Size(37, 34);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 3;
             this.pictureBox11.TabStop = false;
@@ -579,10 +579,10 @@ namespace pro.UI
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button10.Location = new System.Drawing.Point(-4, -11);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button10.Location = new System.Drawing.Point(-4, -9);
+            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(271, 80);
+            this.button10.Size = new System.Drawing.Size(241, 64);
             this.button10.TabIndex = 0;
             this.button10.Text = "Dashboard";
             this.button10.UseVisualStyleBackColor = false;
@@ -592,20 +592,20 @@ namespace pro.UI
             this.panel10.Controls.Add(this.pictureBox12);
             this.panel10.Controls.Add(this.button11);
             this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel10.Location = new System.Drawing.Point(4, 132);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel10.Location = new System.Drawing.Point(4, 106);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel10.Size = new System.Drawing.Size(255, 65);
+            this.panel10.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel10.Size = new System.Drawing.Size(227, 52);
             this.panel10.TabIndex = 3;
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(14, 1);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox12.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(53, 54);
+            this.pictureBox12.Size = new System.Drawing.Size(47, 43);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 3;
             this.pictureBox12.TabStop = false;
@@ -616,10 +616,10 @@ namespace pro.UI
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button11.Location = new System.Drawing.Point(-4, -12);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button11.Location = new System.Drawing.Point(-4, -10);
+            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(271, 80);
+            this.button11.Size = new System.Drawing.Size(241, 64);
             this.button11.TabIndex = 0;
             this.button11.Text = "Chicks";
             this.button11.UseVisualStyleBackColor = false;
@@ -629,20 +629,20 @@ namespace pro.UI
             this.panel11.Controls.Add(this.pictureBox13);
             this.panel11.Controls.Add(this.button12);
             this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel11.Location = new System.Drawing.Point(4, 233);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel11.Location = new System.Drawing.Point(4, 187);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel11.Size = new System.Drawing.Size(255, 65);
+            this.panel11.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel11.Size = new System.Drawing.Size(227, 52);
             this.panel11.TabIndex = 3;
             // 
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox13.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox13.Size = new System.Drawing.Size(37, 34);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 3;
             this.pictureBox13.TabStop = false;
@@ -653,10 +653,10 @@ namespace pro.UI
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button12.Location = new System.Drawing.Point(-4, -11);
-            this.button12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button12.Location = new System.Drawing.Point(-4, -9);
+            this.button12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(271, 80);
+            this.button12.Size = new System.Drawing.Size(241, 64);
             this.button12.TabIndex = 0;
             this.button12.Text = "Feed";
             this.button12.UseVisualStyleBackColor = false;
@@ -666,20 +666,20 @@ namespace pro.UI
             this.panel12.Controls.Add(this.pictureBox14);
             this.panel12.Controls.Add(this.button13);
             this.panel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel12.Location = new System.Drawing.Point(4, 334);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel12.Location = new System.Drawing.Point(4, 268);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel12.Size = new System.Drawing.Size(255, 65);
+            this.panel12.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel12.Size = new System.Drawing.Size(227, 52);
             this.panel12.TabIndex = 3;
             // 
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox14.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox14.Size = new System.Drawing.Size(37, 34);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 3;
             this.pictureBox14.TabStop = false;
@@ -690,10 +690,10 @@ namespace pro.UI
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button13.Location = new System.Drawing.Point(-4, -11);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button13.Location = new System.Drawing.Point(-4, -9);
+            this.button13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(271, 80);
+            this.button13.Size = new System.Drawing.Size(241, 64);
             this.button13.TabIndex = 0;
             this.button13.Text = "Suppliers";
             this.button13.UseVisualStyleBackColor = false;
@@ -703,20 +703,20 @@ namespace pro.UI
             this.panel13.Controls.Add(this.pictureBox16);
             this.panel13.Controls.Add(this.button14);
             this.panel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel13.Location = new System.Drawing.Point(4, 435);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel13.Location = new System.Drawing.Point(4, 349);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(255, 65);
+            this.panel13.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel13.Size = new System.Drawing.Size(227, 52);
             this.panel13.TabIndex = 4;
             // 
             // pictureBox16
             // 
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox16.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox16.Size = new System.Drawing.Size(37, 34);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 3;
             this.pictureBox16.TabStop = false;
@@ -727,10 +727,10 @@ namespace pro.UI
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button14.Location = new System.Drawing.Point(-4, -11);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button14.Location = new System.Drawing.Point(-4, -9);
+            this.button14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(271, 80);
+            this.button14.Size = new System.Drawing.Size(241, 64);
             this.button14.TabIndex = 0;
             this.button14.Text = "Customers";
             this.button14.UseVisualStyleBackColor = false;
@@ -740,20 +740,20 @@ namespace pro.UI
             this.panel14.Controls.Add(this.pictureBox17);
             this.panel14.Controls.Add(this.button15);
             this.panel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel14.Location = new System.Drawing.Point(4, 536);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel14.Location = new System.Drawing.Point(4, 430);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel14.Size = new System.Drawing.Size(255, 65);
+            this.panel14.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel14.Size = new System.Drawing.Size(227, 52);
             this.panel14.TabIndex = 5;
             // 
             // pictureBox17
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox17.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox17.Size = new System.Drawing.Size(37, 34);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 3;
             this.pictureBox17.TabStop = false;
@@ -764,10 +764,10 @@ namespace pro.UI
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button15.Location = new System.Drawing.Point(-4, -11);
-            this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button15.Location = new System.Drawing.Point(-4, -9);
+            this.button15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(271, 80);
+            this.button15.Size = new System.Drawing.Size(241, 64);
             this.button15.TabIndex = 0;
             this.button15.Text = "Staff";
             this.button15.UseVisualStyleBackColor = false;
@@ -777,20 +777,20 @@ namespace pro.UI
             this.panel17.Controls.Add(this.pictureBox18);
             this.panel17.Controls.Add(this.button16);
             this.panel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel17.Location = new System.Drawing.Point(4, 637);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel17.Location = new System.Drawing.Point(4, 511);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel17.Name = "panel17";
-            this.panel17.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel17.Size = new System.Drawing.Size(255, 65);
+            this.panel17.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel17.Size = new System.Drawing.Size(227, 52);
             this.panel17.TabIndex = 6;
             // 
             // pictureBox18
             // 
             this.pictureBox18.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
-            this.pictureBox18.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox18.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox18.Size = new System.Drawing.Size(37, 34);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox18.TabIndex = 3;
             this.pictureBox18.TabStop = false;
@@ -801,10 +801,10 @@ namespace pro.UI
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button16.Location = new System.Drawing.Point(-4, -11);
-            this.button16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button16.Location = new System.Drawing.Point(-4, -9);
+            this.button16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(271, 80);
+            this.button16.Size = new System.Drawing.Size(241, 64);
             this.button16.TabIndex = 0;
             this.button16.Text = "payments";
             this.button16.UseVisualStyleBackColor = false;
@@ -820,10 +820,10 @@ namespace pro.UI
             this.flowLayoutPanel3.Controls.Add(this.panel23);
             this.flowLayoutPanel3.Controls.Add(this.panel24);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 722);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 579);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(270, 0);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(240, 0);
             this.flowLayoutPanel3.TabIndex = 25;
             // 
             // panel18
@@ -831,20 +831,20 @@ namespace pro.UI
             this.panel18.Controls.Add(this.pictureBox19);
             this.panel18.Controls.Add(this.button17);
             this.panel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel18.Location = new System.Drawing.Point(4, 31);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel18.Location = new System.Drawing.Point(4, 25);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(255, 65);
+            this.panel18.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(227, 52);
             this.panel18.TabIndex = 2;
             // 
             // pictureBox19
             // 
             this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox19.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox19.Size = new System.Drawing.Size(37, 34);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox19.TabIndex = 3;
             this.pictureBox19.TabStop = false;
@@ -855,10 +855,10 @@ namespace pro.UI
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button17.Location = new System.Drawing.Point(-4, -11);
-            this.button17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button17.Location = new System.Drawing.Point(-4, -9);
+            this.button17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(271, 80);
+            this.button17.Size = new System.Drawing.Size(241, 64);
             this.button17.TabIndex = 0;
             this.button17.Text = "Dashboard";
             this.button17.UseVisualStyleBackColor = false;
@@ -868,20 +868,20 @@ namespace pro.UI
             this.panel19.Controls.Add(this.pictureBox20);
             this.panel19.Controls.Add(this.button18);
             this.panel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel19.Location = new System.Drawing.Point(4, 132);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel19.Location = new System.Drawing.Point(4, 106);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel19.Name = "panel19";
-            this.panel19.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel19.Size = new System.Drawing.Size(255, 65);
+            this.panel19.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel19.Size = new System.Drawing.Size(227, 52);
             this.panel19.TabIndex = 3;
             // 
             // pictureBox20
             // 
             this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(14, 1);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox20.Location = new System.Drawing.Point(12, 1);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(53, 54);
+            this.pictureBox20.Size = new System.Drawing.Size(47, 43);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox20.TabIndex = 3;
             this.pictureBox20.TabStop = false;
@@ -892,10 +892,10 @@ namespace pro.UI
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button18.Location = new System.Drawing.Point(-4, -12);
-            this.button18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button18.Location = new System.Drawing.Point(-4, -10);
+            this.button18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(271, 80);
+            this.button18.Size = new System.Drawing.Size(241, 64);
             this.button18.TabIndex = 0;
             this.button18.Text = "Chicks";
             this.button18.UseVisualStyleBackColor = false;
@@ -905,20 +905,20 @@ namespace pro.UI
             this.panel20.Controls.Add(this.pictureBox21);
             this.panel20.Controls.Add(this.button19);
             this.panel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel20.Location = new System.Drawing.Point(4, 233);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel20.Location = new System.Drawing.Point(4, 187);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel20.Name = "panel20";
-            this.panel20.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel20.Size = new System.Drawing.Size(255, 65);
+            this.panel20.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel20.Size = new System.Drawing.Size(227, 52);
             this.panel20.TabIndex = 3;
             // 
             // pictureBox21
             // 
             this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox21.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox21.Size = new System.Drawing.Size(37, 34);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox21.TabIndex = 3;
             this.pictureBox21.TabStop = false;
@@ -929,10 +929,10 @@ namespace pro.UI
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button19.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button19.Location = new System.Drawing.Point(-4, -11);
-            this.button19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button19.Location = new System.Drawing.Point(-4, -9);
+            this.button19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(271, 80);
+            this.button19.Size = new System.Drawing.Size(241, 64);
             this.button19.TabIndex = 0;
             this.button19.Text = "Feed";
             this.button19.UseVisualStyleBackColor = false;
@@ -942,20 +942,20 @@ namespace pro.UI
             this.panel21.Controls.Add(this.pictureBox22);
             this.panel21.Controls.Add(this.button20);
             this.panel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel21.Location = new System.Drawing.Point(4, 334);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel21.Location = new System.Drawing.Point(4, 268);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel21.Name = "panel21";
-            this.panel21.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel21.Size = new System.Drawing.Size(255, 65);
+            this.panel21.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel21.Size = new System.Drawing.Size(227, 52);
             this.panel21.TabIndex = 3;
             // 
             // pictureBox22
             // 
             this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
-            this.pictureBox22.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox22.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox22.Size = new System.Drawing.Size(37, 34);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox22.TabIndex = 3;
             this.pictureBox22.TabStop = false;
@@ -966,10 +966,10 @@ namespace pro.UI
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button20.Location = new System.Drawing.Point(-4, -11);
-            this.button20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button20.Location = new System.Drawing.Point(-4, -9);
+            this.button20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(271, 80);
+            this.button20.Size = new System.Drawing.Size(241, 64);
             this.button20.TabIndex = 0;
             this.button20.Text = "Suppliers";
             this.button20.UseVisualStyleBackColor = false;
@@ -979,20 +979,20 @@ namespace pro.UI
             this.panel22.Controls.Add(this.pictureBox23);
             this.panel22.Controls.Add(this.button21);
             this.panel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel22.Location = new System.Drawing.Point(4, 435);
-            this.panel22.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel22.Location = new System.Drawing.Point(4, 349);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel22.Name = "panel22";
-            this.panel22.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel22.Size = new System.Drawing.Size(255, 65);
+            this.panel22.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel22.Size = new System.Drawing.Size(227, 52);
             this.panel22.TabIndex = 4;
             // 
             // pictureBox23
             // 
             this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
-            this.pictureBox23.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox23.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox23.Size = new System.Drawing.Size(37, 34);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 3;
             this.pictureBox23.TabStop = false;
@@ -1003,10 +1003,10 @@ namespace pro.UI
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button21.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button21.Location = new System.Drawing.Point(-4, -11);
-            this.button21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button21.Location = new System.Drawing.Point(-4, -9);
+            this.button21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(271, 80);
+            this.button21.Size = new System.Drawing.Size(241, 64);
             this.button21.TabIndex = 0;
             this.button21.Text = "Customers";
             this.button21.UseVisualStyleBackColor = false;
@@ -1016,20 +1016,20 @@ namespace pro.UI
             this.panel23.Controls.Add(this.pictureBox24);
             this.panel23.Controls.Add(this.button22);
             this.panel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel23.Location = new System.Drawing.Point(4, 536);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel23.Location = new System.Drawing.Point(4, 430);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel23.Name = "panel23";
-            this.panel23.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel23.Size = new System.Drawing.Size(255, 65);
+            this.panel23.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel23.Size = new System.Drawing.Size(227, 52);
             this.panel23.TabIndex = 5;
             // 
             // pictureBox24
             // 
             this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
-            this.pictureBox24.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox24.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox24.Size = new System.Drawing.Size(37, 34);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 3;
             this.pictureBox24.TabStop = false;
@@ -1040,10 +1040,10 @@ namespace pro.UI
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button22.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button22.Location = new System.Drawing.Point(-4, -11);
-            this.button22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button22.Location = new System.Drawing.Point(-4, -9);
+            this.button22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(271, 80);
+            this.button22.Size = new System.Drawing.Size(241, 64);
             this.button22.TabIndex = 0;
             this.button22.Text = "Staff";
             this.button22.UseVisualStyleBackColor = false;
@@ -1053,20 +1053,20 @@ namespace pro.UI
             this.panel24.Controls.Add(this.pictureBox25);
             this.panel24.Controls.Add(this.button23);
             this.panel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.panel24.Location = new System.Drawing.Point(4, 637);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4, 31, 4, 5);
+            this.panel24.Location = new System.Drawing.Point(4, 511);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4, 25, 4, 4);
             this.panel24.Name = "panel24";
-            this.panel24.Padding = new System.Windows.Forms.Padding(0, 39, 0, 0);
-            this.panel24.Size = new System.Drawing.Size(255, 65);
+            this.panel24.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
+            this.panel24.Size = new System.Drawing.Size(227, 52);
             this.panel24.TabIndex = 6;
             // 
             // pictureBox25
             // 
             this.pictureBox25.Image = global::PoultryProject.Properties.Resources.Screenshot_2025_06_13_200110;
-            this.pictureBox25.Location = new System.Drawing.Point(14, 5);
-            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox25.Location = new System.Drawing.Point(12, 4);
+            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox25.Size = new System.Drawing.Size(37, 34);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox25.TabIndex = 3;
             this.pictureBox25.TabStop = false;
@@ -1077,10 +1077,10 @@ namespace pro.UI
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button23.Location = new System.Drawing.Point(-4, -11);
-            this.button23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button23.Location = new System.Drawing.Point(-4, -9);
+            this.button23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(271, 80);
+            this.button23.Size = new System.Drawing.Size(241, 64);
             this.button23.TabIndex = 0;
             this.button23.Text = "payments";
             this.button23.UseVisualStyleBackColor = false;
@@ -1105,19 +1105,17 @@ namespace pro.UI
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.dataGridViewStaff);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(270, 70);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Location = new System.Drawing.Point(240, 56);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1176, 855);
+            this.panel7.Size = new System.Drawing.Size(1045, 684);
             this.panel7.TabIndex = 24;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::PoultryProject.Properties.Resources.refresh;
-            this.pictureBox10.Location = new System.Drawing.Point(564, 174);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(501, 139);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(48, 54);
+            this.pictureBox10.Size = new System.Drawing.Size(43, 43);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 68;
             this.pictureBox10.TabStop = false;
@@ -1125,15 +1123,15 @@ namespace pro.UI
             // 
             // comboBoxType
             // 
+            this.comboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxType.BackColor = System.Drawing.Color.Gainsboro;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {
             "Employee",
             "Admin"});
-            this.comboBoxType.Location = new System.Drawing.Point(442, 719);
-            this.comboBoxType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxType.Location = new System.Drawing.Point(393, 575);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(275, 28);
+            this.comboBoxType.Size = new System.Drawing.Size(245, 24);
             this.comboBoxType.TabIndex = 61;
             // 
             // txtusername
@@ -1143,10 +1141,10 @@ namespace pro.UI
             this.txtusername.BackColor = System.Drawing.Color.Transparent;
             this.txtusername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtusername.Location = new System.Drawing.Point(449, 676);
+            this.txtusername.Location = new System.Drawing.Point(399, 541);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(106, 25);
+            this.txtusername.Size = new System.Drawing.Size(85, 20);
             this.txtusername.TabIndex = 60;
             this.txtusername.Text = "Select Role";
             this.txtusername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1155,22 +1153,20 @@ namespace pro.UI
             // 
             this.txtCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCNIC.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCNIC.Location = new System.Drawing.Point(804, 586);
-            this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCNIC.Location = new System.Drawing.Point(715, 469);
             this.txtCNIC.Multiline = true;
             this.txtCNIC.Name = "txtCNIC";
-            this.txtCNIC.Size = new System.Drawing.Size(275, 43);
+            this.txtCNIC.Size = new System.Drawing.Size(245, 35);
             this.txtCNIC.TabIndex = 58;
             // 
             // txtname
             // 
             this.txtname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtname.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtname.Location = new System.Drawing.Point(34, 586);
-            this.txtname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtname.Location = new System.Drawing.Point(30, 469);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(275, 43);
+            this.txtname.Size = new System.Drawing.Size(245, 35);
             this.txtname.TabIndex = 57;
             // 
             // txtrole
@@ -1180,10 +1176,10 @@ namespace pro.UI
             this.txtrole.BackColor = System.Drawing.Color.Transparent;
             this.txtrole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtrole.Location = new System.Drawing.Point(811, 542);
+            this.txtrole.Location = new System.Drawing.Point(721, 434);
             this.txtrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtrole.Name = "txtrole";
-            this.txtrole.Size = new System.Drawing.Size(54, 25);
+            this.txtrole.Size = new System.Drawing.Size(44, 20);
             this.txtrole.TabIndex = 56;
             this.txtrole.Text = "CNIC";
             this.txtrole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1195,10 +1191,10 @@ namespace pro.UI
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label5.Location = new System.Drawing.Point(449, 542);
+            this.label5.Location = new System.Drawing.Point(399, 434);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 25);
+            this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 55;
             this.label5.Text = "Contact";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1207,11 +1203,10 @@ namespace pro.UI
             // 
             this.txtcontact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtcontact.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtcontact.Location = new System.Drawing.Point(442, 586);
-            this.txtcontact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtcontact.Location = new System.Drawing.Point(393, 469);
             this.txtcontact.Multiline = true;
             this.txtcontact.Name = "txtcontact";
-            this.txtcontact.Size = new System.Drawing.Size(275, 43);
+            this.txtcontact.Size = new System.Drawing.Size(245, 35);
             this.txtcontact.TabIndex = 54;
             // 
             // label6
@@ -1221,10 +1216,10 @@ namespace pro.UI
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label6.Location = new System.Drawing.Point(29, 542);
+            this.label6.Location = new System.Drawing.Point(26, 434);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 25);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 53;
             this.label6.Text = "Name";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1235,10 +1230,10 @@ namespace pro.UI
             this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btndelete.Location = new System.Drawing.Point(388, 175);
-            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btndelete.Location = new System.Drawing.Point(345, 140);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(168, 52);
+            this.btndelete.Size = new System.Drawing.Size(149, 42);
             this.btndelete.TabIndex = 47;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
@@ -1250,10 +1245,10 @@ namespace pro.UI
             this.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnedit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnedit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnedit.Location = new System.Drawing.Point(210, 175);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnedit.Location = new System.Drawing.Point(187, 140);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(168, 52);
+            this.btnedit.Size = new System.Drawing.Size(149, 42);
             this.btnedit.TabIndex = 46;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = false;
@@ -1265,10 +1260,10 @@ namespace pro.UI
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button8.Location = new System.Drawing.Point(34, 174);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button8.Location = new System.Drawing.Point(30, 139);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(168, 52);
+            this.button8.Size = new System.Drawing.Size(149, 42);
             this.button8.TabIndex = 45;
             this.button8.Text = "Add";
             this.button8.UseVisualStyleBackColor = false;
@@ -1281,10 +1276,10 @@ namespace pro.UI
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.pictureBox9);
-            this.panel8.Location = new System.Drawing.Point(24, 20);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel8.Location = new System.Drawing.Point(21, 16);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1137, 129);
+            this.panel8.Size = new System.Drawing.Size(1011, 103);
             this.panel8.TabIndex = 40;
             // 
             // label3
@@ -1292,20 +1287,20 @@ namespace pro.UI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(120, 49);
+            this.label3.Location = new System.Drawing.Point(107, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 31);
+            this.label3.Size = new System.Drawing.Size(173, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "Manage Staff Data";
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::PoultryProject.Properties.Resources.teamwork;
-            this.pictureBox9.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox9.Location = new System.Drawing.Point(24, 18);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(84, 78);
+            this.pictureBox9.Size = new System.Drawing.Size(75, 62);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 0;
             this.pictureBox9.TabStop = false;
@@ -1316,10 +1311,10 @@ namespace pro.UI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label4.Location = new System.Drawing.Point(638, 184);
+            this.label4.Location = new System.Drawing.Point(567, 147);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 31);
+            this.label4.Size = new System.Drawing.Size(81, 25);
             this.label4.TabIndex = 41;
             this.label4.Text = "Search :";
             // 
@@ -1330,10 +1325,10 @@ namespace pro.UI
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button9.Location = new System.Drawing.Point(1018, 181);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button9.Location = new System.Drawing.Point(905, 145);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(126, 39);
+            this.button9.Size = new System.Drawing.Size(112, 31);
             this.button9.TabIndex = 44;
             this.button9.Text = "Search";
             this.button9.UseVisualStyleBackColor = false;
@@ -1343,10 +1338,10 @@ namespace pro.UI
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(736, 181);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSearch.Location = new System.Drawing.Point(654, 145);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(258, 33);
+            this.txtSearch.Size = new System.Drawing.Size(230, 29);
             this.txtSearch.TabIndex = 43;
             this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1360,25 +1355,24 @@ namespace pro.UI
             this.dataGridViewStaff.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewStaff.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridViewStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaff.Location = new System.Drawing.Point(34, 246);
-            this.dataGridViewStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridViewStaff.Location = new System.Drawing.Point(30, 197);
+            this.dataGridViewStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.ReadOnly = true;
             this.dataGridViewStaff.RowHeadersWidth = 51;
             this.dataGridViewStaff.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewStaff.Size = new System.Drawing.Size(1124, 261);
+            this.dataGridViewStaff.Size = new System.Drawing.Size(999, 209);
             this.dataGridViewStaff.TabIndex = 39;
             this.dataGridViewStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaff_CellContentClick);
             // 
             // Staff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1446, 925);
+            this.ClientSize = new System.Drawing.Size(1285, 740);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Staff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffUI";

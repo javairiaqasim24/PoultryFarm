@@ -164,7 +164,7 @@ namespace PoultryProject.DL
                 return -1;
             }
         }
-        public List<string> GetChickBatchNames()
+        public List<string> GetChickBatchNames(string text)
         {
             List<string> names = new List<string>();
             try
@@ -172,14 +172,18 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT BatchName FROM feedbatches";
+                    string query = "SELECT BatchName FROM feedbatches WHERE BatchName LIKE @searchText";
 
                     using (var cmd = new MySqlCommand(query, conn))
-                    using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        cmd.Parameters.AddWithValue("@searchText", "%" + text + "%");
+
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            names.Add(reader.GetString("BatchName"));
+                            while (reader.Read())
+                            {
+                                names.Add(reader.GetString("BatchName"));
+                            }
                         }
                     }
                 }
@@ -192,7 +196,8 @@ namespace PoultryProject.DL
             return names;
         }
 
-       
+
+
         public static List<trackfeed> SearchTrackFeeds(string searchText)
         {
             List<trackfeed> list = new List<trackfeed>();

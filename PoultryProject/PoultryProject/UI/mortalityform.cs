@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
+using Poultary.DL;
 using Poultary.Interfaces;
 using PoultryProject.UI;
 using pro.UI;
@@ -55,13 +56,37 @@ namespace Poultary.UI
             dataGridView2.Columns["batchId"].Visible = false; 
             dataGridView2.Columns["remainingcount"].Visible=false;
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
-            var lists = ibl.getbatchnames();
-            txtsupplier.DataSource = lists;
-txtsupplier.DisplayMember = "batchName";
-            txtsupplier.ValueMember = "batchId";
-            txtsupplier.SelectedIndex = -1; 
+            LoadSupplierComboBox();
         }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        {
+            string searchText = txtsupplier.Text.Trim();
 
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames = mortalityDL.GetBatchNames(searchText);
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
+            Cursor.Current = Cursors.Default;
+        }
 
         private void dataGridView2_rowselected(object sender, DataGridViewCellEventArgs e)
         {
@@ -328,6 +353,11 @@ txtsupplier.DisplayMember = "batchName";
             this.Hide();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,7 +55,7 @@ namespace PoultryProject.DL
                 }
             }
         }
-        public static List<string> GetSupplierNamesLike(string partialName)
+        public static List<string> GetSupplierNamesLike(string partialName, string type)
         {
             List<string> names = new List<string>();
 
@@ -64,11 +64,12 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT Name FROM suppliers WHERE Name LIKE @name";
+                    string query = "SELECT Name FROM suppliers WHERE Name LIKE @name AND SupplierType = @type";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", $"%{partialName}%");
+                        cmd.Parameters.AddWithValue("@type", type);
 
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -82,7 +83,7 @@ namespace PoultryProject.DL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error searching supplier names: " + ex.Message);
+                Console.WriteLine($"Error fetching supplier names: {ex.Message}");
             }
 
             return names;
@@ -142,6 +143,37 @@ namespace PoultryProject.DL
             return bills;
         }
 
+        public static List<string> Getname(string partialName)
+        {
+            List<string> names = new List<string>();
 
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT Name FROM suppliers WHERE Name LIKE @name";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", $"%{partialName}%");
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                names.Add(reader.GetString("Name"));
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching supplier names: {ex.Message}");
+            }
+            return names;
+        }
     }
 }

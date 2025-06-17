@@ -22,11 +22,11 @@ namespace PoultryProject.BL.Bl
                 return false;
             }
         }
-        public List<string> getsuppliernames(string name)
+        public List<string> getsuppliernames(string name,string type)
         {
             try
             {
-                return PoultryProject.DL.supplierBillDL.GetSupplierNamesLike(name);
+                return PoultryProject.DL.supplierBillDL.GetSupplierNamesLike(name,type);
             }
             catch (Exception ex)
             {

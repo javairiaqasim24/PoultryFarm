@@ -51,8 +51,7 @@ namespace Poultary.UI
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            var result = supplier.getsupplierbytype("feed");
-            txtsupplier.DataSource = result;
+         
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -161,11 +160,13 @@ namespace Poultary.UI
         }
         private void LoadSupplierComboBox()
         {
-            txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
-            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None; // ✅ No auto-fill
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.None; // ✅ We're handling suggestions manually
+            txtsupplier.AutoCompleteCustomSource = null; // not needed since using Items directly
+
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown; // ✅ Allow typing
         }
+
         private void txtsupplier_TextUpdate(object sender, EventArgs e)
         {
             string searchText = txtsupplier.Text.Trim();
@@ -173,7 +174,7 @@ namespace Poultary.UI
             if (string.IsNullOrEmpty(searchText))
                 return;
 
-            var matchingNames = idl.getsuppliernames(searchText);
+            var matchingNames = idl.getsuppliernames(searchText,"Feed");
 
             var autoSource = new AutoCompleteStringCollection();
             autoSource.AddRange(matchingNames.ToArray());
@@ -211,7 +212,7 @@ namespace Poultary.UI
         private bool isPanelCollapsed = true;
         private const int PanelExpandedWidth = 181;
         private const int PanelCollapsedWidth = 50;
-        private const int SlideStep = 10;
+        private const int SlideStep = 25;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         private void timer1_Tick(object sender, EventArgs e)
         {

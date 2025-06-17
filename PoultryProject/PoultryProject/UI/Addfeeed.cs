@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
+using PoultryProject.DL;
 using pro.BL.Bl;
 using pro.Interface;
 
@@ -28,6 +29,36 @@ namespace PoultryProject.UI
         private void Addfeeed_Load(object sender, EventArgs e)
         {
             load();
+            LoadSupplierComboBox();
+        }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        {
+            string searchText = txtsupplier.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames = supplierBillDL.GetSupplierNamesLike(searchText, "Feed");
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
+            Cursor.Current = Cursors.Default;
         }
         private void load()
         {
@@ -37,6 +68,7 @@ namespace PoultryProject.UI
             txtsupplier.DataSource = suppliers;
             txtsupplier.SelectedIndex = -1; 
         }
+
         private void btnadd_Click(object sender, EventArgs e)
         {
             string name = txtname.Text; 

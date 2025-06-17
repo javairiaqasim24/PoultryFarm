@@ -53,7 +53,7 @@
             // 
             this.txtsupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Location = new System.Drawing.Point(52, 99);
+            this.txtsupplier.Location = new System.Drawing.Point(52, 88);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 86;

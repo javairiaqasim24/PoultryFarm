@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
+using PoultryProject.DL;
 /*using PoultryProject.Interfaces;
 */
 namespace PoultryProject.UI
@@ -18,11 +19,37 @@ namespace PoultryProject.UI
 
         private void addfeedusage_Load(object sender, EventArgs e)
         {
-            var list = ibl.GetChickBatchNames();
-            txtsupplier.DataSource = list;
-            txtsupplier.SelectedIndex = -1;
+            LoadSupplierComboBox();
         }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        {
+            string searchText = txtsupplier.Text.Trim();
 
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames = ibl.GetChickBatchNames(searchText);
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
+            Cursor.Current = Cursors.Default;
+        }
         private void btnadd_Click(object sender, EventArgs e)
         {
             if (txtsupplier.SelectedIndex == -1)
