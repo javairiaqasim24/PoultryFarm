@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Poultary;
 using Poultary.UI;
 using PoultryProject.DL;
+using pro.BL.Model;
 using pro.UI;
 
 namespace PoultryProject.UI
@@ -113,7 +115,7 @@ namespace PoultryProject.UI
 
         private void txtsrch_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnsrch_Click(object sender, EventArgs e)
