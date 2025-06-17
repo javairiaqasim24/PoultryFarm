@@ -20,8 +20,8 @@ namespace PoultryProject.DL
                         c.Name AS 'Name',
                         b.weight AS 'Weight',
                         b.TotalAmount AS 'Total Amount',
-                        p.`payed amount` AS 'Paid Amount',
-                        p.`Dueamount` AS 'Remaining Amount',
+                        p.`Payed Amount` AS 'Paid Amount',
+                        p.`Due Amount` AS 'Remaining Amount',
                         b.SaleDate AS 'SaleDate'
                     FROM customerbills b
                     JOIN customers c ON b.CustomerID = c.CustomerID
@@ -79,12 +79,12 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT SUM(Dueamount) FROM customerpayments WHERE Dueamount > 0";
+                    string query = "SELECT SUM(`Due Amount`) FROM customerpayments;";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         object result = cmd.ExecuteScalar();
-                        return result != DBNull.Value ? Convert.ToDouble(result) : 0.0;
+                        return result != DBNull.Value && result != null ? Convert.ToDouble(result) : 0.0;
                     }
                 }
             }
@@ -94,6 +94,7 @@ namespace PoultryProject.DL
                 return 0.0;
             }
         }
+
     }
 }
     

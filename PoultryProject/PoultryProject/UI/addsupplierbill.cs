@@ -86,6 +86,9 @@ namespace PoultryProject.UI
             txtsupplier.SelectionLength = 0;
         }
 
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

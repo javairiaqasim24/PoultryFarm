@@ -307,7 +307,7 @@ namespace Poultary.UI
         private void button11_Click(object sender, EventArgs e)
         {
 
-           
+            new Sellchicks().ShowDialog();
         }
 
         private void button12_Click(object sender, EventArgs e)

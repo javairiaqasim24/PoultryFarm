@@ -57,6 +57,7 @@
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 86;
+            this.txtsupplier.SelectedIndexChanged += new System.EventHandler(this.txtsupplier_SelectedIndexChanged);
             this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // btnadd

@@ -336,6 +336,23 @@ namespace PoultryProject.UI
         {
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string text=textBox1.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return;
+            }
+            var list =supplierBillDL.GetBillsBySupplierName(text);
+            dataGridView2.DataSource = list;
+            dataGridView2.Columns["id"].Visible = false;
+            dataGridView2.Columns["batchid"].Visible=false;
+            dataGridView2.Columns["supplierid"].Visible = false;
+            dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
     }
 
 }
