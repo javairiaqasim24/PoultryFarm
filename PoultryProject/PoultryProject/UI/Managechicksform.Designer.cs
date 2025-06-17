@@ -880,6 +880,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Managechicksform";
             this.Text = "Managechicksform";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Managechicksform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

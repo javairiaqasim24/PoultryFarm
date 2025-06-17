@@ -120,7 +120,7 @@ namespace pro.UI
 
         private void button8_Click(object sender, EventArgs e)
         {
-            AddCustomer addCustomer = new AddCustomer(this);
+            AddCustomer addCustomer = new AddCustomer();
             addCustomer.ShowDialog();   
         }
 

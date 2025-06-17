@@ -155,7 +155,7 @@ namespace pro.DL
         {
             string query = @"SELECT SupplierID, Name, ContactInfo,SupplierType, Address 
                      FROM suppliers 
-                     WHERE SupplierType LIKE @name";
+                     WHERE Name LIKE @name";
 
             List<Suppliers> suppliers = new List<Suppliers>();
 

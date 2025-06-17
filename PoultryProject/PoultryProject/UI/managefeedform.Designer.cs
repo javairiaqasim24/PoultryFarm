@@ -826,6 +826,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "managefeedform";
             this.Text = "managefeedform";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.managefeedform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
