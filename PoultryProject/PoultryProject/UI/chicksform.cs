@@ -307,9 +307,7 @@ namespace Poultary.UI
         private void button11_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
-            new addsupplierbill().ShowDialog();
-            this.Close();
+           
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -318,6 +316,13 @@ namespace Poultary.UI
             new Sellchicks().ShowDialog();
             this.Close();
 
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new addsupplierbill().ShowDialog();
+            this.Close();
         }
     }
 }
