@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration; // Required for reading from App.config
 using MySql.Data.MySqlClient;
+using System.Data;
+using System;
+
 namespace KIMS
 {
     public class DatabaseHelper
     {
-
-
-
-
+        // Get connection string from App.config
         public static MySqlConnection GetConnection()
         {
-            return new MySqlConnection(connectionString);
+            string connStr = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+            return new MySqlConnection(connStr);
         }
+
         public static MySqlDataReader ExecuteReader(string query, MySqlParameter[] parameters = null)
         {
             var conn = GetConnection();
@@ -27,6 +23,7 @@ namespace KIMS
                 cmd.Parameters.AddRange(parameters);
             return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
+
         public static int GetLastInsertId()
         {
             string query = "SELECT LAST_INSERT_ID();";
@@ -39,6 +36,7 @@ namespace KIMS
                 }
             }
         }
+
         public static int ExecuteNonQuery(string query, MySqlParameter[] parameters = null)
         {
             using (var conn = GetConnection())

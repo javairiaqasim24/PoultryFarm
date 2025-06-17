@@ -34,7 +34,7 @@ namespace PoultryProject.UI
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string supplier = txtsupplier.Text;  // Get selected or typed text from ComboBox
+            string supplier = txtsupplier.Text;  
             string batch = txtname.Text;
             DateTime date = txtdate.Value;
             string description = txtnotes.Text;

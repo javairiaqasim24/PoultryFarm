@@ -151,11 +151,11 @@ namespace pro.DL
             return suppliers;
         }
 
-        public static List<Suppliers> SearchSuppliersByName(string name)
+        public static List<Suppliers> SearchSuppliersByName(string keyword)
         {
-            string query = @"SELECT SupplierID, Name, ContactInfo,SupplierType, Address 
+            string query = @"SELECT SupplierID, Name, ContactInfo, SupplierType, Address 
                      FROM suppliers 
-                     WHERE Name LIKE @name";
+                     WHERE Name LIKE @keyword OR SupplierType LIKE @keyword";
 
             List<Suppliers> suppliers = new List<Suppliers>();
 
@@ -164,7 +164,7 @@ namespace pro.DL
                 conn.Open();
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", "%" + name + "%"); // wildcard search
+                    cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -186,6 +186,7 @@ namespace pro.DL
 
             return suppliers;
         }
+
         public static List<string> GetSupplierNamesByType(string supplierType)
         {
             List<string> names = new List<string>();
