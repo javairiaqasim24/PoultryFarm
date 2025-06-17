@@ -19,14 +19,14 @@ namespace pro.UI
     public partial class AddCustomer : Form
     {
         Icustomer cus=new CustomerBL();
-        private Customer main;
+       
         private Sellchicks sellchicks;
         private Sellchicks sellchicks1;
 
-        public AddCustomer(Customer main)
+        public AddCustomer()
         {
             InitializeComponent();
-            this.main = main;
+          
         }
 
         public AddCustomer(Sellchicks sellchicks)
@@ -49,7 +49,6 @@ namespace pro.UI
             if (result)
             {
                 MessageBox.Show("Customer added successfully.");
-                main.LoadCustomer();
                 this.Close();
 
             }
