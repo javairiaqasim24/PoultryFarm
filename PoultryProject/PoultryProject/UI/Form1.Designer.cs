@@ -192,6 +192,7 @@
             this.Dueslb.Size = new System.Drawing.Size(113, 45);
             this.Dueslb.TabIndex = 10;
             this.Dueslb.Text = "label9";
+            this.Dueslb.Click += new System.EventHandler(this.Dueslb_Click);
             // 
             // label6
             // 
@@ -217,6 +218,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 5;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click_1);
             // 
             // panel10
             // 
@@ -241,6 +243,7 @@
             this.paymentlb.Size = new System.Drawing.Size(113, 45);
             this.paymentlb.TabIndex = 10;
             this.paymentlb.Text = "label9";
+            this.paymentlb.Click += new System.EventHandler(this.paymentlb_Click);
             // 
             // label5
             // 
@@ -279,6 +282,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(344, 388);
             this.panel12.TabIndex = 13;
+            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint_1);
             // 
             // usagelb
             // 
@@ -351,6 +355,7 @@
             this.label7.Size = new System.Drawing.Size(195, 32);
             this.label7.TabIndex = 7;
             this.label7.Text = "Today Mortatlity";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // pictureBox14
             // 

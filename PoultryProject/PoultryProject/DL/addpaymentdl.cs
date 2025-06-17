@@ -52,7 +52,7 @@ namespace PoultryProject.DL
             using (MySqlConnection conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT `Due amount` FROM customerpayments WHERE CustomerID = @cid AND BillID = @bid";
+                string query = "SELECT `Dueamount` FROM customerpayments WHERE CustomerID = @cid AND BillID = @bid";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@cid", customerId);

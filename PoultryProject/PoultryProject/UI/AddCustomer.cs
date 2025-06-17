@@ -12,6 +12,7 @@ using pro.BL.Bl;
 using pro.Interface;
 using pro.BL.Bl;
 using Poultary.BL.Models;
+using PoultryProject.UI;
 
 namespace pro.UI
 {
@@ -19,11 +20,21 @@ namespace pro.UI
     {
         Icustomer cus=new CustomerBL();
         private Customer main;
+        private Sellchicks sellchicks;
+        private Sellchicks sellchicks1;
+
         public AddCustomer(Customer main)
         {
             InitializeComponent();
             this.main = main;
         }
+
+        public AddCustomer(Sellchicks sellchicks)
+        {
+            this.sellchicks = sellchicks;
+        }
+
+       
 
         private void btnadd_Click(object sender, EventArgs e)
         {

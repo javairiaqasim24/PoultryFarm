@@ -255,7 +255,7 @@ namespace pro.UI
         {
            customerpayments customerpayments = new customerpayments();
             this.Hide();
-            customerpayments.Show();
+            customerpayments.ShowDialog();
             this.Close();
         }
 

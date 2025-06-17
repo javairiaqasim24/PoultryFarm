@@ -6,18 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 namespace KIMS
 {
     public class DatabaseHelper
     {
 
 
-        private static string connectionString = "Server=127.0.0.1;Database=poultary;Uid=root;Pwd=Ahadsaab@263";
+        //private static string connectionString = "Server=127.0.0.1;Database=poultary;Uid=root;Pwd=Ahadsaab@263";
 
 
         public static MySqlConnection GetConnection()
         {
-            return new MySqlConnection(connectionString);
+            string connection = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+            return new MySqlConnection(connection);
         }
         public static MySqlDataReader ExecuteReader(string query, MySqlParameter[] parameters = null)
         {

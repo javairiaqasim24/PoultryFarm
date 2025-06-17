@@ -296,5 +296,10 @@ namespace pro.UI
         {
 
         }
+
+        private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

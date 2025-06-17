@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using KIMS;
 using MySql.Data.MySqlClient;
 using PoultryProject.DL;
+using pro.UI;
 
 namespace PoultryProject.UI
 {
@@ -35,13 +36,13 @@ namespace PoultryProject.UI
             {
 
 
-                namesofcustomers = sellchicksdl.Getnames("medicname");
+                namesofcustomers = sellchicksdl.Getnames("Name");
 
                 // Diagnostic output
-                Debug.WriteLine($"Loaded {namesofcustomers.Count} drug names");
+                Debug.WriteLine($"Loaded {namesofcustomers.Count}  name");
                 if (namesofcustomers.Count == 0)
                 {
-                    MessageBox.Show("No drug names found in database. Check products table.");
+                    MessageBox.Show("No customers found in database. Check products table.");
                 }
 
                 combocustomer.DataSource = namesofcustomers;
@@ -54,7 +55,7 @@ namespace PoultryProject.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading products: {ex.Message}\nCheck db_error.log for details");
+                MessageBox.Show($"Error loading name: {ex.Message}\nCheck db_error.log for details");
             }
         }
 
@@ -97,7 +98,7 @@ namespace PoultryProject.UI
                     }
 
                     // 2. Insert into customerpayments
-                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Due amount`, Notes)
+                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Dueamount`, Notes)
                                           VALUES (@custId, @billId, @paid, @due, @notes)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertPaymentQuery, conn))
@@ -310,5 +311,6 @@ namespace PoultryProject.UI
 
         }
 
+      
     }
 }

@@ -301,5 +301,18 @@ namespace PoultryProject.UI
         {
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            supplierpayments c = new supplierpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

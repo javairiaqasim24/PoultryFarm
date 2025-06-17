@@ -448,5 +448,30 @@ namespace Poultary
         {
 
         }
+
+        private void paymentlb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dueslb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
