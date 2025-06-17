@@ -1382,6 +1382,7 @@ namespace pro.UI
             this.Name = "Staff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffUI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Staff_FormClosed);
             this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
