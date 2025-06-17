@@ -300,5 +300,20 @@ namespace pro.UI
             s.ShowDialog();
             this.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new priccerecordform().ShowDialog();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new supplierpayments().ShowDialog();
+            this.Close();
+
+        }
     }
 }

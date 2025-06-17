@@ -19,11 +19,7 @@ namespace PoultryProject.BL.Bl
                     return false;
                 }
 
-                if (s.supplierID <= 0)
-                {
-                    Console.WriteLine("Invalid Supplier ID.");
-                    return false;
-                }
+              
 
                 if (s.amountPaid <= 0)
                 {

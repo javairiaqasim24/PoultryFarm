@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Poultary;
 using Poultary.UI;
 using PoultryProject.BL.Bl;
+using PoultryProject.DL;
 using PoultryProject.Interfaces;
 
 namespace PoultryProject.UI
@@ -40,8 +41,8 @@ namespace PoultryProject.UI
         {
             var list = ibl.getsupplierpayments();
             dataGridView2.DataSource = list;
-            dataGridView2.Columns["supplierid"].Visible = false; 
-            dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.Columns["supplierid"].Visible = false;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
 
@@ -183,6 +184,20 @@ namespace PoultryProject.UI
         private void button10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string text = textBox1.Text.Trim();
+            if (string.IsNullOrEmpty(text))
+            {
+                loadgrid();
+            }
+            else
+            {
+                var list = supplierpaymentDl.GetAllSupplierPriceRecords().Where(x => x.supplierName.ToLower().Contains(text.ToLower())).ToList();
+                dataGridView2.DataSource = list;
+            }
         }
     }
 }

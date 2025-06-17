@@ -14,16 +14,22 @@ namespace PoultryProject.DL
         public static bool addsupplierpayment(supplierpayment s)
         {
             s.supplierID = GetCustomerIdByName(s.supplierName);
-            string query = "INSERT INTO supplierpricerecord (BillID, supplier_id, date, payment) VALUES (@billID, @supplierID, @paymentDate, @amountPaid)";
-            var parameters = new MySql.Data.MySqlClient.MySqlParameter[]
+            if (s.supplierID == -1)
             {
-                    new MySql.Data.MySqlClient.MySqlParameter("@billID", s.billID),
-                    new MySql.Data.MySqlClient.MySqlParameter("@supplierID", s.supplierID),
-                    new MySql.Data.MySqlClient.MySqlParameter("@paymentDate", s.paymentDate),
-                    new MySql.Data.MySqlClient.MySqlParameter("@amountPaid", s.amountPaid)
+                throw new Exception($"Supplier '{s.supplierName}' not found in database.");
+            }
+
+            string query = "INSERT INTO supplierpricerecord (BillID, supplier_id, date, payment) VALUES (@billID, @supplierID, @paymentDate, @amountPaid)";
+            var parameters = new MySqlParameter[]
+            {
+        new MySqlParameter("@billID", s.billID),
+        new MySqlParameter("@supplierID", s.supplierID),
+        new MySqlParameter("@paymentDate", s.paymentDate),
+        new MySqlParameter("@amountPaid", s.amountPaid)
             };
             return DatabaseHelper.ExecuteNonQuery(query, parameters) > 0;
         }
+
         public static int GetCustomerIdByName(string name)
         {
             using (MySqlConnection conn = DatabaseHelper.GetConnection())

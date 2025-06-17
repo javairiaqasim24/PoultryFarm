@@ -241,5 +241,12 @@ namespace Poultary.UI
             s.ShowDialog();
             this.Close();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new addsupplierbill().ShowDialog();
+            this.Close();
+        }
     }
 }

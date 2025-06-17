@@ -56,22 +56,33 @@ namespace PoultryProject.UI
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string name = txtsupplier.Text.Trim();
-            int billid = Convert.ToInt32(txtbill.Text);
-            DateTime date = txtdate.Value;
-            double amount = Convert.ToDouble(txtamount.Text);
-            supplierpayment s = new supplierpayment(billid, name, 0, date, amount);
-            bool result = ibl.addsupplierpayments(s);
-            if (result)
+            try
             {
-                MessageBox.Show("Supplier payment added successfully.");
-                this.Close();
+                string name = txtsupplier.Text.Trim();
+                int billid = Convert.ToInt32(txtbill.Text);
+                DateTime date = txtdate.Value;
+                double amount = Convert.ToDouble(txtamount.Text);
+
+                supplierpayment s = new supplierpayment(billid, name, date, amount);
+
+                bool result = ibl.addsupplierpayments(s);
+
+                if (result)
+                {
+                    MessageBox.Show("Supplier payment added successfully.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add supplier payment. Please try again.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Failed to add supplier payment. Please try again.");
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
     }
 
 }

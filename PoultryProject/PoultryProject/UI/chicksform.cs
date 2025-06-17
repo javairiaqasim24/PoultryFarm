@@ -302,5 +302,19 @@ namespace Poultary.UI
             new Form1().ShowDialog();
             this.Close();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new addsupplierbill().ShowDialog();
+            this.Close();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Sellchicks().ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -21,5 +21,12 @@ namespace PoultryProject.BL.Models
             this.paymentDate = paymentDate;
             this.amountPaid = amountPaid;
         }
+        public supplierpayment(int billID, string supplierName, DateTime paymentDate, double amountPaid)
+        {
+            this.billID = billID;
+            this.supplierName = supplierName;
+            this.paymentDate = paymentDate;
+            this.amountPaid = amountPaid;
+        }
     }
 }
