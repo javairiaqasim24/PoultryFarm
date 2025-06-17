@@ -707,6 +707,7 @@
             this.dataGridViewCustomer.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(1124, 261);
             this.dataGridViewCustomer.TabIndex = 39;
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             // 
             // Customer
             // 

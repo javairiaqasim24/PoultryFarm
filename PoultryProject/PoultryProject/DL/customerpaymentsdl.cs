@@ -21,7 +21,7 @@ namespace PoultryProject.DL
                         b.weight AS 'Weight',
                         b.TotalAmount AS 'Total Amount',
                         p.`payed amount` AS 'Paid Amount',
-                        p.`Due amount` AS 'Remaining Amount',
+                        p.`Dueamount` AS 'Remaining Amount',
                         b.SaleDate AS 'SaleDate'
                     FROM customerbills b
                     JOIN customers c ON b.CustomerID = c.CustomerID
@@ -79,7 +79,7 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT SUM(DueAmount) FROM customerpayments WHERE DueAmount > 0";
+                    string query = "SELECT SUM(Dueamount) FROM customerpayments WHERE Dueamount > 0";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
@@ -90,7 +90,7 @@ namespace PoultryProject.DL
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error fetching total supplier dues: " + ex.Message);
+                Console.WriteLine("Error fetching total customer dues: " + ex.Message);
                 return 0.0;
             }
         }

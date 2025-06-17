@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnadd
@@ -46,10 +47,10 @@
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnadd.Location = new System.Drawing.Point(206, 415);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnadd.Location = new System.Drawing.Point(232, 519);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(132, 51);
+            this.btnadd.Size = new System.Drawing.Size(148, 64);
             this.btnadd.TabIndex = 75;
             this.btnadd.Text = "Add";
             this.btnadd.UseVisualStyleBackColor = false;
@@ -64,10 +65,10 @@
             this.comboBoxType.Items.AddRange(new object[] {
             "Admin",
             "Employee"});
-            this.comboBoxType.Location = new System.Drawing.Point(154, 356);
+            this.comboBoxType.Location = new System.Drawing.Point(173, 445);
             this.comboBoxType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(245, 30);
+            this.comboBoxType.Size = new System.Drawing.Size(275, 34);
             this.comboBoxType.TabIndex = 74;
             // 
             // txtemail
@@ -77,10 +78,10 @@
             this.txtemail.BackColor = System.Drawing.Color.Transparent;
             this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtemail.Location = new System.Drawing.Point(150, 334);
+            this.txtemail.Location = new System.Drawing.Point(169, 418);
             this.txtemail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(85, 20);
+            this.txtemail.Size = new System.Drawing.Size(106, 25);
             this.txtemail.TabIndex = 73;
             this.txtemail.Text = "Select Role";
             this.txtemail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,10 +91,11 @@
             this.txtCNIC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCNIC.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNIC.Location = new System.Drawing.Point(154, 274);
+            this.txtCNIC.Location = new System.Drawing.Point(173, 342);
+            this.txtCNIC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCNIC.Multiline = true;
             this.txtCNIC.Name = "txtCNIC";
-            this.txtCNIC.Size = new System.Drawing.Size(245, 35);
+            this.txtCNIC.Size = new System.Drawing.Size(275, 43);
             this.txtCNIC.TabIndex = 72;
             // 
             // txtcontact
@@ -101,10 +103,11 @@
             this.txtcontact.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtcontact.BackColor = System.Drawing.Color.Gainsboro;
             this.txtcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcontact.Location = new System.Drawing.Point(154, 191);
+            this.txtcontact.Location = new System.Drawing.Point(173, 239);
+            this.txtcontact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtcontact.Multiline = true;
             this.txtcontact.Name = "txtcontact";
-            this.txtcontact.Size = new System.Drawing.Size(245, 35);
+            this.txtcontact.Size = new System.Drawing.Size(275, 43);
             this.txtcontact.TabIndex = 71;
             // 
             // txtname
@@ -112,10 +115,11 @@
             this.txtname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtname.BackColor = System.Drawing.Color.Gainsboro;
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(154, 112);
+            this.txtname.Location = new System.Drawing.Point(173, 140);
+            this.txtname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(245, 35);
+            this.txtname.Size = new System.Drawing.Size(275, 43);
             this.txtname.TabIndex = 70;
             // 
             // txtrole
@@ -125,10 +129,10 @@
             this.txtrole.BackColor = System.Drawing.Color.Transparent;
             this.txtrole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtrole.Location = new System.Drawing.Point(150, 251);
+            this.txtrole.Location = new System.Drawing.Point(169, 314);
             this.txtrole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtrole.Name = "txtrole";
-            this.txtrole.Size = new System.Drawing.Size(44, 20);
+            this.txtrole.Size = new System.Drawing.Size(54, 25);
             this.txtrole.TabIndex = 69;
             this.txtrole.Text = "CNIC";
             this.txtrole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,10 +144,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label5.Location = new System.Drawing.Point(150, 168);
+            this.label5.Location = new System.Drawing.Point(169, 210);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 20);
+            this.label5.Size = new System.Drawing.Size(78, 25);
             this.label5.TabIndex = 68;
             this.label5.Text = "Contact";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,10 +159,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label1.Location = new System.Drawing.Point(150, 89);
+            this.label1.Location = new System.Drawing.Point(169, 111);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(62, 25);
             this.label1.TabIndex = 67;
             this.label1.Text = "Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,19 +174,30 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label6.Location = new System.Drawing.Point(213, 19);
+            this.label6.Location = new System.Drawing.Point(240, 24);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 31);
+            this.label6.Size = new System.Drawing.Size(142, 38);
             this.label6.TabIndex = 66;
             this.label6.Text = "Add Staff";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(228, 319);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 20);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "(*Without Dsahes)";
+            // 
             // AddStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 483);
+            this.ClientSize = new System.Drawing.Size(618, 604);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.txtemail);
@@ -193,6 +208,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddStaff";
@@ -213,5 +229,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }

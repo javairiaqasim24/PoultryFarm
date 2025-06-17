@@ -70,5 +70,10 @@ namespace PoultryProject.UI
             pro.UI.AddSupplier supplierUI = new pro.UI.AddSupplier();
             supplierUI.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

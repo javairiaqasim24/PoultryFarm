@@ -201,9 +201,10 @@ namespace pro.UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
             pro.UI.Customer customer = new pro.UI.Customer();
-            customer.Show();
+            this.Hide();
+            customer.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

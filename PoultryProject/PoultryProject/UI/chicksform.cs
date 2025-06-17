@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -305,6 +306,7 @@ namespace Poultary.UI
 
         private void button11_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             new addsupplierbill().ShowDialog();
             this.Close();
@@ -315,6 +317,7 @@ namespace Poultary.UI
             this.Hide();
             new Sellchicks().ShowDialog();
             this.Close();
+
         }
     }
 }

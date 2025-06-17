@@ -26,11 +26,6 @@ namespace PoultryProject.BL.Bl
                     Console.WriteLine("Amount must be greater than 0.");
                     return false;
                 }
-
-               
-
-                
-
                 return supplierpaymentDl.addsupplierpayment(s);
             }
             catch (Exception ex)

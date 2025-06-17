@@ -54,7 +54,7 @@ namespace Poultary.UI
         {
             try
             {
-                var suppliers = supplier.getsupplierbytype("chicks"); 
+                var suppliers = supplier.getsupplierbytype("chick"); 
                 txtsupplier.DataSource = suppliers;
                 txtsupplier.SelectedIndex = -1;
             }
@@ -67,6 +67,11 @@ namespace Poultary.UI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             new pro.UI.AddSupplier().ShowDialog();
+        }
+
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
