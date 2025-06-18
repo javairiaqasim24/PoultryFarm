@@ -97,7 +97,7 @@ namespace PoultryProject.UI
                     }
 
                     // 2. Insert into customerpayments
-                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Dueamount`, Notes)
+                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Due amount`, Notes)
                                           VALUES (@custId, @billId, @paid, @due, @notes)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertPaymentQuery, conn))

@@ -106,27 +106,32 @@ namespace Poultary.DL
                 }
             }
         }
-        public static List<mortality> GetBatchNames()
+        public static List<string> GetBatchNames(string text)
         {
-            List<mortality> batches = new List<mortality>();
+            List<string> batches = new List<string>();
+
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string query = "SELECT BatchId, BatchName FROM chickbatches";
+                string query = "SELECT BatchName FROM chickbatches WHERE BatchName LIKE @searchText";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@searchText", "%" + text + "%");
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            mortality m = new mortality(  reader.GetString("BatchName"),reader.GetInt32("BatchId"));
-                            batches.Add(m);
+                            batches.Add(reader.GetString("BatchName"));
                         }
                     }
                 }
             }
+
             return batches;
         }
+
+
         public static List<mortality> SearchMortalityByDate(DateTime date)
         {
             List<mortality> mortalities = new List<mortality>();

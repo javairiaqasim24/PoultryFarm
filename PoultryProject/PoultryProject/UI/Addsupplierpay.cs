@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
+using PoultryProject.DL;
 using PoultryProject.Interfaces;
 
 namespace PoultryProject.UI
@@ -19,6 +20,8 @@ namespace PoultryProject.UI
         public Addsupplierpay()
         {
             InitializeComponent();
+            this.txtsupplier.Leave += new System.EventHandler(this.txtsupplier_Leave);
+
         }
 
         private void Addsupplierpay_Load(object sender, EventArgs e)
@@ -27,7 +30,7 @@ namespace PoultryProject.UI
         }
         private void LoadSupplierComboBox()
         {
-            txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
             txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
             txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
@@ -52,6 +55,14 @@ namespace PoultryProject.UI
             txtsupplier.DroppedDown = true;
             txtsupplier.SelectionStart = txtsupplier.Text.Length;
             txtsupplier.SelectionLength = 0;
+        }
+        private void txtsupplier_Leave(object sender, EventArgs e)
+        {
+            string supplierName = txtsupplier.Text.Trim();
+            if (!string.IsNullOrEmpty(supplierName))
+            {
+                LoadSupplierBillIds(supplierName);
+            }
         }
 
         private void btnadd_Click(object sender, EventArgs e)
@@ -83,6 +94,35 @@ namespace PoultryProject.UI
             }
         }
 
-    }
+        private void txtbill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // REMOVE this completely
+        }
 
+        private void LoadSupplierBillIds(string supplierName)
+        {
+            if (string.IsNullOrWhiteSpace(supplierName))
+                return;
+
+            var billIds = supplierpaymentDl.GetBillIdsBySupplierName(supplierName);
+
+            txtbill.DataSource = null;
+            txtbill.Items.Clear();
+
+            if (billIds != null && billIds.Count > 0)
+            {
+                // Convert to string list if needed
+                var items = billIds.Select(id => id.ToString()).ToArray();
+
+                txtbill.Items.AddRange(items);
+
+                // Let the user select manually — keep no selection initially
+                txtbill.SelectedIndex = -1;
+                txtbill.Text = ""; // Clear display text manually if needed
+            }
+        }
+
+
+
+    }
 }

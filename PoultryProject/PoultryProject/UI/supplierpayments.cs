@@ -37,6 +37,8 @@ namespace PoultryProject.UI
             panel7.Dock = DockStyle.Fill;
             this.Shown += ViewOrderAd_Shown;
             timer1.Tick += timer1_Tick;
+            this.txtsupplier.Leave += txtsupplier_Leave;
+
 
         }
 
@@ -98,7 +100,7 @@ namespace PoultryProject.UI
             if (string.IsNullOrEmpty(searchText))
                 return;
 
-            var matchingNames = ibl.getsuppliernames(searchText);
+            var matchingNames = supplierBillDL.Getname(searchText);
 
             var autoSource = new AutoCompleteStringCollection();
             autoSource.AddRange(matchingNames.ToArray());
@@ -212,7 +214,28 @@ namespace PoultryProject.UI
                 }
             }
         }
+        private void LoadSupplierBillIds(string supplierName)
+        {
+            if (string.IsNullOrWhiteSpace(supplierName))
+                return;
 
+            var billIds = supplierpaymentDl.GetBillIdsBySupplierName(supplierName);
+
+            txtbill.DataSource = null;
+            txtbill.Items.Clear();
+
+            if (billIds != null && billIds.Count > 0)
+            {
+                // Convert to string list if needed
+                var items = billIds.Select(id => id.ToString()).ToArray();
+
+                txtbill.Items.AddRange(items);
+
+                // Let the user select manually — keep no selection initially
+                txtbill.SelectedIndex = -1;
+                txtbill.Text = ""; // Clear display text manually if needed
+            }
+        }
         private void button7_Click(object sender, EventArgs e)
         {
             customerpayments customerpayments = new customerpayments();
@@ -336,6 +359,32 @@ namespace PoultryProject.UI
         {
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string text=textBox1.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return;
+            }
+            var list =supplierBillDL.GetBillsBySupplierName(text);
+            dataGridView2.DataSource = list;
+            dataGridView2.Columns["id"].Visible = false;
+            dataGridView2.Columns["batchid"].Visible=false;
+            dataGridView2.Columns["supplierid"].Visible = false;
+            dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
+        private void txtsupplier_Leave(object sender, EventArgs e)
+        {
+            string name = txtsupplier.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                LoadSupplierBillIds(name);
+            }
+        }
+
     }
 
 }

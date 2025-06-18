@@ -9,7 +9,7 @@ namespace PoultryProject.DL
 {
     public class trackfeedDL
     {
-        // Create
+       
         public bool addtrack(trackfeed g)
         {
             try
@@ -18,7 +18,7 @@ namespace PoultryProject.DL
 
                 if (g.batchid == -1)
                 {
-                    return false;  // Batch not found
+                    return false;  
                 }
 
                 using (var conn = DatabaseHelper.GetConnection())
@@ -42,7 +42,7 @@ namespace PoultryProject.DL
             }
         }
 
-        // Read
+        
         public List<trackfeed> getAllTracks()
         {
             List<trackfeed> list = new List<trackfeed>();
@@ -62,7 +62,6 @@ namespace PoultryProject.DL
                         {
                             while (reader.Read())
                             {
-                                // Constructor: trackfeed(int id, string name, int batchid, int sacksUsed, DateTime date)
                                 trackfeed tf = new trackfeed(
                                     reader.GetInt32("UsageID"),
                                     reader.GetString("BatchName"),
@@ -80,7 +79,6 @@ namespace PoultryProject.DL
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in getAllTracks: {ex.Message}");
-                // Optionally, you can log this or rethrow
             }
 
             return list;
@@ -90,7 +88,6 @@ namespace PoultryProject.DL
 
 
 
-        // Update
         public bool updateTrack(trackfeed g)
         {
             try
@@ -145,7 +142,6 @@ namespace PoultryProject.DL
             }
         }
 
-        // Helper: Get BatchID from FeedBatchName
         private static int getbatchid(string name)
         {
             try
@@ -168,7 +164,7 @@ namespace PoultryProject.DL
                 return -1;
             }
         }
-        public List<string> GetChickBatchNames()
+        public List<string> GetChickBatchNames(string text)
         {
             List<string> names = new List<string>();
             try
@@ -176,14 +172,18 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT BatchName FROM feedbatches";
+                    string query = "SELECT BatchName FROM feedbatches WHERE BatchName LIKE @searchText";
 
                     using (var cmd = new MySqlCommand(query, conn))
-                    using (var reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        cmd.Parameters.AddWithValue("@searchText", "%" + text + "%");
+
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            names.Add(reader.GetString("BatchName"));
+                            while (reader.Read())
+                            {
+                                names.Add(reader.GetString("BatchName"));
+                            }
                         }
                     }
                 }
@@ -196,7 +196,8 @@ namespace PoultryProject.DL
             return names;
         }
 
-        // Search feed usage records by batch name and/or date
+
+
         public static List<trackfeed> SearchTrackFeeds(string searchText)
         {
             List<trackfeed> list = new List<trackfeed>();

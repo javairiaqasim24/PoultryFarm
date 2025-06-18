@@ -130,7 +130,7 @@ namespace PoultryProject.UI
 
             try
             {
-                dataGridView2.AutoGenerateColumns = true; // Allow auto-binding for simplicity
+                dataGridView2.AutoGenerateColumns = true; 
                 DataTable dt = customerpaymentsdl.SearchCustomerPayments(name);
 
                 if (dt.Rows.Count == 0)
@@ -150,6 +150,8 @@ namespace PoultryProject.UI
         private void customerpayments_Load(object sender, EventArgs e)
         {
 
+            LoadPaymentData();
+            FormatGrid();
         }
 
         private void button1_Click(object sender, EventArgs e)

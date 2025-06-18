@@ -10,6 +10,6 @@ public interface ITrackfeed
     List<trackfeed> getAllTracks();
 
     // New methods
-    List<string> GetChickBatchNames();
+    List<string> GetChickBatchNames(string text);
     List<trackfeed> searchTrackFeeds(string batchName);
 }

@@ -51,15 +51,11 @@
             // txtsupplier
             // 
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Items.AddRange(new object[] {
-            "fresh",
-            "useable",
-            "rotten"});
             this.txtsupplier.Location = new System.Drawing.Point(75, 83);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 66;
-            this.txtsupplier.SelectedIndexChanged += new System.EventHandler(this.txtsupplier_SelectedIndexChanged);
+            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // btnadd
             // 

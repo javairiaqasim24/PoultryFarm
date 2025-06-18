@@ -10,6 +10,6 @@ namespace PoultryProject.Interfaces
     public interface IsupplierBill
     {
         bool addsupplierbills(supplierbill b);
-        List<string> getsuppliernames(string name);
+        List<string> getsuppliernames(string name,string type);
     }
 }

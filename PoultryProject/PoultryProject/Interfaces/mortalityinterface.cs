@@ -13,7 +13,7 @@ namespace Poultary.Interfaces
             List<mortality> getmortality();
         bool updatemortality(mortality m);
         bool deletemortality(int mortalityId);
-        List<mortality> getbatchnames();
+        List<string> getbatchnames(string text);
         List<mortality> SearchMortalityByDate(DateTime date);
         List<mortality> SearchMortality(string input);
     }

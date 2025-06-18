@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Poultary.BL.Models;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
 using PoultryProject.Interfaces;
@@ -62,7 +63,8 @@ namespace PoultryProject.UI
             txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
-            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown; 
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+         
         }
         private void txtsupplier_TextUpdate(object sender, EventArgs e)
         {
@@ -71,7 +73,7 @@ namespace PoultryProject.UI
             if (string.IsNullOrEmpty(searchText))
                 return;
 
-            var matchingNames = ibl.getsuppliernames(searchText);
+            var matchingNames = ibl.getsuppliernames(searchText,"Chick");
 
             var autoSource = new AutoCompleteStringCollection();
             autoSource.AddRange(matchingNames.ToArray());
@@ -86,6 +88,9 @@ namespace PoultryProject.UI
             txtsupplier.SelectionLength = 0;
         }
 
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

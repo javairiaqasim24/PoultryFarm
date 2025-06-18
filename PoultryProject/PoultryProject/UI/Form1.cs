@@ -26,7 +26,7 @@ namespace Poultary
         public Form1()
         {
             InitializeComponent();
-            timer1.Interval = 10;
+            timer1.Interval = 5;
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             pictureBox1.MouseEnter += pictureBox_MouseEnter;

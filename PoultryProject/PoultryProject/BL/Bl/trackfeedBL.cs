@@ -46,9 +46,9 @@ namespace PoultryProject.BL.Bl
             return dl.getAllTracks();
         }
 
-        public List<string> GetChickBatchNames()
+        public List<string> GetChickBatchNames(string t)
         {
-            return dl.GetChickBatchNames();
+            return dl.GetChickBatchNames(t);
         }
 
         public List<trackfeed> searchTrackFeeds(string batchName)

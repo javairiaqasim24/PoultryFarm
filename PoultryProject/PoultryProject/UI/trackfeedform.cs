@@ -14,6 +14,8 @@ using PoultryProject.BL.Models;
 using Poultary.UI;
 using Poultary;
 using pro.UI;
+using Poultary.BL.Bl;
+using Poultary.DL;
 
 namespace PoultryProject.UI
 {
@@ -40,6 +42,36 @@ namespace PoultryProject.UI
         private void trackfeedform_Load(object sender, EventArgs e)
         {
             loadgrid();
+            LoadSupplierComboBox();
+        }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        {
+            string searchText = txtsupplier.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames =ibl.GetChickBatchNames(searchText);
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
+            Cursor.Current = Cursors.Default;
         }
         private void loadgrid()
         {
@@ -48,9 +80,7 @@ namespace PoultryProject.UI
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["batchid"].Visible = false;
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
-            var lists = ibl.GetChickBatchNames();
-            txtsupplier.DataSource=lists;
-            txtsupplier.SelectedIndex = -1;
+
             dataGridView2.RowEnter += dataGridView2_rowselected;
 
         }

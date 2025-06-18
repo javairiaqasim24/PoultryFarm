@@ -23,13 +23,9 @@ namespace Poultary.UI
 
         private void addmortality_Load(object sender, EventArgs e)
         {
-            var list=idl.getbatchnames();
-            txtsupplier.DataSource = list;
-            txtsupplier.DisplayMember= "batchName";
-            txtsupplier.ValueMember = "batchId";
-            txtsupplier.SelectedIndex = -1;
+            LoadSupplierComboBox();
         }
-
+       
         private void btnadd_Click(object sender, EventArgs e)
         {
             if (txtsupplier.SelectedValue == null)
@@ -68,6 +64,35 @@ namespace Poultary.UI
         {
 
         }
+        private void LoadSupplierComboBox()
+        {
+            txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+        private void txtsupplier_TextUpdate(object sender, EventArgs e)
+{
+            string searchText = txtsupplier.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+                return;
+
+            var matchingNames = idl.getbatchnames(searchText);
+
+            var autoSource = new AutoCompleteStringCollection();
+            autoSource.AddRange(matchingNames.ToArray());
+            txtsupplier.AutoCompleteCustomSource = autoSource;
+
+            txtsupplier.DataSource = null;
+            txtsupplier.Items.Clear();
+            txtsupplier.Items.AddRange(matchingNames.ToArray());
+
+            txtsupplier.DroppedDown = true;
+            txtsupplier.SelectionStart = txtsupplier.Text.Length;
+            txtsupplier.SelectionLength = 0;
+            Cursor.Current = Cursors.Default; 
+}
 
         private void txtdate_ValueChanged(object sender, EventArgs e)
         {

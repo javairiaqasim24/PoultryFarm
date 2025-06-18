@@ -55,7 +55,95 @@ namespace PoultryProject.DL
                 }
             }
         }
-        public static List<string> GetSupplierNamesLike(string partialName)
+        public static List<string> GetSupplierNamesLike(string partialName, string type)
+        {
+            List<string> names = new List<string>();
+
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT Name FROM suppliers WHERE Name LIKE @name AND SupplierType = @type";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", $"%{partialName}%");
+                        cmd.Parameters.AddWithValue("@type", type);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                names.Add(reader.GetString("Name"));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching supplier names: {ex.Message}");
+            }
+
+            return names;
+        }
+
+        public static List<supplierbill> GetBillsBySupplierName(string supplierName)
+        {
+            List<supplierbill> bills = new List<supplierbill>();
+
+            try
+            {
+                int supplierId = GetConditionIdByName(supplierName);
+                if (supplierId == -1)
+                {
+                    Console.WriteLine("Supplier not found.");
+                    return bills;
+                }
+
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = @"SELECT BillID,BatchName, Notes, TotalAmount, Date 
+                             FROM supplierbills 
+                             WHERE SupplierID = @SupplierID";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SupplierID", supplierId);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                supplierbill bill = new supplierbill(
+                                    reader.GetInt32("BillID"),
+                                       supplierName,
+                                            supplierId,
+                                            reader.GetDateTime("Date"),
+                                                 reader.GetDouble("TotalAmount"),
+                                                 0,
+                               reader.GetString("BatchName"),
+                             reader.IsDBNull(reader.GetOrdinal("Notes")) ? "" : reader.GetString("Notes")
+ );
+
+
+                                bills.Add(bill);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error retrieving supplier bills: " + ex.Message);
+            }
+
+            return bills;
+        }
+
+        public static List<string> Getname(string partialName)
         {
             List<string> names = new List<string>();
 
@@ -79,15 +167,13 @@ namespace PoultryProject.DL
                         }
                     }
                 }
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error searching supplier names: " + ex.Message);
+                Console.WriteLine($"Error fetching supplier names: {ex.Message}");
             }
-
             return names;
         }
-
-
     }
 }

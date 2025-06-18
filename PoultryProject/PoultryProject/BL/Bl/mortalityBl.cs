@@ -42,9 +42,9 @@ namespace Poultary.BL.Bl
 
             return DL.mortalityDL.deletemortality(mortalityId);
         }
-        public List<mortality> getbatchnames()
+        public List<string> getbatchnames(string text)
         {
-            return DL.mortalityDL.GetBatchNames();
+            return DL.mortalityDL.GetBatchNames(text);
         }
         
         public List<mortality> SearchMortalityByDate(DateTime date)
