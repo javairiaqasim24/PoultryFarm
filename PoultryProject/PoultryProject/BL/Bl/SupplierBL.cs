@@ -26,11 +26,7 @@ namespace pro.BL.Bl
                 return false;
             }
 
-            if (s.Contact.Length != 11)
-            {
-                MessageBox.Show("Contact must be 11 characters long.");
-                return false;
-            }
+          
 
             if (string.IsNullOrWhiteSpace(s.Address))
             {
@@ -60,11 +56,7 @@ namespace pro.BL.Bl
                 return false;
             }
 
-            if (s.Contact.Length != 11)
-            {
-                MessageBox.Show("Contact must be 11 characters long.");
-                return false;
-            }
+          
 
             if (string.IsNullOrWhiteSpace(s.Address))
             {

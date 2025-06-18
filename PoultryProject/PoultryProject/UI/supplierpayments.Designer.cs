@@ -64,7 +64,6 @@
             this.txtusername = new System.Windows.Forms.Label();
             this.txtnotes = new System.Windows.Forms.TextBox();
             this.txtdue = new System.Windows.Forms.TextBox();
-            this.txtbill = new System.Windows.Forms.TextBox();
             this.txtrole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtpayed = new System.Windows.Forms.TextBox();
@@ -81,6 +80,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtbill = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -461,13 +461,13 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.txtbill);
             this.panel7.Controls.Add(this.pictureBox10);
             this.panel7.Controls.Add(this.txtsupplier);
             this.panel7.Controls.Add(this.txtpassword);
             this.panel7.Controls.Add(this.txtusername);
             this.panel7.Controls.Add(this.txtnotes);
             this.panel7.Controls.Add(this.txtdue);
-            this.panel7.Controls.Add(this.txtbill);
             this.panel7.Controls.Add(this.txtrole);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.txtpayed);
@@ -503,7 +503,7 @@
             this.txtsupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtsupplier.BackColor = System.Drawing.Color.Gainsboro;
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Location = new System.Drawing.Point(442, 714);
+            this.txtsupplier.Location = new System.Drawing.Point(33, 611);
             this.txtsupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(275, 28);
@@ -518,7 +518,7 @@
             this.txtpassword.BackColor = System.Drawing.Color.Transparent;
             this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.txtpassword.Location = new System.Drawing.Point(449, 682);
+            this.txtpassword.Location = new System.Drawing.Point(28, 584);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(82, 25);
@@ -563,17 +563,6 @@
             this.txtdue.Size = new System.Drawing.Size(275, 43);
             this.txtdue.TabIndex = 102;
             // 
-            // txtbill
-            // 
-            this.txtbill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtbill.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtbill.Location = new System.Drawing.Point(33, 596);
-            this.txtbill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtbill.Multiline = true;
-            this.txtbill.Name = "txtbill";
-            this.txtbill.Size = new System.Drawing.Size(275, 43);
-            this.txtbill.TabIndex = 101;
-            // 
             // txtrole
             // 
             this.txtrole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -596,7 +585,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label5.Location = new System.Drawing.Point(449, 552);
+            this.label5.Location = new System.Drawing.Point(437, 658);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 25);
@@ -608,7 +597,7 @@
             // 
             this.txtpayed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtpayed.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtpayed.Location = new System.Drawing.Point(442, 596);
+            this.txtpayed.Location = new System.Drawing.Point(442, 700);
             this.txtpayed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtpayed.Multiline = true;
             this.txtpayed.Name = "txtpayed";
@@ -622,7 +611,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label6.Location = new System.Drawing.Point(30, 552);
+            this.label6.Location = new System.Drawing.Point(437, 569);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 25);
@@ -715,9 +704,9 @@
             this.label3.Location = new System.Drawing.Point(120, 49);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 31);
+            this.label3.Size = new System.Drawing.Size(298, 31);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Manage Chick Batches";
+            this.label3.Text = "Manage Supplier payments";
             // 
             // pictureBox9
             // 
@@ -789,6 +778,17 @@
             this.dataGridView2.Size = new System.Drawing.Size(1124, 260);
             this.dataGridView2.TabIndex = 89;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // txtbill
+            // 
+            this.txtbill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtbill.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtbill.FormattingEnabled = true;
+            this.txtbill.Location = new System.Drawing.Point(442, 611);
+            this.txtbill.Name = "txtbill";
+            this.txtbill.Size = new System.Drawing.Size(266, 28);
+            this.txtbill.TabIndex = 110;
+            this.txtbill.SelectedIndexChanged += new System.EventHandler(this.txtbill_SelectedIndexChanged);
             // 
             // supplierpayments
             // 
@@ -869,7 +869,6 @@
         private System.Windows.Forms.Label txtusername;
         private System.Windows.Forms.TextBox txtnotes;
         private System.Windows.Forms.TextBox txtdue;
-        private System.Windows.Forms.TextBox txtbill;
         private System.Windows.Forms.Label txtrole;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtpayed;
@@ -886,5 +885,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox txtbill;
     }
 }

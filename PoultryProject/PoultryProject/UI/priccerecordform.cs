@@ -12,6 +12,7 @@ using Poultary.UI;
 using PoultryProject.BL.Bl;
 using PoultryProject.DL;
 using PoultryProject.Interfaces;
+using pro.UI;
 
 namespace PoultryProject.UI
 {
@@ -198,6 +199,39 @@ namespace PoultryProject.UI
                 var list = supplierpaymentDl.GetAllSupplierPriceRecords().Where(x => x.supplierName.ToLower().Contains(text.ToLower())).ToList();
                 dataGridView2.DataSource = list;
             }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            customerpayments c = new customerpayments();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Staff s = new Staff();
+            this.Hide();
+            s.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Customer c = new Customer();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Supplier c = new Supplier();
+            this.Hide();
+            c.ShowDialog();
+            this.Close();
         }
     }
 }

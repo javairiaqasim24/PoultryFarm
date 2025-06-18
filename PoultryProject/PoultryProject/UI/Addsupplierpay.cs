@@ -122,7 +122,9 @@ namespace PoultryProject.UI
             }
         }
 
+        private void txtsupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

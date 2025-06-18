@@ -385,6 +385,10 @@ namespace PoultryProject.UI
             }
         }
 
+        private void txtbill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

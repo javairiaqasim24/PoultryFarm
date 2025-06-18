@@ -21,7 +21,7 @@ namespace PoultryProject.DL
                         b.weight AS 'Weight',
                         b.TotalAmount AS 'Total Amount',
                         p.`Payed Amount` AS 'Paid Amount',
-                        p.`Due Amount` AS 'Remaining Amount',
+                        p.`Dueamount` AS 'Remaining Amount',
                         b.SaleDate AS 'SaleDate'
                     FROM customerbills b
                     JOIN customers c ON b.CustomerID = c.CustomerID
@@ -79,7 +79,7 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT SUM(`Due Amount`) FROM customerpayments;";
+                    string query = "SELECT SUM(`Dueamount`) FROM customerpayments;";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {

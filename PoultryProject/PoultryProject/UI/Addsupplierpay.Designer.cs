@@ -42,18 +42,21 @@
             // 
             // txtdate
             // 
-            this.txtdate.Location = new System.Drawing.Point(68, 327);
+            this.txtdate.Location = new System.Drawing.Point(77, 394);
+            this.txtdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtdate.Name = "txtdate";
-            this.txtdate.Size = new System.Drawing.Size(307, 22);
+            this.txtdate.Size = new System.Drawing.Size(345, 26);
             this.txtdate.TabIndex = 77;
             // 
             // txtsupplier
             // 
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Location = new System.Drawing.Point(69, 97);
+            this.txtsupplier.Location = new System.Drawing.Point(78, 121);
+            this.txtsupplier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtsupplier.Name = "txtsupplier";
-            this.txtsupplier.Size = new System.Drawing.Size(307, 24);
+            this.txtsupplier.Size = new System.Drawing.Size(345, 28);
             this.txtsupplier.TabIndex = 76;
+            this.txtsupplier.SelectedIndexChanged += new System.EventHandler(this.txtsupplier_SelectedIndexChanged);
             this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // btnadd
@@ -62,10 +65,10 @@
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnadd.Location = new System.Drawing.Point(81, 427);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnadd.Location = new System.Drawing.Point(91, 534);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(275, 64);
+            this.btnadd.Size = new System.Drawing.Size(309, 80);
             this.btnadd.TabIndex = 75;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = false;
@@ -78,10 +81,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label7.Location = new System.Drawing.Point(68, 292);
+            this.label7.Location = new System.Drawing.Point(76, 365);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 20);
+            this.label7.Size = new System.Drawing.Size(57, 25);
             this.label7.TabIndex = 74;
             this.label7.Text = " Date";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,10 +96,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label6.Location = new System.Drawing.Point(68, 213);
+            this.label6.Location = new System.Drawing.Point(76, 169);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(63, 25);
             this.label6.TabIndex = 73;
             this.label6.Text = "Bill ID";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,10 +111,10 @@
             this.txt1.BackColor = System.Drawing.Color.Transparent;
             this.txt1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.txt1.Location = new System.Drawing.Point(65, 133);
+            this.txt1.Location = new System.Drawing.Point(73, 266);
             this.txt1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(67, 20);
+            this.txt1.Size = new System.Drawing.Size(81, 25);
             this.txt1.TabIndex = 71;
             this.txt1.Text = "Amount";
             this.txt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,10 +122,11 @@
             // txtamount
             // 
             this.txtamount.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtamount.Location = new System.Drawing.Point(67, 165);
+            this.txtamount.Location = new System.Drawing.Point(77, 295);
+            this.txtamount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtamount.Multiline = true;
             this.txtamount.Name = "txtamount";
-            this.txtamount.Size = new System.Drawing.Size(313, 35);
+            this.txtamount.Size = new System.Drawing.Size(345, 43);
             this.txtamount.TabIndex = 70;
             // 
             // label2
@@ -132,10 +136,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.label2.Location = new System.Drawing.Point(77, 63);
+            this.label2.Location = new System.Drawing.Point(72, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 69;
             this.label2.Text = "Supplier Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,10 +151,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(51)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(87, 18);
+            this.label1.Location = new System.Drawing.Point(98, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 32);
+            this.label1.Size = new System.Drawing.Size(324, 40);
             this.label1.TabIndex = 68;
             this.label1.Text = "Add Supplier Payment";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,17 +162,18 @@
             // txtbill
             // 
             this.txtbill.FormattingEnabled = true;
-            this.txtbill.Location = new System.Drawing.Point(69, 250);
+            this.txtbill.Location = new System.Drawing.Point(77, 208);
+            this.txtbill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtbill.Name = "txtbill";
-            this.txtbill.Size = new System.Drawing.Size(307, 24);
+            this.txtbill.Size = new System.Drawing.Size(345, 28);
             this.txtbill.TabIndex = 78;
             this.txtbill.SelectedIndexChanged += new System.EventHandler(this.txtbill_SelectedIndexChanged);
             // 
             // Addsupplierpay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 623);
+            this.ClientSize = new System.Drawing.Size(538, 779);
             this.Controls.Add(this.txtbill);
             this.Controls.Add(this.txtdate);
             this.Controls.Add(this.txtsupplier);
@@ -179,6 +184,7 @@
             this.Controls.Add(this.txtamount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Addsupplierpay";
             this.Text = "Addsupplierpay";
             this.Load += new System.EventHandler(this.Addsupplierpay_Load);

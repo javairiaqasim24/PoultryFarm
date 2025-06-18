@@ -68,7 +68,7 @@ namespace PoultryProject.UI
                     // 2. Update customerpayments (accumulate paid + recalculate due)
                     string updatePayment = @"UPDATE customerpayments 
                                      SET `payed amount` = `payed amount` + @paid,
-                                         `Due Amount` = `Due Amount` - @paid
+                                         `Dueamount` = `Dueamount` - @paid
                                      WHERE CustomerID = @cid AND BillID = @bid";
 
                     using (MySqlCommand cmd = new MySqlCommand(updatePayment, conn))

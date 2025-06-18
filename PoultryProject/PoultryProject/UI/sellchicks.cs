@@ -97,7 +97,7 @@ namespace PoultryProject.UI
                     }
 
                     // 2. Insert into customerpayments
-                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Due amount`, Notes)
+                    string insertPaymentQuery = @"INSERT INTO customerpayments (CustomerID, BillID, `payed amount`, `Dueamount`, Notes)
                                           VALUES (@custId, @billId, @paid, @due, @notes)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertPaymentQuery, conn))
@@ -310,6 +310,10 @@ namespace PoultryProject.UI
 
         }
 
-      
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AddCustomer customer = new AddCustomer();
+            customer.ShowDialog();
+        }
     }
 }
