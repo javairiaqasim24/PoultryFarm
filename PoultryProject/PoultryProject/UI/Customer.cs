@@ -222,7 +222,7 @@ namespace pro.UI
         {
             this.Hide();
             feedform feed = new feedform();
-            feed.Show();
+            feed.ShowDialog();
             this.Close();
         }
 

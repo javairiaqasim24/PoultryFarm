@@ -213,14 +213,16 @@ namespace pro.UI
         {
             this.Hide();
             chicksform chick = new chicksform();
-            chick.Show();
+            chick.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             feedform feed = new feedform();
-            feed.Show();
+            feed.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
