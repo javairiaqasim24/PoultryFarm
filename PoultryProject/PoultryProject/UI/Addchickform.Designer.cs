@@ -56,6 +56,7 @@
             this.txtsupplier.Size = new System.Drawing.Size(307, 24);
             this.txtsupplier.TabIndex = 51;
             this.txtsupplier.SelectedIndexChanged += new System.EventHandler(this.txtsupplier_SelectedIndexChanged);
+            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // pictureBox1
             // 
@@ -84,7 +85,7 @@
             this.btnadd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnadd.Location = new System.Drawing.Point(139, 550);
-            this.btnadd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnadd.Margin = new System.Windows.Forms.Padding(4);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(171, 64);
             this.btnadd.TabIndex = 46;

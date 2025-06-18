@@ -49,27 +49,76 @@ namespace PoultryProject.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null) { return; }
-            supplierpay selectedUser = dataGridView2.CurrentRow.DataBoundItem as supplierpay;
-            if (selectedUser == null) return;
-            selectedUser.billid = Convert.ToInt32(txtbill.Text);
-            selectedUser.notes = txtnotes.Text;
-            selectedUser.payedamount = double.Parse(txtpayed.Text);
-            selectedUser.dueamount = double.Parse(txtdue.Text);
-            selectedUser.suppliername = txtsupplier.Text;
-            selectedUser.id = currentitemid;
-            bool result = idl.updatepayments(selectedUser);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-                
+                if (dataGridView2.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a payment record to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                supplierpay selectedPayment = dataGridView2.CurrentRow.DataBoundItem as supplierpay;
+                if (selectedPayment == null)
+                {
+                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate and assign bill ID
+                if (!int.TryParse(txtbill.Text.Trim(), out int billId) || billId <= 0)
+                {
+                    MessageBox.Show("Please enter a valid bill ID (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate and assign payed amount
+                if (!double.TryParse(txtpayed.Text.Trim(), out double payedAmount) || payedAmount < 0)
+                {
+                    MessageBox.Show("Please enter a valid paid amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate and assign due amount
+                if (!double.TryParse(txtdue.Text.Trim(), out double dueAmount) || dueAmount < 0)
+                {
+                    MessageBox.Show("Please enter a valid due amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate supplier name
+                string supplierName = txtsupplier.Text.Trim();
+                if (string.IsNullOrWhiteSpace(supplierName))
+                {
+                    MessageBox.Show("Supplier name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Assign other values
+                selectedPayment.billid = billId;
+                selectedPayment.notes = txtnotes.Text.Trim();
+                selectedPayment.payedamount = payedAmount;
+                selectedPayment.dueamount = dueAmount;
+                selectedPayment.suppliername = supplierName;
+                selectedPayment.id = currentitemid;
+
+                // Attempt update
+                bool result = idl.updatepayments(selectedPayment);
+                if (result)
+                {
+                    MessageBox.Show("Payment record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadgrid(); // Refresh the grid
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update payment record.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            loadgrid();
         }
+
         private void dataGridView2_rowselected(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;

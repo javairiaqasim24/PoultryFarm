@@ -71,31 +71,59 @@ namespace PoultryProject.UI
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string name = txtname.Text; 
-            int quantity = Convert.ToInt32(txtquantity.Text);
-            DateTime purchaseDate = txtdate.Value;
-            string supplier=txtsupplier.Text;
-            double weight = Convert.ToDouble(txtweight.Text);
-            int price = Convert.ToInt32(txtprice.Text);
-            // Validate inputs
-            if (string.IsNullOrWhiteSpace(name) || quantity <= 0 || weight <= 0 || price <= 0 || string.IsNullOrWhiteSpace(supplier))
+            try
             {
-                MessageBox.Show("Please fill in all fields correctly.");
-                return;
-            }
-            feed f = new feed(name, purchaseDate, price, weight, quantity, supplier);
-            bool result = ibl.addfeed(f);
-            if (result)
-            {
-                MessageBox.Show("Feed added successfully.");
-                this.Close(); 
-            }
-            else
-            {
-                MessageBox.Show("Failed to add feed. Please try again.");
-            }
+                string name = txtname.Text.Trim();
+                string supplier = txtsupplier.Text.Trim();
+                DateTime purchaseDate = txtdate.Value;
 
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(supplier))
+                {
+                    MessageBox.Show("Name and Supplier are required.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtquantity.Text, out int quantity) || quantity <= 0)
+                {
+                    MessageBox.Show("Please enter a valid quantity greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!double.TryParse(txtweight.Text, out double weight) || weight <= 0)
+                {
+                    MessageBox.Show("Please enter a valid weight greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtprice.Text, out int price) || price <= 0)
+                {
+                    MessageBox.Show("Please enter a valid price greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                feed f = new feed(name, purchaseDate, price, weight, quantity, supplier);
+                bool result = ibl.addfeed(f);
+
+                if (result)
+                {
+                    MessageBox.Show("Feed added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add feed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

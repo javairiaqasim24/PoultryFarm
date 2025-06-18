@@ -27,7 +27,6 @@ namespace pro.BL.Bl
             }
 
           
-
             if (string.IsNullOrWhiteSpace(s.Address))
             {
                 MessageBox.Show("Address is required.");

@@ -41,5 +41,13 @@ namespace Poultary.BL.Models
             this.batchName = batchname;
             this.batchId = batchId;
         }
+
+        public mortality(int v1, string batchName, int count, int v2, DateTime date, string reason)
+        {
+            this.batchName = batchName;
+            this.count = count;
+            this.date = date;
+            this.reason = reason;
+        }
     }
 }

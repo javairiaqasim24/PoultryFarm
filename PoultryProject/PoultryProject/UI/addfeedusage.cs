@@ -52,34 +52,48 @@ namespace PoultryProject.UI
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
-            if (txtsupplier.SelectedIndex == -1)
+            try
             {
-                MessageBox.Show("Please select a batch.");
-                return;
+                if (txtsupplier.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please select a batch.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string batchName = txtsupplier.Text;
+
+                if (!int.TryParse(txtquantity.Text, out int count) || count <= 0)
+                {
+                    MessageBox.Show("Please enter a valid sack count (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DateTime date = txtdate.Value;
+
+                var obj = new trackfeed(batchName, count, date);
+                bool result = ibl.addtrack(obj);
+
+                if (result)
+                {
+                    MessageBox.Show("Feed usage added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add feed usage.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            string batchName = txtsupplier.Text;
-
-            if (!int.TryParse(txtquantity.Text, out int count))
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Please enter a valid sack count.");
-                return;
+                // Catch validation errors thrown by BL
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            DateTime date = txtdate.Value;
-
-            var obj = new trackfeed(batchName, count, date);
-            bool result = ibl.addtrack(obj);
-
-            if (result)
+            catch (Exception ex)
             {
-                MessageBox.Show("Feed usage added successfully.");
-            }
-            else
-            {
-                MessageBox.Show("Failed to add feed usage.");
+                // Catch all unexpected errors
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void ClearFields()

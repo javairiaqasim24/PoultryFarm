@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
+using Poultary.DL;
 using Poultary.Interfaces;
 
 namespace Poultary.UI
@@ -28,14 +29,10 @@ namespace Poultary.UI
        
         private void btnadd_Click(object sender, EventArgs e)
         {
-            if (txtsupplier.SelectedValue == null)
-            {
-                MessageBox.Show("Please select a batch.");
-                return;
-            }
+          
 
-            int batchId = Convert.ToInt32(txtsupplier.SelectedValue);
             string batchName = txtsupplier.Text;
+            int batchId = mortalityDL.getbatchid(batchName);
 
             if (!int.TryParse(txtquantity.Text, out int count))
             {
@@ -46,7 +43,6 @@ namespace Poultary.UI
             DateTime date = txtdate.Value;
             string reason = txtreason.Text;
 
-            // Manually set values using the constructor that matches your model
             var obj = new mortality(0, batchId, batchName, count, 0, date, reason);
 
             bool result = idl.addmortality(obj);

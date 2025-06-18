@@ -63,27 +63,86 @@ namespace Poultary.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null) { return; }
-            feed selectedUser = dataGridView2.CurrentRow.DataBoundItem as feed;
-            if (selectedUser == null) return;
-            selectedUser.quantity = int.Parse(txtquantity.Text);
-            selectedUser.purchasedate = txtdate.Value;
-            selectedUser.name = txtname.Text;
-            selectedUser.price = int.Parse(txtprice.Text);
-            selectedUser.weight = double.Parse(txtweight.Text);
-            selectedUser.suppliername = txtsupplier.Text;
-            selectedUser.id = currentitemid;
-            bool result = ibl.updatefeed(selectedUser);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-            }
-            else
-            {
-                MessageBox.Show("Item Not Updated");
-            }
-            loadgrid();
+                if (dataGridView2.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a feed item to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                var selectedFeed = dataGridView2.CurrentRow.DataBoundItem as feed;
+                if (selectedFeed == null)
+                {
+                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Input validation
+                string name = txtname.Text.Trim();
+                string supplier = txtsupplier.Text.Trim();
+                DateTime purchaseDate = txtdate.Value;
+
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(supplier))
+                {
+                    MessageBox.Show("Feed name and supplier name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtquantity.Text, out int quantity) || quantity <= 0)
+                {
+                    MessageBox.Show("Please enter a valid quantity greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtprice.Text, out int price) || price <= 0)
+                {
+                    MessageBox.Show("Please enter a valid price greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!double.TryParse(txtweight.Text, out double weight) || weight <= 0)
+                {
+                    MessageBox.Show("Please enter a valid weight greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Assign values
+                selectedFeed.name = name;
+                selectedFeed.quantity = quantity;
+                selectedFeed.purchasedate = purchaseDate;
+                selectedFeed.price = price;
+                selectedFeed.weight = weight;
+                selectedFeed.suppliername = supplier;
+                selectedFeed.id = currentitemid;
+
+                // Perform update
+                bool result = ibl.updatefeed(selectedFeed);
+
+                if (result)
+                {
+                    MessageBox.Show("Feed item updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs(); // Optional
+                    loadgrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update feed item.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ClearInputs()
+        {
+            txtname.Clear();
+            txtquantity.Clear();
+            txtprice.Clear();
+            txtweight.Clear();
+            txtsupplier.SelectedIndex=-1;
+            txtdate.Value = DateTime.Now;
         }
 
         private void btndelete_Click(object sender, EventArgs e)
