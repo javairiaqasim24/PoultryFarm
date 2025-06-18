@@ -244,9 +244,8 @@ namespace Poultary.UI
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new addsupplierbill().ShowDialog();
-            this.Close();
+            
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)

@@ -1125,6 +1125,7 @@ namespace pro.UI
             // 
             // comboBoxType
             // 
+            this.comboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxType.BackColor = System.Drawing.Color.Gainsboro;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {

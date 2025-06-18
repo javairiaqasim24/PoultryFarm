@@ -69,7 +69,6 @@ namespace PoultryProject.UI
                 decimal paidAmount = decimal.Parse(txtpaidamount.Text);
                 DateTime saleDate = txtdate.Value;
                 string notes = "Auto-entry"; // optional
-
                 int customerId = sellchicksdl.GetCustomerIdByName(customerName);
                 if (customerId == -1)
                 {
