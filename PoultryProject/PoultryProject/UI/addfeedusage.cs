@@ -24,8 +24,8 @@ namespace PoultryProject.UI
         private void LoadSupplierComboBox()
         {
             txtsupplier.AutoCompleteMode = AutoCompleteMode.None;
-            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+            txtsupplier.AutoCompleteSource = AutoCompleteSource.None;
+            txtsupplier.AutoCompleteCustomSource = null;
             txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
         }
         private void txtsupplier_TextUpdate(object sender, EventArgs e)
