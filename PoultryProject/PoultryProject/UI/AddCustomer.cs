@@ -34,50 +34,40 @@ namespace pro.UI
             this.sellchicks = sellchicks;
         }
 
-
+       
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            try
+
+            string name = txtname.Text;
+            string contact = txtcontact.Text;
+            string address = txtaddress.Text;
+            
+
+            Customers c = new Customers(name, contact, address);
+            bool result = cus.Add(c);
+            if (result)
             {
-                string name = txtname.Text.Trim();
-                string contact = txtcontact.Text.Trim();
-                string address = txtaddress.Text.Trim();
+                MessageBox.Show("Customer added successfully.");
+                clearboxes();
+                this.Close();
 
-                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(contact))
-                {
-                    MessageBox.Show("Please enter all required fields (Name and Contact).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                Customers c = new Customers(name, contact, address);
-                bool result = cus.Add(c);
-
-                if (result)
-                {
-                    MessageBox.Show("Customer added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add Customer. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex) when (ex.Number == 1062)
+            else
             {
-                // Duplicate entry violation (e.g., name already exists)
-                MessageBox.Show("Customer with this name already exists. Please choose a different name.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to add Customer. Please try again.");
             }
         }
-
 
         private void AddCustomer_Load(object sender, EventArgs e)
         {
 
+        }
+        private void clearboxes()
+        {
+            txtname.Clear();
+            txtcontact.Clear();
+            txtaddress.Clear();
         }
     }
 }

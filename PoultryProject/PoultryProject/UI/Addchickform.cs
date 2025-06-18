@@ -46,6 +46,7 @@ namespace Poultary.UI
                 if (result)
                 {
                     MessageBox.Show("Chicken batch added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearboxes();
                     this.Close();
                 }
                 else
@@ -116,5 +117,15 @@ namespace Poultary.UI
         {
 
         }
+
+        private void clearboxes()
+        {
+            txtname.Clear();
+            txtquantity.Clear();
+            txtsupplier.Text = "";
+            txtweight.Clear();
+            txtprice.Clear();
+        }
+
     }
 }

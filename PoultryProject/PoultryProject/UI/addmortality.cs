@@ -49,6 +49,7 @@ namespace Poultary.UI
             if (result)
             {
                 MessageBox.Show("Mortality added successfully");
+                this.Close();
             }
             else
             {
