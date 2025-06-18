@@ -15,13 +15,13 @@ namespace PoultryProject.UI
         private bool isPanelCollapsed = true;
         private const int PanelExpandedWidth = 181;
         private const int PanelCollapsedWidth = 50;
-        private const int SlideStep = 10;
+        private const int SlideStep = 20;
         public customerpayments()
         {
             InitializeComponent();
             LoadPaymentData();
             dataGridView2.ScrollBars = ScrollBars.Both;
-            timer1.Interval = 10;
+            timer1.Interval = 5;
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;

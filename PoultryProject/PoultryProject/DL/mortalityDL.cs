@@ -92,7 +92,7 @@ namespace Poultary.DL
                 }
             }
         }
-        private static int getbatchid(string name)
+        public static int getbatchid(string name)
         {
             using (var conn = DatabaseHelper.GetConnection())
             {

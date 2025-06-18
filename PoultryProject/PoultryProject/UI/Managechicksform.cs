@@ -183,28 +183,78 @@ namespace Poultary.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null) { return; }
-            ChickenBatch selectedUser = dataGridView2.CurrentRow.DataBoundItem as ChickenBatch;
-            if (selectedUser == null) return;
-            selectedUser.BatchName = txtname.Text;
-            selectedUser.batchweight = double.Parse(txtweight.Text);
-            selectedUser.batchquantity = int.Parse(txtquantity.Text);
-            selectedUser.purchaseDate = txtdate.Value;
-            selectedUser.batchprice = int.Parse(txtprice.Text);
-            selectedUser.supplierName = txtsupplier.Text;
-            selectedUser.BatchId = currentitemid;
-            bool result = ibl.UpdateChickenBatch(selectedUser);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-                ClearInputs();
+                if (dataGridView2.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a batch to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedBatch = dataGridView2.CurrentRow.DataBoundItem as ChickenBatch;
+                if (selectedBatch == null)
+                {
+                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate and parse inputs
+                string name = txtname.Text.Trim();
+                string supplier = txtsupplier.Text.Trim();
+                DateTime purchaseDate = txtdate.Value;
+
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(supplier))
+                {
+                    MessageBox.Show("Please enter valid batch name and supplier name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!double.TryParse(txtweight.Text, out double weight) || weight <= 0)
+                {
+                    MessageBox.Show("Please enter a valid batch weight greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtquantity.Text, out int quantity) || quantity <= 0)
+                {
+                    MessageBox.Show("Please enter a valid quantity greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtprice.Text, out int price) || price <= 0)
+                {
+                    MessageBox.Show("Please enter a valid price greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Assign updated values
+                selectedBatch.BatchName = name;
+                selectedBatch.batchweight = weight;
+                selectedBatch.batchquantity = quantity;
+                selectedBatch.purchaseDate = purchaseDate;
+                selectedBatch.batchprice = price;
+                selectedBatch.supplierName = supplier;
+                selectedBatch.BatchId = currentitemid;
+
+                bool result = ibl.UpdateChickenBatch(selectedBatch);
+
+                if (result)
+                {
+                    MessageBox.Show("Chicken batch updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                    loadgrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update chicken batch.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            loadgrid();
         }
+
         private void ClearInputs()
         {
             txtname.Text = "";

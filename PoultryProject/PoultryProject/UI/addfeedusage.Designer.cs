@@ -131,11 +131,13 @@
             // 
             // txtsupplier
             // 
+            this.txtsupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtsupplier.FormattingEnabled = true;
-            this.txtsupplier.Location = new System.Drawing.Point(53, 111);
+            this.txtsupplier.Location = new System.Drawing.Point(57, 120);
             this.txtsupplier.Name = "txtsupplier";
             this.txtsupplier.Size = new System.Drawing.Size(315, 24);
             this.txtsupplier.TabIndex = 78;
+            this.txtsupplier.TextUpdate += new System.EventHandler(this.txtsupplier_TextUpdate);
             // 
             // addfeedusage
             // 

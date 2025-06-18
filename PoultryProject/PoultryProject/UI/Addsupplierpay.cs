@@ -70,9 +70,26 @@ namespace PoultryProject.UI
             try
             {
                 string name = txtsupplier.Text.Trim();
-                int billid = Convert.ToInt32(txtbill.Text);
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    MessageBox.Show("Please enter the supplier name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtbill.Text, out int billid) || billid <= 0)
+                {
+                    MessageBox.Show("Please enter a valid Bill ID (positive number).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!double.TryParse(txtamount.Text, out double amount) || amount <= 0)
+                {
+                    MessageBox.Show("Please enter a valid amount greater than 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 DateTime date = txtdate.Value;
-                double amount = Convert.ToDouble(txtamount.Text);
 
                 supplierpayment s = new supplierpayment(billid, name, date, amount);
 
@@ -80,19 +97,24 @@ namespace PoultryProject.UI
 
                 if (result)
                 {
-                    MessageBox.Show("Supplier payment added successfully.");
+                    MessageBox.Show("Supplier payment added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add supplier payment. Please try again.");
+                    MessageBox.Show("Failed to add supplier payment. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void txtbill_SelectedIndexChanged(object sender, EventArgs e)
         {

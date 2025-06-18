@@ -26,12 +26,12 @@ namespace PoultryProject.UI
         private bool isPanelCollapsed = true;
         private const int PanelExpandedWidth = 181;
         private const int PanelCollapsedWidth = 50;
-        private const int SlideStep = 10;
+        private const int SlideStep = 25;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public trackfeedform()
         {
             InitializeComponent();
-            timer1.Interval = 10;
+            timer1.Interval = 5;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
             this.Shown += ViewOrderAd_Shown;
@@ -43,6 +43,27 @@ namespace PoultryProject.UI
         {
             loadgrid();
             LoadSupplierComboBox();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isPanelCollapsed)
+            {
+                flowLayoutPanel1.Width += SlideStep;
+                if (flowLayoutPanel1.Width >= PanelExpandedWidth)
+                {
+                    timer1.Stop();
+                    isPanelCollapsed = false;
+                }
+            }
+            else
+            {
+                flowLayoutPanel1.Width -= SlideStep;
+                if (flowLayoutPanel1.Width <= PanelCollapsedWidth)
+                {
+                    timer1.Stop();
+                    isPanelCollapsed = true;
+                }
+            }
         }
         private void LoadSupplierComboBox()
         {
@@ -94,10 +115,7 @@ namespace PoultryProject.UI
         {
             timer1.Start();
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
 
-        }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
@@ -106,25 +124,60 @@ namespace PoultryProject.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dataGridView2.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a feed usage record to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            if (dataGridView2.CurrentRow == null) { return; }
-            trackfeed selectedUser = dataGridView2.CurrentRow.DataBoundItem as trackfeed;
-            if (selectedUser == null) return;
-            selectedUser.sacksUsed = int.Parse(txtquantity.Text);
-            selectedUser.date = txtdate.Value;
-            selectedUser.name = txtsupplier.Text;
-            selectedUser.id = currentitemid;
-            bool result = ibl.updatetrack(selectedUser);
-            if (result == true)
-            {
-                MessageBox.Show("Item Updated Successfully");
+                trackfeed selectedUser = dataGridView2.CurrentRow.DataBoundItem as trackfeed;
+                if (selectedUser == null)
+                {
+                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validate sacks used
+                if (!int.TryParse(txtquantity.Text.Trim(), out int sacksUsed) || sacksUsed <= 0)
+                {
+                    MessageBox.Show("Please enter a valid number of sacks used (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate supplier/feed name
+                string supplierName = txtsupplier.Text.Trim();
+                if (string.IsNullOrWhiteSpace(supplierName))
+                {
+                    MessageBox.Show("Please select or enter a feed name.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Assign values
+                selectedUser.sacksUsed = sacksUsed;
+                selectedUser.date = txtdate.Value;
+                selectedUser.name = supplierName;
+                selectedUser.id = currentitemid;
+
+                // Update the record
+                bool result = ibl.updatetrack(selectedUser);
+                if (result)
+                {
+                    MessageBox.Show("Feed usage updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadgrid(); // Refresh grid
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update feed usage. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            loadgrid();
         }
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {

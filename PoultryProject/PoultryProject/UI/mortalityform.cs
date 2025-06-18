@@ -47,6 +47,7 @@ namespace Poultary.UI
         {
             loadgrid();
             dataGridView2.RowEnter+=dataGridView2_rowselected;
+            LoadSupplierComboBox();
         }
         private void loadgrid()
         {
@@ -147,24 +148,65 @@ namespace Poultary.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridView2.CurrentRow == null) { return; }
-            mortality selectedUser = dataGridView2.CurrentRow.DataBoundItem as mortality;
-            if (selectedUser == null) return;
-            selectedUser.batchName = txtsupplier.Text;
-            selectedUser.count = int.Parse(txtquantity.Text);
-            selectedUser.date = txtdate.Value;
-            selectedUser.mortalityId = currentitemid;
-            bool result = ibl.updatemortality(selectedUser);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
+                if (dataGridView2.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a record to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedMortality = dataGridView2.CurrentRow.DataBoundItem as mortality;
+                if (selectedMortality == null)
+                {
+                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string batchName = txtsupplier.Text.Trim();
+                if (string.IsNullOrWhiteSpace(batchName))
+                {
+                    MessageBox.Show("Batch name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!int.TryParse(txtquantity.Text, out int count) || count <= 0)
+                {
+                    MessageBox.Show("Please enter a valid mortality count (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string reason = txtreason.Text.Trim();
+                if (string.IsNullOrWhiteSpace(reason))
+                {
+                    MessageBox.Show("reason cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DateTime date = txtdate.Value;
+
+                selectedMortality.batchName = batchName;
+                selectedMortality.count = count;
+                selectedMortality.date = date;
+                selectedMortality.reason = reason;
+                selectedMortality.mortalityId = currentitemid;
+
+                bool result = ibl.updatemortality(selectedMortality);
+
+                if (result)
+                {
+                    MessageBox.Show("Mortality record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadgrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update mortality record.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            loadgrid();
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
