@@ -34,7 +34,7 @@ namespace PoultryProject.UI
             timer1.Interval = 5;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
             timer1.Tick += timer1_Tick;
 
         }
@@ -100,7 +100,9 @@ namespace PoultryProject.UI
             dataGridView2.DataSource=list;
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["batchid"].Visible = false;
+            
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
 
             dataGridView2.RowEnter += dataGridView2_rowselected;
 

@@ -23,9 +23,9 @@ namespace PoultryProject.UI
         int currentitemid = -1;
         IsupplierBill ibl = new supplierBillBL();
         Isupplierpay idl = new SupplierpayBL();
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
 
@@ -35,9 +35,9 @@ namespace PoultryProject.UI
             timer1.Interval = 10;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
             timer1.Tick += timer1_Tick;
-            this.txtsupplier.Leave += txtsupplier_Leave;
+            //this.txtsupplier.Leave += txtsupplier_Leave;
 
 
         }
@@ -47,137 +47,140 @@ namespace PoultryProject.UI
             new Addsupplierpay().ShowDialog();
         }
 
-        private void btnedit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridView2.CurrentRow == null)
-                {
-                    MessageBox.Show("Please select a payment record to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+        //private void btnedit_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (dataGridView2.CurrentRow == null)
+        //        {
+        //            MessageBox.Show("Please select a payment record to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            return;
+        //        }
 
-                supplierpay selectedPayment = dataGridView2.CurrentRow.DataBoundItem as supplierpay;
-                if (selectedPayment == null)
-                {
-                    MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+        //        supplierpay selectedPayment = dataGridView2.CurrentRow.DataBoundItem as supplierpay;
+        //        if (selectedPayment == null)
+        //        {
+        //            MessageBox.Show("Invalid selection. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            return;
+        //        }
 
-                // Validate and assign bill ID
-                if (!int.TryParse(txtbill.Text.Trim(), out int billId) || billId <= 0)
-                {
-                    MessageBox.Show("Please enter a valid bill ID (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+        //        // Validate and assign bill ID
+        //        if (!int.TryParse(txtbill.Text.Trim(), out int billId) || billId <= 0)
+        //        {
+        //            MessageBox.Show("Please enter a valid bill ID (greater than 0).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            return;
+        //        }
 
-                // Validate and assign payed amount
-                if (!double.TryParse(txtpayed.Text.Trim(), out double payedAmount) || payedAmount < 0)
-                {
-                    MessageBox.Show("Please enter a valid paid amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+        //        // Validate and assign payed amount
+        //        if (!double.TryParse(txtpayed.Text.Trim(), out double payedAmount) || payedAmount < 0)
+        //        {
+        //            MessageBox.Show("Please enter a valid paid amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            return;
+        //        }
 
-                // Validate and assign due amount
-                if (!double.TryParse(txtdue.Text.Trim(), out double dueAmount) || dueAmount < 0)
-                {
-                    MessageBox.Show("Please enter a valid due amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+        //        // Validate and assign due amount
+        //        if (!double.TryParse(txtdue.Text.Trim(), out double dueAmount) || dueAmount < 0)
+        //        {
+        //            MessageBox.Show("Please enter a valid due amount (non-negative).", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            return;
+        //        }
 
-                // Validate supplier name
-                string supplierName = txtsupplier.Text.Trim();
-                if (string.IsNullOrWhiteSpace(supplierName))
-                {
-                    MessageBox.Show("Supplier name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+        //        // Validate supplier name
+        //        string supplierName = txtsupplier.Text.Trim();
+        //        if (string.IsNullOrWhiteSpace(supplierName))
+        //        {
+        //            MessageBox.Show("Supplier name cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //            return;
+        //        }
 
-                // Assign other values
-                selectedPayment.billid = billId;
-                selectedPayment.notes = txtnotes.Text.Trim();
-                selectedPayment.payedamount = payedAmount;
-                selectedPayment.dueamount = dueAmount;
-                selectedPayment.suppliername = supplierName;
-                selectedPayment.id = currentitemid;
+        //        // Assign other values
+        //        selectedPayment.billid = billId;
+        //        selectedPayment.notes = txtnotes.Text.Trim();
+        //        selectedPayment.payedamount = payedAmount;
+        //        selectedPayment.dueamount = dueAmount;
+        //        selectedPayment.suppliername = supplierName;
+        //        selectedPayment.id = currentitemid;
 
-                // Attempt update
-                bool result = idl.updatepayments(selectedPayment);
-                if (result)
-                {
-                    MessageBox.Show("Payment record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    loadgrid(); // Refresh the grid
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update payment record.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        // Attempt update
+        //        bool result = idl.updatepayments(selectedPayment);
+        //        if (result)
+        //        {
+        //            MessageBox.Show("Payment record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            loadgrid(); // Refresh the grid
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Failed to update payment record.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
-        private void dataGridView2_rowselected(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
+        //private void dataGridView2_rowselected(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex < 0) return;
 
-            DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
-            supplierpay selectedItem = selectedRow.DataBoundItem as supplierpay;
-            if (selectedItem == null) return;
-           txtnotes.Text=selectedItem.notes;
-            txtbill.Text = selectedItem.billid.ToString();
-            txtdue.Text = selectedItem.dueamount.ToString();
-            txtpayed.Text = selectedItem.payedamount.ToString();
-            txtsupplier.Text = selectedItem.suppliername;
+        //    DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
+        //    supplierpay selectedItem = selectedRow.DataBoundItem as supplierpay;
+        //    if (selectedItem == null) return;
+        //   txtnotes.Text=selectedItem.notes;
+        //    txtbill.Text = selectedItem.billid.ToString();
+        //    txtdue.Text = selectedItem.dueamount.ToString();
+        //    txtpayed.Text = selectedItem.payedamount.ToString();
+        //    txtsupplier.Text = selectedItem.suppliername;
 
-            currentitemid = selectedItem.id;
+        //    currentitemid = selectedItem.id;
 
-        }
-        private void LoadSupplierComboBox()
-        {
-            txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
-            txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
-        }
-        private void txtsupplier_TextUpdate(object sender, EventArgs e)
-        {
-            string searchText = txtsupplier.Text.Trim();
+        //}
+        //private void LoadSupplierComboBox()
+        //{
+        //    txtsupplier.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        //    txtsupplier.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //    txtsupplier.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+        //    txtsupplier.DropDownStyle = ComboBoxStyle.DropDown;
+        //}
+        //private void txtsupplier_TextUpdate(object sender, EventArgs e)
+        //{
+        //    string searchText = txtsupplier.Text.Trim();
 
-            if (string.IsNullOrEmpty(searchText))
-                return;
+        //    if (string.IsNullOrEmpty(searchText))
+        //        return;
 
-            var matchingNames = supplierBillDL.Getname(searchText);
+        //    var matchingNames = supplierBillDL.Getname(searchText);
 
-            var autoSource = new AutoCompleteStringCollection();
-            autoSource.AddRange(matchingNames.ToArray());
-            txtsupplier.AutoCompleteCustomSource = autoSource;
+        //    var autoSource = new AutoCompleteStringCollection();
+        //    autoSource.AddRange(matchingNames.ToArray());
+        //    txtsupplier.AutoCompleteCustomSource = autoSource;
 
-            txtsupplier.DataSource = null;
-            txtsupplier.Items.Clear();
-            txtsupplier.Items.AddRange(matchingNames.ToArray());
+        //    txtsupplier.DataSource = null;
+        //    txtsupplier.Items.Clear();
+        //    txtsupplier.Items.AddRange(matchingNames.ToArray());
 
-            txtsupplier.DroppedDown = true;
-            txtsupplier.SelectionStart = txtsupplier.Text.Length;
-            txtsupplier.SelectionLength = 0;
-        }
+        //    txtsupplier.DroppedDown = true;
+        //    txtsupplier.SelectionStart = txtsupplier.Text.Length;
+        //    txtsupplier.SelectionLength = 0;
+        //}
 
         private void supplierpayments_Load(object sender, EventArgs e)
         {
             loadgrid();
-            LoadSupplierComboBox();
-            dataGridView2.RowEnter += dataGridView2_rowselected;
+            //LoadSupplierComboBox();
+            //dataGridView2.RowEnter += dataGridView2_rowselected;
         }
         private void loadgrid()
         {
             var list = idl.getsupplierpayments();
             dataGridView2.DataSource=list;
             dataGridView2.Columns["id"].Visible = false;
-            dataGridView2.Columns["supplierid"].Visible = false; 
+            dataGridView2.Columns["supplierid"].Visible = false;
+            dataGridView2.Columns["payedamount"].HeaderText = "Amount Paid";
 
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -263,28 +266,28 @@ namespace PoultryProject.UI
                 }
             }
         }
-        private void LoadSupplierBillIds(string supplierName)
-        {
-            if (string.IsNullOrWhiteSpace(supplierName))
-                return;
+        //private void LoadSupplierBillIds(string supplierName)
+        //{
+        //    if (string.IsNullOrWhiteSpace(supplierName))
+        //        return;
 
-            var billIds = supplierpaymentDl.GetBillIdsBySupplierName(supplierName);
+        //    var billIds = supplierpaymentDl.GetBillIdsBySupplierName(supplierName);
 
-            txtbill.DataSource = null;
-            txtbill.Items.Clear();
+        //    txtbill.DataSource = null;
+        //    txtbill.Items.Clear();
 
-            if (billIds != null && billIds.Count > 0)
-            {
-                // Convert to string list if needed
-                var items = billIds.Select(id => id.ToString()).ToArray();
+        //    if (billIds != null && billIds.Count > 0)
+        //    {
+        //        // Convert to string list if needed
+        //        var items = billIds.Select(id => id.ToString()).ToArray();
 
-                txtbill.Items.AddRange(items);
+        //        txtbill.Items.AddRange(items);
 
-                // Let the user select manually — keep no selection initially
-                txtbill.SelectedIndex = -1;
-                txtbill.Text = ""; // Clear display text manually if needed
-            }
-        }
+        //        // Let the user select manually — keep no selection initially
+        //        txtbill.SelectedIndex = -1;
+        //        txtbill.Text = ""; // Clear display text manually if needed
+        //    }
+        //}
         private void button7_Click(object sender, EventArgs e)
         {
             customerpayments customerpayments = new customerpayments();
@@ -425,14 +428,14 @@ namespace PoultryProject.UI
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        private void txtsupplier_Leave(object sender, EventArgs e)
-        {
-            string name = txtsupplier.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(name))
-            {
-                LoadSupplierBillIds(name);
-            }
-        }
+        //private void txtsupplier_Leave(object sender, EventArgs e)
+        //{
+        //    string name = txtsupplier.Text.Trim();
+        //    if (!string.IsNullOrWhiteSpace(name))
+        //    {
+        //        LoadSupplierBillIds(name);
+        //    }
+        //}
 
         private void txtbill_SelectedIndexChanged(object sender, EventArgs e)
         {

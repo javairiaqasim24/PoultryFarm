@@ -88,6 +88,7 @@ namespace PoultryProject.UI
                 // Catch validation errors thrown by BL
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
             catch (Exception ex)
             {
                 // Catch all unexpected errors

@@ -15,9 +15,9 @@ namespace Poultary.UI
 {
     public partial class feedform : Form
     {
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         Ifeedinfo ibl = new feedinfoBL();
@@ -28,7 +28,7 @@ namespace Poultary.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
             pictureBox1.MouseEnter += pictureBox_MouseEnter;
             pictureBox1.MouseLeave += pictureBox_MouseLeave;
             pictureBox3.MouseEnter += pictureBox_MouseEnter;
@@ -146,6 +146,8 @@ namespace Poultary.UI
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["batchname"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
 
         private void button10_Click(object sender, EventArgs e)

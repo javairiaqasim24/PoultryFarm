@@ -17,6 +17,7 @@ using PoultryProject.Interfaces;
 using PoultryProject.BL.Bl;
 using PoultryProject.UI;
 using pro.UI;
+using MySql.Data.MySqlClient;
 
 namespace Poultary.UI
 {
@@ -35,7 +36,7 @@ namespace Poultary.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
         }
 
         private void managefeedform_Load(object sender, EventArgs e)
@@ -51,7 +52,9 @@ namespace Poultary.UI
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-         
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
+
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -129,6 +132,10 @@ namespace Poultary.UI
                 {
                     MessageBox.Show("Failed to update feed item.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("Batch name already exists. Please enter a unique name.");
             }
             catch (Exception ex)
             {
@@ -268,9 +275,9 @@ namespace Poultary.UI
 
             this.PerformLayout();
         }
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 25;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         private void timer1_Tick(object sender, EventArgs e)

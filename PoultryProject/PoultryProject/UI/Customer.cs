@@ -22,9 +22,9 @@ namespace pro.UI
     {
         Icustomer supp = new CustomerBL();
         int currentitemid = -1;
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Customer()
@@ -34,7 +34,7 @@ namespace pro.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
         }
 
         private void Customer_Load(object sender, EventArgs e)
@@ -49,6 +49,8 @@ namespace pro.UI
             dataGridViewCustomer.DataSource = customers;
             dataGridViewCustomer.Columns["CustomerID"].Visible = false;
             dataGridViewCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCustomer.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
 
         private void dataGridViewCustomer_rowselected(object sender, DataGridViewCellEventArgs e)
@@ -218,8 +220,10 @@ namespace pro.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
             feedform feed = new feedform();
             feed.Show();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -232,8 +236,10 @@ namespace pro.UI
         private void button5_Click(object sender, EventArgs e)
         {
 
-            Customer customer = new Customer();
-            customer.Show();
+
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -252,10 +258,10 @@ namespace pro.UI
             this.Close();
         }
 
-        private void Customer_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void Customer_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

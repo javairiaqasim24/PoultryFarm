@@ -19,9 +19,9 @@ namespace PoultryProject.UI
     public partial class priccerecordform : Form
     {
         ISupplierpayemnts ibl = new supplierpaymentBL();
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public priccerecordform()
@@ -31,7 +31,7 @@ namespace PoultryProject.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
         }
 
         private void priccerecordform_Load(object sender, EventArgs e)
@@ -43,7 +43,10 @@ namespace PoultryProject.UI
             var list = ibl.getsupplierpayments();
             dataGridView2.DataSource = list;
             dataGridView2.Columns["supplierid"].Visible = false;
+         dataGridView2.Columns["amountPaid"].HeaderText = "Amount Paid";
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
 
         }
 
