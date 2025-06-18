@@ -76,6 +76,7 @@ namespace PoultryProject.UI
                 if (result)
                 {
                     MessageBox.Show("Feed usage added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {

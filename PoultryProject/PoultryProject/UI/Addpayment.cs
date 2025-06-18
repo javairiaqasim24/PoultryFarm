@@ -81,6 +81,7 @@ namespace PoultryProject.UI
                 }
 
                 MessageBox.Show("Payment recorded and updated successfully.");
+                this.Close();
             }
             catch (Exception ex)
             {

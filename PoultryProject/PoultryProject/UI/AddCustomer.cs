@@ -49,6 +49,7 @@ namespace pro.UI
             if (result)
             {
                 MessageBox.Show("Customer added successfully.");
+                clearboxes();
                 this.Close();
 
             }
@@ -61,6 +62,12 @@ namespace pro.UI
         private void AddCustomer_Load(object sender, EventArgs e)
         {
 
+        }
+        private void clearboxes()
+        {
+            txtname.Clear();
+            txtcontact.Clear();
+            txtaddress.Clear();
         }
     }
 }
