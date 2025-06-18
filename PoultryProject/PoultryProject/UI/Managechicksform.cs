@@ -13,15 +13,16 @@ using Poultary.BL.Models;
 using pro.UI;
 using PoultryProject.DL;
 using PoultryProject.UI;
+using MySql.Data.MySqlClient;
 namespace Poultary.UI
 {
     public partial class Managechicksform : Form
     {
         ChickenBatchInterface ibl = new ChickenbatchBL();
         int currentitemid = -1;
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep =25;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Managechicksform()
@@ -32,7 +33,7 @@ namespace Poultary.UI
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
             DoubleBuffered = true;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
             pictureBox1.MouseEnter += pictureBox_MouseEnter;
             pictureBox1.MouseLeave += pictureBox_MouseLeave;
             pictureBox3.MouseEnter += pictureBox_MouseEnter;
@@ -133,6 +134,8 @@ namespace Poultary.UI
             dataGridView2.Columns["BatchId"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
         private void LoadSupplierComboBox()
         {
@@ -248,6 +251,10 @@ namespace Poultary.UI
                 {
                     MessageBox.Show("Failed to update chicken batch.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("Batch name already exists. Please enter a unique name.");
             }
             catch (Exception ex)
             {

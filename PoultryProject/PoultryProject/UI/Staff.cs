@@ -20,9 +20,9 @@ namespace pro.UI
     {
         Istaff supp = new StaffBL();
         int currentitemid = -1;
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Staff()
@@ -32,7 +32,7 @@ namespace pro.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
         }
         private void pictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -100,6 +100,8 @@ namespace pro.UI
             dataGridViewStaff.DataSource = staff;
             dataGridViewStaff.Columns["StaffID"].Visible = false;
             dataGridViewStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStaff.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
 
         private void dataGridViewStaff_rowselected(object sender, DataGridViewCellEventArgs e)
@@ -209,7 +211,8 @@ namespace pro.UI
         {
             this.Hide();
             Form1 form = new Form1();
-            form.Show();
+            form.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -259,10 +262,10 @@ namespace pro.UI
             this.Close();
         }
 
-        private void Staff_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void Staff_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         private void pictureBox15_Click(object sender, EventArgs e)
         {

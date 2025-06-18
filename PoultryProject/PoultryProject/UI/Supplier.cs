@@ -21,9 +21,9 @@ namespace pro.UI
     {
         Isupplier supp = new SupplierBL();
         int currentitemid = -1;
-        private bool isPanelCollapsed = true;
+        private bool isPanelCollapsed = false;
         private const int PanelExpandedWidth = 181;
-        private const int PanelCollapsedWidth = 50;
+        private const int PanelCollapsedWidth = 55;
         private const int SlideStep = 10;
         private Color hoverColor = Color.FromArgb(40, 55, 71);
         public Supplier()
@@ -33,7 +33,7 @@ namespace pro.UI
             timer1.Tick += timer1_Tick;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             panel7.Dock = DockStyle.Fill;
-            this.Shown += ViewOrderAd_Shown;
+            //this.Shown += ViewOrderAd_Shown;
         }
         private void pictureBox_MouseEnter(object sender, EventArgs e)
         {
@@ -101,6 +101,8 @@ namespace pro.UI
             dataGridViewSupplier.DataSource = suppliers;
             dataGridViewSupplier.Columns["SupplierID"].Visible = false;
             dataGridViewSupplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewSupplier.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+
         }
         private void dataGridViewSupplier_rowselected(object sender, DataGridViewCellEventArgs e)
         {
@@ -249,13 +251,14 @@ namespace pro.UI
         {
             this.Hide();
             Form1 form = new Form1();
-            form.Show();
+            form.ShowDialog();
+            this.Close();
         }
 
-        private void Supplier_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void Supplier_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         private void pictureBox15_Click(object sender, EventArgs e)
         {

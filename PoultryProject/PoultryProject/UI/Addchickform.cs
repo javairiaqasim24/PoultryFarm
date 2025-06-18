@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Poultary.BL.Bl;
 using Poultary.BL.Models;
 using Poultary.Interfaces;
 using PoultryProject.DL;
 using pro.BL.Bl;
 using pro.Interface;
+using MySql.Data.MySqlClient;
 
 namespace Poultary.UI
 {
@@ -59,10 +61,16 @@ namespace Poultary.UI
             {
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("Batch name already exists. Please enter a unique name.");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+       
+
         }
 
 

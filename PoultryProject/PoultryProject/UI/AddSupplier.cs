@@ -26,23 +26,45 @@ namespace pro.UI
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            string name = txtname.Text;
-            string contact = txtcontact.Text;
-            string address = txtaddress.Text;
-            string type = comboBoxType.SelectedItem.ToString();
-
-            Suppliers c = new Suppliers(name, contact, address, type);
-            bool result = supp.Add(c);
-            if (result)
+            try
             {
-                MessageBox.Show("Supplier added successfully.");
-                this.Close();
+                string name = txtname.Text.Trim();
+                string contact = txtcontact.Text.Trim();
+                string address = txtaddress.Text.Trim();
 
+                if (string.IsNullOrWhiteSpace(name) ||
+                    string.IsNullOrWhiteSpace(contact) ||
+                    string.IsNullOrWhiteSpace(address) ||
+                    comboBoxType.SelectedItem == null)
+                {
+                    MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string type = comboBoxType.SelectedItem.ToString();
+
+                Suppliers supplier = new Suppliers(name, contact, address, type);
+                bool result = supp.Add(supplier);
+
+                if (result)
+                {
+                    MessageBox.Show("Supplier added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add supplier. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (MySql.Data.MySqlClient.MySqlException ex) when (ex.Number == 1062)
             {
-                MessageBox.Show("Failed to add Supplier. Please try again.");
+                MessageBox.Show("A supplier with the same name already exists. Please use a unique name.", "Duplicate Entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
