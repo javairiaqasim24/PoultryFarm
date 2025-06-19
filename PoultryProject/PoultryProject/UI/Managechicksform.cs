@@ -281,16 +281,19 @@ namespace Poultary.UI
 
             selecteditems.BatchId = currentitemid;
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {selecteditems.BatchName}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (ibl.DeleteChickenBatch(currentitemid))
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Item Deleted Successfully");
-                ClearInputs();
+                if (ibl.DeleteChickenBatch(currentitemid))
+                {
+                    MessageBox.Show("Item Deleted Successfully");
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted");
+                }
+                loadgrid();
             }
-            else
-            {
-                MessageBox.Show("Item Not Deleted");
-            }
-            loadgrid();
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
