@@ -5,7 +5,7 @@ using System;
 
 namespace PoultryProject.DL
 {
-    internal class customerpaymentsdl
+    public class customerpaymentsdl
     {
         public static DataTable LoadCustomerPayments()
         {

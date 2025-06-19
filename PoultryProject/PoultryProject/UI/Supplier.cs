@@ -132,25 +132,80 @@ namespace pro.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridViewSupplier.CurrentRow == null) { return; }
-            Suppliers selectedUser = dataGridViewSupplier.CurrentRow.DataBoundItem as Suppliers;
-            if (selectedUser == null) return;
-            selectedUser.Name = txtname.Text;
-            selectedUser.Contact = txtcontact.Text;
-            selectedUser.Address = txtaddress.Text;
-            selectedUser.SupplierType = comboBoxType.SelectedItem.ToString();
-            selectedUser.SupplierID = currentitemid;
-            bool result = supp.Update(selectedUser, currentitemid);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-                ClearInputs();
+                if (dataGridViewSupplier.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a supplier to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Suppliers selectedUser = dataGridViewSupplier.CurrentRow.DataBoundItem as Suppliers;
+                if (selectedUser == null)
+                {
+                    MessageBox.Show("Selected supplier is not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string name = txtname.Text.Trim();
+                string contact = txtcontact.Text.Trim();
+                string address = txtaddress.Text.Trim();
+                string supplierType = comboBoxType.SelectedItem?.ToString();
+
+                // UI-level validation
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    MessageBox.Show("Please enter the supplier's name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtname.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(contact))
+                {
+                    MessageBox.Show("Please enter the supplier's contact.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtcontact.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(address))
+                {
+                    MessageBox.Show("Please enter the supplier's address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtaddress.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(supplierType))
+                {
+                    MessageBox.Show("Please select the supplier type.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBoxType.Focus();
+                    return;
+                }
+
+                // Set updated values
+                selectedUser.Name = name;
+                selectedUser.Contact = contact;
+                selectedUser.Address = address;
+                selectedUser.SupplierType = supplierType;
+                selectedUser.SupplierID = currentitemid;
+
+                // Call update method
+                bool result = supp.Update(selectedUser, currentitemid);
+                if (result)
+                {
+                    MessageBox.Show("Supplier updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Supplier could not be updated. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                LoadSuppliers();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadSuppliers();
         }
 
         private void btndelete_Click(object sender, EventArgs e)
@@ -323,6 +378,14 @@ namespace pro.UI
             new supplierpayments().ShowDialog();
             this.Close();
 
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Staff f = new Staff();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

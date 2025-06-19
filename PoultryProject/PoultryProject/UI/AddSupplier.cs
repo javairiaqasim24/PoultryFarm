@@ -66,5 +66,9 @@ namespace pro.UI
             }
         }
 
+        private void AddSupplier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

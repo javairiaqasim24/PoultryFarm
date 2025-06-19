@@ -34,28 +34,56 @@ namespace pro.UI
             this.sellchicks = sellchicks;
         }
 
-       
+
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-
-            string name = txtname.Text;
-            string contact = txtcontact.Text;
-            string address = txtaddress.Text;
-            
-
-            Customers c = new Customers(name, contact, address);
-            bool result = cus.Add(c);
-            if (result)
+            try
             {
-                MessageBox.Show("Customer added successfully.");
-                clearboxes();
-                this.Close();
+                string name = txtname.Text.Trim();
+                string contact = txtcontact.Text.Trim();
+                string address = txtaddress.Text.Trim();
 
+                // Basic UI-level validation for empty fields
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    MessageBox.Show("Please enter the customer's name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtname.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(contact))
+                {
+                    MessageBox.Show("Please enter the customer's contact.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtcontact.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(address))
+                {
+                    MessageBox.Show("Please enter the customer's address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtaddress.Focus();
+                    return;
+                }
+
+                // Create and add customer
+                Customers c = new Customers(name, contact, address);
+                bool result = cus.Add(c);
+
+                if (result)
+                {
+                    MessageBox.Show("Customer added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearboxes();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add customer. Please check the input or try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Failed to add Customer. Please try again.");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

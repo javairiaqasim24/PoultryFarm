@@ -7,7 +7,6 @@ namespace KIMS
 {
     public class DatabaseHelper
     {
-        // Get connection string from App.config
         public static MySqlConnection GetConnection()
         {
             string connStr = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;

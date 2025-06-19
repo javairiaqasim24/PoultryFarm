@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Poultary.DL
 {
-    internal class loginpagedl
+    public class loginpagedl
     {
         public static bool ValidateLogin(string username, string password)
         {
@@ -19,7 +19,7 @@ namespace Poultary.DL
                 conn.Open();
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@username", username); 
                     cmd.Parameters.AddWithValue("@password", password); 
 
                     int count = Convert.ToInt32(cmd.ExecuteScalar());

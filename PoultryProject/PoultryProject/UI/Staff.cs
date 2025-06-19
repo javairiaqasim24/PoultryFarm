@@ -138,26 +138,89 @@ namespace pro.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridViewStaff.CurrentRow == null) { return; }
-            Staffs selectedUser = dataGridViewStaff.CurrentRow.DataBoundItem as Staffs;
-            if (selectedUser == null) return;
-            selectedUser.Name = txtname.Text;
-            selectedUser.Contact = txtcontact.Text;
-            selectedUser.CNIC = txtCNIC.Text;
-            selectedUser.Role = comboBoxType.SelectedItem.ToString();
-            selectedUser.StaffID = currentitemid;
-            bool result = supp.Update(selectedUser, currentitemid);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-                ClearInputs();
+                if (dataGridViewStaff.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a staff member to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Staffs selectedUser = dataGridViewStaff.CurrentRow.DataBoundItem as Staffs;
+                if (selectedUser == null)
+                {
+                    MessageBox.Show("Selected staff member is not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string name = txtname.Text.Trim();
+                string contact = txtcontact.Text.Trim();
+                string cnic = txtCNIC.Text.Trim();
+                string role = comboBoxType.SelectedItem?.ToString();
+
+                // Validation
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    MessageBox.Show("Please enter the staff member's name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtname.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(contact))
+                {
+                    MessageBox.Show("Please enter the contact number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtcontact.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(cnic))
+                {
+                    MessageBox.Show("Please enter the CNIC.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCNIC.Focus();
+                    return;
+                }
+
+                if (cnic.Length != 13)
+                {
+                    MessageBox.Show("CNIC must be exactly 13 digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCNIC.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(role))
+                {
+                    MessageBox.Show("Please select a role from the list.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBoxType.Focus();
+                    return;
+                }
+
+                // Set updated values
+                selectedUser.Name = name;
+                selectedUser.Contact = contact;
+                selectedUser.CNIC = cnic;
+                selectedUser.Role = role;
+                selectedUser.StaffID = currentitemid;
+
+                // Call update method
+                bool result = supp.Update(selectedUser, currentitemid);
+                if (result)
+                {
+                    MessageBox.Show("Staff member updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update staff member. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                LoadStaff();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadStaff();
         }
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {
@@ -310,6 +373,21 @@ namespace pro.UI
         private void txtcontact_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new pro.UI.Customer().ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            feedform f = new feedform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

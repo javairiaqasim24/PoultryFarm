@@ -2,129 +2,98 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using pro.BL.Bl;
 using pro.BL.Model;
 using KIMS;
+
 namespace pro.DL
 {
-    internal class SupplierDL
+    public class SupplierDL
     {
         public static bool AddSupplier(Suppliers supplier)
         {
             try
             {
-                string query = @"insert into suppliers (Name,ContactInfo,SupplierType,Address) values (@name,@contact,@type,@address)";
+                string query = @"INSERT INTO suppliers (Name, ContactInfo, SupplierType, Address) 
+                                 VALUES (@name, @contact, @type, @address)";
                 var parameterDict = new Dictionary<string, object>
-            {
-                {"@name",supplier.Name },
-                { "@contact", supplier.Contact },
-                 { "@type", supplier.SupplierType },
-                    { "@address", supplier.Address },
+                {
+                    {"@name", supplier.Name },
+                    {"@contact", supplier.Contact },
+                    {"@type", supplier.SupplierType },
+                    {"@address", supplier.Address }
+                };
 
-            };
                 MySqlParameter[] parameters = parameterDict
-               .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-               .ToArray();
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
                 DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return true;
             }
-
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-
-            }
-            catch (InvalidOperationException invOpEx)
-            {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            catch (SqlException) { return false; }
+            catch (InvalidOperationException) { return false; }
+            catch (Exception) { return false; }
         }
 
         public static bool UpdateSupplier(Suppliers supplier, int supplierID)
         {
             try
             {
-                string query = @"update suppliers 
-                             set Name = @name, 
-                                 ContactInfo = @contact, 
-                                  SupplierType = @type,   
-                                 Address = @address                                 
-                             where SupplierID = @id";
+                string query = @"UPDATE suppliers 
+                                 SET Name = @name, 
+                                     ContactInfo = @contact, 
+                                     SupplierType = @type,   
+                                     Address = @address                                 
+                                 WHERE SupplierID = @id";
+
                 var parameterDict = new Dictionary<string, object>
-            {
-                {"@name", supplier.Name },
-
-                {"@contact", supplier.Contact },
-
-                {"@address", supplier.Address },
-
-                {"@type", supplier.SupplierType },
+                {
+                    {"@name", supplier.Name },
+                    {"@contact", supplier.Contact },
+                    {"@address", supplier.Address },
+                    {"@type", supplier.SupplierType },
                     {"@id", supplierID }
-            };
-                MySqlParameter[] parameters = parameterDict
-              .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-              .ToArray();
-                int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
+                };
 
-                // Check if update was successful (1 or more rows affected)
+                MySqlParameter[] parameters = parameterDict
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
+                int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return rowsAffected > 0;
             }
-
-
-
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            catch (InvalidOperationException invOpEx)
-            {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
+            catch (SqlException) { return false; }
+            catch (InvalidOperationException) { return false; }
+            catch (Exception) { return false; }
         }
+
         public static bool DeleteSupplier(int id)
         {
             try
             {
-                string query = @"delete from suppliers where SupplierID=@ID";
+                string query = @"DELETE FROM suppliers WHERE SupplierID = @ID";
                 var parameterDict = new Dictionary<string, object>
                 {
-                    {"@ID",id }
+                    {"@ID", id }
                 };
+
                 MySqlParameter[] parameters = parameterDict
-                  .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-                  .ToArray();
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
                 int rows = DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return rows > 0;
             }
-            catch (SqlException sqlEx)
-            {
-
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
-
+            catch (SqlException) { return false; }
+            catch (Exception) { return false; }
         }
 
         public static List<Suppliers> GetSuppliers()
         {
-            string query = "SELECT SupplierID, Name, ContactInfo,SupplierType, Address FROM suppliers";
+            string query = "SELECT SupplierID, Name, ContactInfo, SupplierType, Address FROM suppliers";
             List<Suppliers> suppliers = new List<Suppliers>();
 
             using (var conn = DatabaseHelper.GetConnection())
@@ -154,8 +123,8 @@ namespace pro.DL
         public static List<Suppliers> SearchSuppliersByName(string keyword)
         {
             string query = @"SELECT SupplierID, Name, ContactInfo, SupplierType, Address 
-                     FROM suppliers 
-                     WHERE Name LIKE @keyword OR SupplierType LIKE @keyword";
+                             FROM suppliers 
+                             WHERE Name LIKE @keyword OR SupplierType LIKE @keyword";
 
             List<Suppliers> suppliers = new List<Suppliers>();
 

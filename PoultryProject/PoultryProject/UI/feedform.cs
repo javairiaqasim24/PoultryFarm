@@ -1,4 +1,8 @@
-﻿using System;
+﻿using PoultryProject.BL.Bl;
+using PoultryProject.Interfaces;
+using PoultryProject.UI;
+using pro.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using PoultryProject.BL.Bl;
-using PoultryProject.Interfaces;
-using PoultryProject.UI;
 
 namespace Poultary.UI
 {
@@ -253,6 +254,14 @@ namespace Poultary.UI
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            chicksform f = new chicksform();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

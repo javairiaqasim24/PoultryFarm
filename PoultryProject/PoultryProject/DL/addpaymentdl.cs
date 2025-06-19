@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace PoultryProject.DL
 {
-    internal class addpaymentdl
+    public class addpaymentdl
     {
         public static int GetCustomerIdByName(string name)
         {

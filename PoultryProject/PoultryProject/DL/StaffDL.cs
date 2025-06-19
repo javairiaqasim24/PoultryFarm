@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using pro.BL.Model;
-using System.Windows.Forms;
 using KIMS;
 namespace pro.DL
 {
@@ -32,20 +31,17 @@ namespace pro.DL
                 return true;
             }
 
-            catch (SqlException sqlEx)
+            catch (SqlException)
             {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
 
             }
-            catch (InvalidOperationException invOpEx)
+            catch (InvalidOperationException)
             {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -82,20 +78,19 @@ namespace pro.DL
 
 
 
-            catch (SqlException sqlEx)
+            catch (SqlException )
             {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
 
             }
-            catch (InvalidOperationException invOpEx)
+            catch (InvalidOperationException )
             {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
         }
         public static bool DeleteStaff(int id)
         {
@@ -112,12 +107,11 @@ namespace pro.DL
                 int rows = DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return rows > 0;
             }
-            catch (SqlException sqlEx)
+            catch (SqlException )
             {
 
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            return false;
 
         }
 

@@ -5,67 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using PoultryProject.BL.Models;
 using PoultryProject.Interfaces;
-using System.Windows.Forms;
 using pro.BL.Model;
 using Poultary.DL;
 using pro.Interface;
 using pro.DL;
 
-
 namespace Poultary.BL.Models
 {
-    public class CustomerBL:Icustomer
+    public class CustomerBL : Icustomer
     {
         public bool Add(Customers s)
         {
-            if (string.IsNullOrWhiteSpace(s.Name))
-            { 
-                MessageBox.Show("Name is required."); 
-                return false;
-            
-            }
-
-            if (string.IsNullOrWhiteSpace(s.Contact))
-            {
-                MessageBox.Show("Contact is required.");
-                return false;
-            }
-
-
-          
-
-            if (string.IsNullOrWhiteSpace(s.Address))
-            {
-                MessageBox.Show("Address is required.");
-                return false;
-            }
+            if (string.IsNullOrWhiteSpace(s.Name)) return false;
+            if (string.IsNullOrWhiteSpace(s.Contact)) return false;
+            if (string.IsNullOrWhiteSpace(s.Address)) return false;
 
             return CustomerDL.AddCustomer(s);
         }
 
         public bool Update(Customers s, int id)
         {
-            if (string.IsNullOrWhiteSpace(s.Name))
-            {
-                MessageBox.Show("Name is required.");
-                return false;
-
-            }
-
-            if (string.IsNullOrWhiteSpace(s.Contact))
-            {
-                MessageBox.Show("Contact is required.");
-                return false;
-            }
-
-
-
-            if (string.IsNullOrWhiteSpace(s.Address))
-            {
-                MessageBox.Show("Address is required.");
-                return false;
-            }
-
+            if (string.IsNullOrWhiteSpace(s.Name)) return false;
+            if (string.IsNullOrWhiteSpace(s.Contact)) return false;
+            if (string.IsNullOrWhiteSpace(s.Address)) return false;
 
             return CustomerDL.UpdateCustomers(s, id);
         }

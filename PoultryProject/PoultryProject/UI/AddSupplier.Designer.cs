@@ -197,6 +197,7 @@
             this.Name = "AddSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSupplier";
+            this.Load += new System.EventHandler(this.AddSupplier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

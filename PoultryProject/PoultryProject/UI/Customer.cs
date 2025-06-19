@@ -80,25 +80,73 @@ namespace pro.UI
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            if (dataGridViewCustomer.CurrentRow == null) { return; }
-            Customers selectedUser = dataGridViewCustomer.CurrentRow.DataBoundItem as Customers;
-            if (selectedUser == null) return;
-            selectedUser.Name = txtname.Text;
-            selectedUser.Contact = txtcontact.Text;
-            selectedUser.Address = txtaddress.Text;         
-            selectedUser.CustomerID = currentitemid;
-            bool result = supp.Update(selectedUser, currentitemid);
-            if (result == true)
+            try
             {
-                MessageBox.Show("Item Updated Successfully");
-                ClearInputs();
+                if (dataGridViewCustomer.CurrentRow == null)
+                {
+                    MessageBox.Show("Please select a customer from the list to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Customers selectedUser = dataGridViewCustomer.CurrentRow.DataBoundItem as Customers;
+                if (selectedUser == null)
+                {
+                    MessageBox.Show("Selected customer is not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string name = txtname.Text.Trim();
+                string contact = txtcontact.Text.Trim();
+                string address = txtaddress.Text.Trim();
+
+                // UI-level validation
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    MessageBox.Show("Please enter the customer's name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtname.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(contact))
+                {
+                    MessageBox.Show("Please enter the customer's contact.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtcontact.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(address))
+                {
+                    MessageBox.Show("Please enter the customer's address.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtaddress.Focus();
+                    return;
+                }
+
+                // Set updated values
+                selectedUser.Name = name;
+                selectedUser.Contact = contact;
+                selectedUser.Address = address;
+                selectedUser.CustomerID = currentitemid;
+
+                // Call update
+                bool result = supp.Update(selectedUser, currentitemid);
+                if (result)
+                {
+                    MessageBox.Show("Customer updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Customer could not be updated. Please try again.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                LoadCustomer();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Item Not Updated");
+                MessageBox.Show("An unexpected error occurred:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadCustomer();
         }
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {

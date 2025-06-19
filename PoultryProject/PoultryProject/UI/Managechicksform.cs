@@ -133,6 +133,8 @@ namespace Poultary.UI
             dataGridView2.DataSource = list;
             dataGridView2.Columns["BatchId"].Visible = false;
             dataGridView2.Columns["supplier_id"].Visible = false;
+            //dataGridView2.Columns["name"].HeaderText = "Batch Name";
+
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
 

@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using pro.BL.Model;
-using System.Windows.Forms;
 using KIMS;
 
 namespace pro.DL
@@ -19,36 +18,22 @@ namespace pro.DL
             {
                 string query = @"insert into customers (Name,ContactInfo,Address) values (@name,@contact,@address)";
                 var parameterDict = new Dictionary<string, object>
-            {
-                {"@name",cus.Name },
-                { "@contact", cus.Contact },
-                
-                    { "@address", cus.Address },
+                {
+                    {"@name", cus.Name },
+                    {"@contact", cus.Contact },
+                    {"@address", cus.Address },
+                };
 
-            };
                 MySqlParameter[] parameters = parameterDict
-               .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-               .ToArray();
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
                 DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return true;
             }
-
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-
-            }
-            catch (InvalidOperationException invOpEx)
-            {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            catch (SqlException) { return false; }
+            catch (InvalidOperationException) { return false; }
+            catch (Exception) { return false; }
         }
 
         public static bool UpdateCustomers(Customers cus, int CustomerID)
@@ -56,47 +41,31 @@ namespace pro.DL
             try
             {
                 string query = @"update customers 
-                             set Name = @name, 
-                                 ContactInfo = @contact,               
-                                 Address = @address                                 
-                             where CustomerID = @id";
+                                 set Name = @name, 
+                                     ContactInfo = @contact,               
+                                     Address = @address                                 
+                                 where CustomerID = @id";
+
                 var parameterDict = new Dictionary<string, object>
-            {
-                {"@name", cus.Name },
-
-                {"@contact", cus.Contact },
-
-                {"@address", cus.Address },
-
-              
+                {
+                    {"@name", cus.Name },
+                    {"@contact", cus.Contact },
+                    {"@address", cus.Address },
                     {"@id", CustomerID }
-            };
-                MySqlParameter[] parameters = parameterDict
-              .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-              .ToArray();
-                int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
+                };
 
-                // Check if update was successful (1 or more rows affected)
+                MySqlParameter[] parameters = parameterDict
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
+                int rowsAffected = DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return rowsAffected > 0;
             }
-
-
-
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            catch (InvalidOperationException invOpEx)
-            {
-                MessageBox.Show("Invalid operation: " + invOpEx.Message, "Operation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An unexpected error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
+            catch (SqlException) { return false; }
+            catch (InvalidOperationException) { return false; }
+            catch (Exception) { return false; }
         }
+
         public static bool DeleteCustomer(int id)
         {
             try
@@ -104,26 +73,23 @@ namespace pro.DL
                 string query = @"delete from customers where CustomerID=@ID";
                 var parameterDict = new Dictionary<string, object>
                 {
-                    {"@ID",id }
+                    {"@ID", id }
                 };
+
                 MySqlParameter[] parameters = parameterDict
-                  .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
-                  .ToArray();
+                    .Select(p => new MySqlParameter(p.Key, p.Value ?? DBNull.Value))
+                    .ToArray();
+
                 int rows = DatabaseHelper.ExecuteNonQuery(query, parameters);
                 return rows > 0;
             }
-            catch (SqlException sqlEx)
-            {
-
-                MessageBox.Show("Database error occurred: " + sqlEx.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
-
+            catch (SqlException) { return false; }
+            catch (Exception) { return false; }
         }
 
         public static List<Customers> GetCustomers()
         {
-            string query = "SELECT CustomerID, Name, ContactInfo,Address FROM customers";
+            string query = "SELECT CustomerID, Name, ContactInfo, Address FROM customers";
             List<Customers> cus = new List<Customers>();
 
             using (var conn = DatabaseHelper.GetConnection())
@@ -151,9 +117,9 @@ namespace pro.DL
 
         public static List<Customers> SearchCustomersByName(string name)
         {
-            string query = @"SELECT CustomerID, Name, ContactInfo,Address 
-                     FROM customers 
-                     WHERE Name LIKE @name";
+            string query = @"SELECT CustomerID, Name, ContactInfo, Address 
+                             FROM customers 
+                             WHERE Name LIKE @name";
 
             List<Customers> cus = new List<Customers>();
 
@@ -162,7 +128,7 @@ namespace pro.DL
                 conn.Open();
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@name", "%" + name + "%"); // wildcard search
+                    cmd.Parameters.AddWithValue("@name", "%" + name + "%");
 
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -183,6 +149,5 @@ namespace pro.DL
 
             return cus;
         }
-       
     }
 }

@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace PoultryProject.DL
 {
-    internal class sellchicksdl
+    public class sellchicksdl
     {
         public static List<string> nameofcustomers = new List<string>();
         public static List<string> Getnames(string columnName)
