@@ -1208,6 +1208,7 @@ namespace pro.UI
             this.txtcontact.Name = "txtcontact";
             this.txtcontact.Size = new System.Drawing.Size(245, 35);
             this.txtcontact.TabIndex = 54;
+            this.txtcontact.TextChanged += new System.EventHandler(this.txtcontact_TextChanged);
             // 
             // label6
             // 
@@ -1377,7 +1378,6 @@ namespace pro.UI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Staff_FormClosed);
             this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

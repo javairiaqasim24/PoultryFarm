@@ -61,7 +61,7 @@ namespace pro.BL.Bl
 
            
 
-            if (s.Contact.Length != 13)
+            if (s.CNIC.Length != 13)
             {
                 MessageBox.Show("Cnic must be 13 characters long.");
                 return false;

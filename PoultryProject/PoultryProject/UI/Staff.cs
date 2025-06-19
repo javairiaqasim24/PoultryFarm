@@ -167,14 +167,17 @@ namespace pro.UI
 
             selecteditems.StaffID = currentitemid;
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {selecteditems.Name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (supp.delete(currentitemid))
+            if (result == DialogResult.Yes) // User chose Yes
             {
-                MessageBox.Show("Item Deleted Successfully");
-                ClearInputs();
-            }
-            else
-            {
-                MessageBox.Show("Item Not Deleted");
+                if (supp.delete(currentitemid))
+                {
+                    MessageBox.Show("Item Deleted Successfully");
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted");
+                }
             }
             LoadStaff();
         }
@@ -302,6 +305,11 @@ namespace pro.UI
             this.Hide();
             s.ShowDialog();
             this.Close();
+        }
+
+        private void txtcontact_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
