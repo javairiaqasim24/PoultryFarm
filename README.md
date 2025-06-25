@@ -1,28 +1,45 @@
 # 🐣 Poultry Farm Management System
 
-A desktop-based poultry farm management system developed using **C# (WinForms)** and **MySQL**, designed to automate and streamline farm operations such as chick mortality tracking, feed usage, batch management, and inventory updates.
+A desktop-based poultry farm management application built with **C# (WinForms)** and **MySQL**, designed to automate critical operations of a poultry farm including chick mortality tracking, feed consumption monitoring, batch lifecycle management, and real-time inventory updates.
+
+---
+
+## 📋 Table of Contents
+
+- [🚀 Features](#-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [📸 Screenshots](#-screenshots)
+- [📂 Folder Structure](#-folder-structure)
+- [🧠 Concepts Implemented](#-concepts-implemented)
+- [💾 Setup Instructions](#-setup-instructions)
+- [📌 Future Improvements](#-future-improvements)
+- [👨‍💻 Author](#-author)
+- [📜 License](#-license)
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Batch Management**  
-  Register new poultry batches with starting counts and breed information.
+- ✅ **Batch Registration**  
+  Create and manage poultry batches with breed type, initial count, and start date.
 
-- ✅ **Chick Mortality Tracking**  
-  Record daily mortalities with reasons and auto-update remaining count.
+- ✅ **Mortality Recording**  
+  Log daily chick mortality with reasons and auto-adjust the remaining count.
 
-- ✅ **Feed Consumption Tracking**  
-  Log daily feed usage per batch and monitor consumption trends.
+- ✅ **Feed Usage Tracking**  
+  Record daily feed consumption by batch to monitor efficiency.
 
-- ✅ **Inventory Management**  
-  Auto-adjust feed stock based on consumption and issue alerts when low.
+- ✅ **Inventory Monitoring**  
+  Automatically update feed inventory and alert on low levels.
 
-- ✅ **Dashboard Summary**  
-  View total batches, active stock, mortality stats, and usage trends at a glance.
+- ✅ **Live Dashboard**  
+  See current batch status, mortality summaries, and feed consumption in one view.
 
 - ✅ **3-Tier Architecture**  
-  Structured into **UI**, **Business Logic Layer (BL)**, and **Data Access Layer (DL)** for clean code separation and maintainability.
+  Separated concerns with clear layers: UI, Business Logic (BL), and Data Access (DL).
+
+- ✅ **Validation & Error Handling**  
+  Catch and handle errors gracefully with form validations.
 
 ---
 
@@ -30,17 +47,26 @@ A desktop-based poultry farm management system developed using **C# (WinForms)**
 
 | Layer         | Technology           |
 |---------------|----------------------|
-| Frontend      | C# WinForms (.NET Framework) |
-| Backend Logic | C# (Business Layer)  |
-| Database      | MySQL                |
-| Architecture  | 3-Tier (UI - BL - DL)|
-| Programming   | Object-Oriented (OOP)|
+| **Frontend**  | C# WinForms (.NET Framework) |
+| **Backend**   | C# Business Logic Layer (BL) |
+| **Database**  | MySQL                |
+| **Architecture** | 3-Tier (UI → BL → DL) |
+| **Programming** | OOP Principles      |
 
 ---
 
 ## 📸 Screenshots
 
-> _(Optional: Insert screenshots of your UI here)_
+> Add screenshots in the `screenshots/` folder and reference them here:
+
+- **Dashboard View**  
+  ![Dashboard](screenshots/dashboard.png)
+
+- **Batch Management Form**  
+  ![Batch Form](screenshots/batch.png)
+
+- **Mortality Entry Form**  
+  ![Mortality Form](screenshots/mortality.png)
 
 ---
 
