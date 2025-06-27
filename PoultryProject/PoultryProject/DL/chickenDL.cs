@@ -52,7 +52,7 @@ namespace Poultary.DL
                                 reader.GetInt32("quantity"),
                                 reader.GetInt32("diedquantity"),
                                 reader.GetInt32("sacks_used"),                 // Use GetInt32 if it's INT
-                                reader.GetDecimal("total_expenses")
+                                reader.GetInt32("total_expenses")
                             ));
                         }
                         return chickens;
@@ -105,7 +105,7 @@ namespace Poultary.DL
                                 reader.GetInt32("quantity"),
                                 reader.GetInt32("diedquantity"),
                                 reader.GetInt32("sacks_used"),                 
-                                reader.GetDecimal("total_expenses")
+                                reader.GetInt32("total_expenses")
                             ));
                         }
                         return chickens;
