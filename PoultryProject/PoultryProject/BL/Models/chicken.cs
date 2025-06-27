@@ -14,7 +14,9 @@ namespace Poultary.BL.Models
         public string suppliername { get; set; }
         public int quantity {  get; set; }
         public int diedquantity { get; set; }
-        public chicken(int batch_id, string batch_name, int supplierid, string suppliername, int quantity, int diedquantity)
+        public int SacksUsed { get; set; }             
+        public decimal TotalExpenses { get; set; }
+        public chicken(int batch_id, string batch_name, int supplierid, string suppliername, int quantity, int diedquantity, int sacksUsed, decimal totalExpenses)
         {
             this.batch_id = batch_id;
             this.batch_name = batch_name;
@@ -22,6 +24,8 @@ namespace Poultary.BL.Models
             this.suppliername = suppliername;
             this.quantity = quantity;
             this.diedquantity = diedquantity;
+            SacksUsed = sacksUsed;
+            TotalExpenses = totalExpenses;
         }
     }
 }
