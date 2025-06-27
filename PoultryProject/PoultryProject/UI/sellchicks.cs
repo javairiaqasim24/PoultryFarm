@@ -315,5 +315,10 @@ namespace PoultryProject.UI
             AddCustomer customer = new AddCustomer();
             customer.ShowDialog();
         }
+
+        private void combocustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

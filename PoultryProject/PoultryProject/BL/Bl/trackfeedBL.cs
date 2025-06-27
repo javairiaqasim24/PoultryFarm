@@ -11,7 +11,7 @@ namespace PoultryProject.BL.Bl
 
         public bool addtrack(trackfeed g)
         {
-            if (string.IsNullOrWhiteSpace(g.name))
+            if (string.IsNullOrWhiteSpace(g.feed_batch_name))
             {
                 MessageBox.Show("Batch name is required.");
                 return false;
@@ -60,7 +60,7 @@ namespace PoultryProject.BL.Bl
         // 🔒 Centralized validation method
         private bool IsValid(trackfeed g)
         {
-            if (string.IsNullOrWhiteSpace(g.name))
+            if (string.IsNullOrWhiteSpace(g.feed_batch_name))
                 return false;
 
             if (g.sacksUsed <= 0)

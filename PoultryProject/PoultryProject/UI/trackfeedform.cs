@@ -100,7 +100,9 @@ namespace PoultryProject.UI
             dataGridView2.DataSource=list;
             dataGridView2.Columns["id"].Visible = false;
             dataGridView2.Columns["batchid"].Visible = false;
-            
+            dataGridView2.Columns["chickid"].Visible = false;
+
+
             dataGridView2.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
 
@@ -159,7 +161,7 @@ namespace PoultryProject.UI
                 // Assign values
                 selectedUser.sacksUsed = sacksUsed;
                 selectedUser.date = txtdate.Value;
-                selectedUser.name = supplierName;
+                selectedUser.feed_batch_name = supplierName;
                 selectedUser.id = currentitemid;
 
                 // Update the record
@@ -189,7 +191,7 @@ namespace PoultryProject.UI
             selecteditems.id = currentitemid;
 
             DialogResult result = MessageBox.Show(
-                $"Are you sure you want to delete {selecteditems.name}?",
+                $"Are you sure you want to delete {selecteditems.feed_batch_name}?",
                 "Confirm Deletion",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
@@ -219,7 +221,7 @@ namespace PoultryProject.UI
 
             txtquantity.Text = selectedItem.sacksUsed.ToString();
             txtdate.Value = selectedItem.date;
-            txtsupplier.Text = selectedItem.name;
+            txtsupplier.Text = selectedItem.feed_batch_name;
             currentitemid = selectedItem.id;
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using KIMS;
 using MySql.Data.MySqlClient;
@@ -14,7 +15,8 @@ namespace PoultryProject.DL
         {
             try
             {
-                g.batchid = getbatchid(g.name);  
+                g.batchid = getbatchid(g.feed_batch_name);
+                g.chickid = GetchickbatchIdByName(g.chick_batch_name);
 
                 if (g.batchid == -1)
                 {
@@ -24,12 +26,13 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "INSERT INTO feedusage (FeedBatchID, SacksUsed, Date) VALUES (@BatchID, @SacksUsed, @Date)";
+                    string query = "INSERT INTO feedusage (FeedBatchID, SacksUsed, Date , batchID) VALUES (@BatchID, @SacksUsed, @Date, @Chickid)";
                     using (var cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@BatchID", g.batchid);
                         cmd.Parameters.AddWithValue("@SacksUsed", g.sacksUsed);
                         cmd.Parameters.AddWithValue("@Date", g.date);
+                        cmd.Parameters.AddWithValue("@Chickid", g.chickid);
                         int rowsAffected = cmd.ExecuteNonQuery();
                         return rowsAffected > 0;
                     }
@@ -42,7 +45,21 @@ namespace PoultryProject.DL
             }
         }
 
-        
+        public static int GetchickbatchIdByName(string name)
+        {
+            using (MySqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT BatchID FROM chickbatches WHERE BatchName = @name LIMIT 1";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", name);
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1;
+                }
+            }
+        }
+
         public List<trackfeed> getAllTracks()
         {
             List<trackfeed> list = new List<trackfeed>();
@@ -52,9 +69,10 @@ namespace PoultryProject.DL
                 using (var conn = DatabaseHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = @"SELECT f.UsageID, f.FeedBatchID, fb.BatchName, f.SacksUsed, f.Date 
+                    string query = @"SELECT f.UsageID, f.FeedBatchID, fb.batchname, f.SacksUsed, f.Date , cb.BatchName as Chick_Batch_name ,f.batchID
                              FROM feedusage f 
-                             JOIN feedBatches fb ON f.FeedBatchID = fb.FeedBatchID";
+                             JOIN feedBatches fb ON f.FeedBatchID = fb.FeedBatchID
+                             join chickbatches cb on f.batchID = cb.BatchID";
 
                     using (var cmd = new MySqlCommand(query, conn))
                     {
@@ -64,10 +82,13 @@ namespace PoultryProject.DL
                             {
                                 trackfeed tf = new trackfeed(
                                     reader.GetInt32("UsageID"),
-                                    reader.GetString("BatchName"),
+                                    reader.GetString("batchname"),
                                     reader.GetInt32("FeedBatchID"),
                                     reader.GetInt32("SacksUsed"),
-                                    reader.GetDateTime("Date")
+                                    reader.GetDateTime("Date"),
+                                    reader.GetInt32("batchID"),
+                                    reader.GetString("Chick_Batch_name")
+
                                 );
 
                                 list.Add(tf);
@@ -92,7 +113,7 @@ namespace PoultryProject.DL
         {
             try
             {
-                g.batchid = getbatchid(g.name);
+                g.batchid = getbatchid(g.feed_batch_name);
                 if (g.batchid == -1) return false;
 
                 using (var conn = DatabaseHelper.GetConnection())
@@ -267,6 +288,38 @@ namespace PoultryProject.DL
                 Console.WriteLine("Error in GetTodaySacksUsed: " + ex.Message);
                 return 0;
             }
+        }
+
+        public static List<string> namesofbatches = new List<string>();
+        public static List<string> Getnames(string columnName)
+        {
+            List<string> namesofbatches = new List<string>();
+            try
+            {
+                using (MySqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT  BatchName FROM chickbatches WHERE BatchName IS NOT NULL AND BatchName != ''";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string value = reader["BatchName"]?.ToString().Trim();
+                            if (!string.IsNullOrEmpty(value)) namesofbatches.Add(value);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Add diagnostic logging here
+                File.WriteAllText("db_error.log", $"[{DateTime.Now}] Error: {ex.Message}\n{ex.StackTrace}");
+                throw; // Re-throw to preserve original error behavior
+            }
+
+            return namesofbatches;
         }
 
     }

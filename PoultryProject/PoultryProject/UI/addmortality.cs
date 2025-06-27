@@ -130,5 +130,10 @@ namespace Poultary.UI
         {
 
         }
+
+        private void txtsupplier_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

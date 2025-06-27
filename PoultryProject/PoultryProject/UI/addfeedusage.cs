@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using PoultryProject.BL.Bl;
 using PoultryProject.BL.Models;
@@ -10,11 +11,13 @@ namespace PoultryProject.UI
 {
     public partial class addfeedusage : Form
     {
+        public static List<string> namesofbatches = new List<string>();
         ITrackfeed ibl = new trackfeedBL();
 
         public addfeedusage()
         {
             InitializeComponent();
+            LoadNames();
         }
 
         private void addfeedusage_Load(object sender, EventArgs e)
@@ -68,9 +71,16 @@ namespace PoultryProject.UI
                     return;
                 }
 
+                if(txtchickbatches.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please enter the name of the batch of chicks , to which the feed is being supplied.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string name = txtchickbatches.Text;
+
                 DateTime date = txtdate.Value;
 
-                var obj = new trackfeed(batchName, count, date);
+                var obj = new trackfeed(batchName, count, date , name);
                 bool result = ibl.addtrack(obj);
 
                 if (result)
@@ -104,5 +114,40 @@ namespace PoultryProject.UI
             txtquantity.Clear();
             txtdate.Value = DateTime.Now;
         }
+
+        private void txtchickbatches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadNames()
+        {
+            try
+            {
+
+
+                namesofbatches = trackfeedDL.Getnames("BatchName");
+
+                // Diagnostic output
+                Debug.WriteLine($"Loaded {namesofbatches.Count}  BatchName");
+                if (namesofbatches.Count == 0)
+                {
+                    MessageBox.Show("No customers found in database. Check products table.");
+                }
+
+                txtchickbatches.DataSource = namesofbatches;
+                txtchickbatches.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                txtchickbatches.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                var autoCompleteSource = new AutoCompleteStringCollection();
+                autoCompleteSource.AddRange(namesofbatches.ToArray());
+                txtchickbatches.AutoCompleteCustomSource = autoCompleteSource;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading name: {ex.Message}\nCheck db_error.log for details");
+            }
+        }
+
     }
 }
